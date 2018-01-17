@@ -281,6 +281,7 @@ h2 span {
 .toprated-main{
     width:100%;
 margin: 0 auto;
+height: auto;
 }
 .contents-toprated{
     width:100%;
@@ -329,7 +330,6 @@ h5{
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
     line-height: 1.1;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -438,6 +438,47 @@ text-decoration: none;
 }
 .subscribe-block_group >a:hover{
    background:  #a0ce4e;
+}
+.popularmain{
+    width:370px;
+    position: relative;
+    top:0;
+    left:0;
+    height: auto;
+}
+.one{
+    width:70px;
+    height: 50px;
+    float: left;
+    display: inline;
+}
+.two{
+    width:180px;
+    height: 140px;
+    background:#2b2b2b;
+    transition: width 0.5s ease-in;
+    margin-left: auto;
+    position:relative;
+    top:0;
+    left:0;
+    margin-bottom: -10px;
+}
+.two:hover{
+    width:280px;
+    z-index: 100;
+    cursor: pointer;
+}
+.two h6{
+    color:white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    font-family: Montserrat;
+    letter-spacing: 0px;
+    position: relative;
+    top:40%;
+
 }
 /*topratedblog ends*/
 .moviedetails {

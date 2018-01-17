@@ -5,6 +5,8 @@ import NowPlaying from './NowPlaying.js';
 import UpcomingMovies from './Upcoming.jsx';
 import Latest from './latest.js';
 import Footer from './Footer.js';
+import Header from './Header.js';
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -68,7 +70,8 @@ export default class Home extends React.Component {
     }
     return (
       <div>
-      
+             <Header/>
+ 
         <NowPlaying/>
         <div className="upcomingmainblog">
         <h5 className="contentheading">upcoming news</h5> 
