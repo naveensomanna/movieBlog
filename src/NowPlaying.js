@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import {Row,Col} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 export default class NowPlaying extends React.Component {
     constructor(props) {
         super(props);
@@ -47,7 +48,7 @@ export default class NowPlaying extends React.Component {
                 <Col lg={5} md={6} xs={12} sm={12}>
             <div className="first-blog">
 
-                    {movieList1}
+                    <NavLink to="/comdey">{movieList1}</NavLink>
                     </div>
                     </Col>
                     <Col lg={7} md={6} xs={12} sm={12}>

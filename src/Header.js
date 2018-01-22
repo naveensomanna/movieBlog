@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar,Nav,NavItem,NavbarToggle,NavbarCollapse,form} from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';  
 class MovieLogo extends React.Component{
     render(){
            var imageName = require('./images/icon.png')
@@ -26,13 +26,13 @@ class NavBar extends React.Component{
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav className="navbar">
-                 <NavItem eventKey={1}  className="navitem"  href="">HOME</NavItem>
-                 <NavItem eventKey={2}   className="navitem" href="#">COMEDY</NavItem>
-                <NavItem eventKey={3}   className="navitem" href="#">DRAMA</NavItem>
+                 <NavItem eventKey={1}  className="navitem"  href=""><Link to="/" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>HOME</Link></NavItem>
+                 <NavItem eventKey={2}   className="navitem" href="#"><Link to="/comdey">COMEDY</Link></NavItem>
+                <NavItem eventKey={3}   className="navitem" href="#"><Link to="/drama">DRAMA</Link></NavItem>
                <NavItem eventKey={4}   className="navitem"  href="">ACTION</NavItem>
                  <NavItem eventKey={5}  className="navitem"  href="#">HORROR</NavItem>
                 <NavItem eventKey={6}   className="navitem" href="#">SCI-FI</NavItem>
-               <NavItem eventKey={7}   className="navitem"  href="">TV SHOWS</NavItem>
+               <NavItem eventKey={7}   className="navitem"  href=""><Link to="/tvshows"style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
                  <NavItem eventKey={8}  className="navitem"  href="#">OTHER GENRES</NavItem>
               </Nav>
               

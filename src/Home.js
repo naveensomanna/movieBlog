@@ -4,8 +4,6 @@ import axios from 'axios';
 import NowPlaying from './NowPlaying.js';
 import UpcomingMovies from './Upcoming.jsx';
 import Latest from './latest.js';
-import Footer from './Footer.js';
-import Header from './Header.js';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -33,8 +31,7 @@ export default class Home extends React.Component {
     this.getdata(data.selected + 1);
   }
   getdata(value) {
-    let requestUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0060" +
-        "474990618f8eace5a7835a1fead6&page=" + value;
+    let requestUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0060474990618f8eace5a7835a1fead6&page=" + value;
     axios
       .get(requestUrl)
       .then(response => {
@@ -70,7 +67,7 @@ export default class Home extends React.Component {
     }
     return (
       <div>
-             <Header/>
+           
  
         <NowPlaying/>
         <div className="upcomingmainblog">
@@ -81,7 +78,6 @@ export default class Home extends React.Component {
         </div>
         </div>
         <Latest/>
-<Footer/>
         
         </div>
     

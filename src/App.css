@@ -554,6 +554,7 @@ input::-webkit-input-placeholder {
 .site-footer{
     background-color: #222222;
     max-width: 100%;
+    margin-top: 20px;
 }
 .invert{
     color:#ffffff;
@@ -656,4 +657,16 @@ input[type="email"]{
     align-self: center;
     color:#888888;
     display: flex;
+}
+#comdey{
+    color: white;
+}
+
+
+.tvshows{
+    margin: 0 auto;
+    width:74%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
