@@ -66,17 +66,18 @@ width:200px;
 }
 
 .moviename {
-    color: white;
+    color: #f15f60;
      align-self: center;
 }
 
 .moviename span {
-    color: #a0ce4e;
+    color:white;
+
 }
 
 #subtitle {
     font-size: 9px;
-    color: white;
+    color:#00ada9;
     letter-spacing: 0.3em;
     word-spacing: 0.2em;
     opacity: 0.4;
@@ -89,8 +90,6 @@ width:200px;
     margin-bottom: 50px;
     width:100%;
 }
-
-
 
 .navbar {
     padding-top: 2px;
@@ -194,33 +193,22 @@ margin-right: auto;
         text-align: center;
             }
 }
-
 /*thetare main blog starts*/
-@media screen and (min-width:550px){
-#theatremainblog {
+
+.theater_blog {
     width: 76%;
     border-top: 4px solid orange;   
-    margin:0 auto;
-    
+    margin:0 auto;   
 }
-.first-blog{
-}
-.second-blog{
-}   
 .img2SecondBlog{
     object-fit: cover;
     object-position: center center;
-    width:336px;
 }
-}
+
 .img1FirstBlog{
     object-fit: cover;
     object-position: center center;}
-.img2SecondBlog{
-    object-fit: cover;
-    object-position: center center;
-    width:330px;
-}
+
 .img1carousel{
     object-fit: cover;
     object-position: center center;
@@ -255,6 +243,9 @@ h2 span {
 .upcomingmainblog{
     padding-top:40px; 
 }
+#carouselblog{
+width:100%;
+}
 .contentheading{
     text-transform: uppercase;
     font-family: Montserrat;
@@ -285,13 +276,13 @@ height: auto;
 }
 .contents-toprated{
     width:100%;
-margin-left:5%; 
+margin-left:6%; 
 }
 .contents-toprated h4{
 margin-left: 13%;
 }
 .main-blog{
-width:74%;
+width:76%;
 margin: 0 auto;
     border-top:2px solid #3ec0e1;  
 }
@@ -662,11 +653,29 @@ input[type="email"]{
     color: white;
 }
 
+.well img{
+    width:100%;
+}
+
+#tvshow{
+   width:18%;
+   display: flex;
+
+}
 
 .tvshows{
-    margin: 0 auto;
-    width:74%;
+   
+    width:75%;
+margin: 0 auto;
+
+}
+.tvshows >div{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: space-between;
+
+}
+.movie_details{
+    margin:0 auto;
+    width:70%;
 }

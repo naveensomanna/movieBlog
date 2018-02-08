@@ -31,7 +31,7 @@ export default class NowPlaying extends React.Component {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             console.log("imgurl" + imgurl)
-            return (<img className="img2SecondBlog" src={imgurl} width="333px" height="250px"/>);
+            return (<img className="img2SecondBlog" src={imgurl} width="323px" height="250px"/>);
         });
         let movies1 = [];
         movies1 = this.state .movie
@@ -43,25 +43,21 @@ export default class NowPlaying extends React.Component {
         });
         return (
             <div>
-            <div id="theatremainblog">
-            <Row>
-                <Col lg={5} md={6} xs={12} sm={12}>
-            <div className="first-blog">
+                            <div class="theater_blog">
 
-                    <NavLink to="/comdey">{movieList1}</NavLink>
-                    </div>
+            <Row>
+
+                <Col lg={5} md={6} xs={12} sm={12}>
+
+                {movieList1}
                     </Col>
                     <Col lg={7} md={6} xs={12} sm={12}>
-
-                    <div className="second-blog">
                     {movieList}
-                
-                   </div>
                 </Col>
+            
                 </Row>
                 </div>
-
-               </div>
+</div>
                );
     }
 }

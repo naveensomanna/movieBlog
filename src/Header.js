@@ -1,12 +1,13 @@
 import React from 'react';
-import {Navbar,Nav,NavItem,NavbarToggle,NavbarCollapse,form} from 'react-bootstrap';
+import {Navbar,Nav,NavItem,form} from 'react-bootstrap';
 import {Link} from 'react-router-dom';  
 class MovieLogo extends React.Component{
+    
     render(){
            var imageName = require('./images/icon.png')
         return(
 <div className="nameblog">
-<img src={imageName} width="100px" height="100px"/>
+<img src={imageName} alt="" width="100px" height="100px"/>
 <h1 className="moviename">movie<span>spot</span><p id="subtitle">YOUR FAVORITE MOVIES</p></h1>
     </div>
         );
@@ -14,7 +15,6 @@ class MovieLogo extends React.Component{
 }
 class NavBar extends React.Component{
     render(){
-       
         return(
             <div>
             <div className="navlist">
@@ -26,16 +26,15 @@ class NavBar extends React.Component{
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav className="navbar">
-                 <NavItem eventKey={1}  className="navitem"  href=""><Link to="/" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>HOME</Link></NavItem>
-                 <NavItem eventKey={2}   className="navitem" href="#"><Link to="/comdey">COMEDY</Link></NavItem>
-                <NavItem eventKey={3}   className="navitem" href="#"><Link to="/drama">DRAMA</Link></NavItem>
+                 <NavItem eventKey={1}  className="navitem"  href=""><Link to="/" style={{ color:"white",textDecoration:"none",":hover": { color: "green" }}}>HOME</Link></NavItem>
+                 <NavItem eventKey={2}   className="navitem" href="#"><Link to="/comdey" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>COMEDY</Link></NavItem>
+                <NavItem eventKey={3}   className="navitem" href="#"><Link to="/drama" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>DRAMA</Link></NavItem>
                <NavItem eventKey={4}   className="navitem"  href="">ACTION</NavItem>
                  <NavItem eventKey={5}  className="navitem"  href="#">HORROR</NavItem>
                 <NavItem eventKey={6}   className="navitem" href="#">SCI-FI</NavItem>
-               <NavItem eventKey={7}   className="navitem"  href=""><Link to="/tvshows"style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
+               <NavItem eventKey={7}   className="navitem"  href=""><Link to="tvshows" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
                  <NavItem eventKey={8}  className="navitem"  href="#">OTHER GENRES</NavItem>
               </Nav>
-              
             </Navbar.Collapse>
           </Navbar>
         </div>
@@ -44,11 +43,13 @@ class NavBar extends React.Component{
     }
 }
 class Searc extends React.Component{
+  
     render(){
+
         return(
             <div>
             <form>
-            <input type="search" placeholder="Search"/>
+            <input type="search"  placeholder="Search"/>
         </form>
         </div>
         );
@@ -66,7 +67,7 @@ export default class Header extends React.Component{
         <Searc/>
         </div>
         </div>
-        <NavBar/>
+        <NavBar />
 
         </div>
 

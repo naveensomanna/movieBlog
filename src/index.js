@@ -8,6 +8,9 @@ import Comdey from './Comdey.js';
 import Drama from './Drama.js';
 import TvShows from './TvShows.js';
 import Footer from './Footer.js';
+import Movies from './Movies.js';
+import Moviess from './Moviess.js';
+import Moviesss from './Moviesss.js';
 
 import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
 
@@ -23,8 +26,11 @@ ReactDOM.render(
 <Route  path="/comdey" component={Comdey}/>
 <Route  path="/drama" component={Drama}/>
 <Route  path="/tvshows" component={TvShows}/>
-<Footer/>
+<Route  path="/movies/:id" component={Movies}/>
+<Route  path="/moviess/:id" component={Moviess}/>
+<Route  path="/moviesss/:id" component={Moviesss}/>
 
+<Footer/>
     </div>
    </Router> ,
  document.getElementById('root'));

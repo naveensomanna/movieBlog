@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+let datas = [];
 export default class Latest extends React.Component {
     constructor(props) {
         super(props);
@@ -9,23 +11,27 @@ export default class Latest extends React.Component {
             movie1: [],
         }
     }
-    componentWillMount() {
+    componentDidMount() {
+        console.log("componentWillMount");
         let requestUrl = "https://api.themoviedb.org/3/movie/top_rated?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl).then(response => {
             this.setState({
                 movie: response.data.results
             })
+            console.log("got the results1");            
+
         });
-        console.log("url in latest" + this.state.movie);
+        // console.log("url in latest" + this.state.movie);
         let requestUrl1 = "https://api.themoviedb.org/3/movie/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl1).then(response => {
             this.setState({
                 movie1: response.data.results
-            })
+            });
+        console.log("got the results");            
         });
-
     }
     render() {
+        console.log("render called");
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this
@@ -33,10 +39,10 @@ export default class Latest extends React.Component {
             .movie
             .slice(1, 7);
         let movieList = movies.map(movie => {
-            console.log("mapped movie" + movie)
+            // console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
-            console.log("imgurl" + imgurl)
-            return (<img className="img1carousel" src={imgurl} width="370px" height="300px" />);
+            // console.log("imgurl" + imgurl)
+            return (<img className="img1carousel" src={imgurl} width="373px" height="300px" />);
         });
         let moviess = [];
         moviess = this.state.movie1.slice(1, 4);
@@ -46,13 +52,23 @@ export default class Latest extends React.Component {
                 <img src={imgurl} width="190px" height="140px" />
             );
         });
-        let movieposter=[];
-        movieposter=moviess.map(movie =>{
-            return  (<div>{movie.title}  <p>({movie.release_date})</p></div>
-                );
-        }
-    );
+        console.log("api" + moviess);
+let obj1=moviess.map(mov =>{
+ return mov.id;   
+});
 
+        
+        // console.log(obj.id)
+        // let obj =JSON.parse(moviess[0]);
+        // console.log(obj['adult'])
+
+        let movieposter = [];
+        movieposter = moviess.map(movie => {
+            return (<div>{movie.title}  <p>({movie.release_date})</p></div>
+            );
+        }
+        );
+        // console.log(moviess.release_date);
         return (
             <div>
                 <div className="toprated-main">
@@ -104,14 +120,14 @@ export default class Latest extends React.Component {
                                     {movieList1}
                                 </div>
                                 <div className="two">
-                                    <h6>{movieposter[0]}</h6>
+                                 <Link to={`/Movies/${obj1[0]}`}>   <h6>{movieposter[0]}</h6></Link>
 
                                 </div>
                                 <div className="two">
-                                    <h6>{movieposter[1]}</h6>
+                                <Link to={`/Moviess/${obj1[1]}`}><h6>{movieposter[1]}</h6></Link>
                                 </div>
                                 <div className="two">
-                                    <h6>{movieposter[2]}</h6>
+                                <Link to={`/Moviesss/${obj1[2]}`}><h6>{movieposter[2]}</h6></Link>
                                 </div>
                             </div>
 
