@@ -1,37 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Header from './Header.js';
-import Home from './Home.js';
-import Comdey from './Comdey.js';
-import Drama from './Drama.js';
-import TvShows from './TvShows.js';
-import Footer from './Footer.js';
-import Movies from './Movies.js';
-import Moviess from './Moviess.js';
-import Moviesss from './Moviesss.js';
-
-import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
-
+import App from './App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-<Router>
-    <div>
-    <Header/>
-    
-
-<Route exact path="/" component={Home}/>
-<Route  path="/comdey" component={Comdey}/>
-<Route  path="/drama" component={Drama}/>
-<Route  path="/tvshows" component={TvShows}/>
-<Route  path="/movies/:id" component={Movies}/>
-<Route  path="/moviess/:id" component={Moviess}/>
-<Route  path="/moviesss/:id" component={Moviesss}/>
-
-<Footer/>
-    </div>
-   </Router> ,
+ReactDOM.render(<App/>
+ ,
  document.getElementById('root'));
 registerServiceWorker();

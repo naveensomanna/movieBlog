@@ -1,6 +1,7 @@
 import React from 'react';
-import {Navbar,Nav,NavItem,form} from 'react-bootstrap';
-import {Link} from 'react-router-dom';  
+import {Navbar,Nav,NavItem,form,inverse} from 'react-bootstrap';
+import {Link} from 'react-router-dom'; 
+import axios from 'axios'; 
 class MovieLogo extends React.Component{
     
     render(){
@@ -15,41 +16,64 @@ class MovieLogo extends React.Component{
 }
 class NavBar extends React.Component{
     render(){
+        var divStyle={
+            marginBottom:"10px",
+        };
         return(
-            <div>
-            <div className="navlist">
-            <Navbar inverse collapseOnSelect >
-            <Navbar.Header>
-              <Navbar.Brand>
-              </Navbar.Brand>
-              <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-              <Nav className="navbar">
-                 <NavItem eventKey={1}  className="navitem"  href=""><Link to="/" style={{ color:"white",textDecoration:"none",":hover": { color: "green" }}}>HOME</Link></NavItem>
-                 <NavItem eventKey={2}   className="navitem" href="#"><Link to="/comdey" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>COMEDY</Link></NavItem>
-                <NavItem eventKey={3}   className="navitem" href="#"><Link to="/drama" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>DRAMA</Link></NavItem>
-               <NavItem eventKey={4}   className="navitem"  href="">ACTION</NavItem>
-                 <NavItem eventKey={5}  className="navitem"  href="#">HORROR</NavItem>
-                <NavItem eventKey={6}   className="navitem" href="#">SCI-FI</NavItem>
-               <NavItem eventKey={7}   className="navitem"  href=""><Link to="tvshows" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
-                 <NavItem eventKey={8}  className="navitem"  href="#">OTHER GENRES</NavItem>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        </div>
+            <div style={divStyle}>
+           <Navbar  collapseOnSelect>
+  <Navbar.Collapse>
+    <Nav>
+
+    <NavItem eventKey={1}   href=""><Link to="/"  style={{ color:"white",textDecoration:"none",":hover":{color:"green"}}}>HOME</Link></NavItem>
+    <NavItem eventKey={2}    href="#"><Link to="/comdey" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>COMEDY</Link></NavItem>
+    <NavItem eventKey={3}    href="#"><Link to="/drama" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>DRAMA</Link></NavItem>
+    <NavItem eventKey={4}     href="">ACTION</NavItem>
+    <NavItem eventKey={5}    href="#">HORROR</NavItem>
+    <NavItem eventKey={6}    href="#">SCI-FI</NavItem>
+    <NavItem eventKey={7}    href=""><Link to="tvshows" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
+    <NavItem eventKey={8}    href="#">OTHER GENRES</NavItem>
+
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
         </div>
         )
     }
 }
+
 class Searc extends React.Component{
-  
+  constructor(props){
+    super(props)
+    this.state={
+        value:'',
+        movie:[]
+    }
+    this.handleClick=this.handleClick.bind(this);
+  }
+  handleClick(event){
+      event.preventDefault();
+      console.log(this.refs.contenttype.value);
+      this.setState({
+          value:this.refs.contenttype.value
+      })
+  }
+  componentDidMount(){
+let value=this.state.value;
+    let requestUrl = "https://api.themoviedb.org/3/search?query="+value+"&api_key=0060474990618f8eace5a7835";
+axios
+.get(requestUrl)
+.then(response => {
+    this.setState({movie: response.data.results})
+});
+  }
     render(){
+        console.log("moviee search result"+this.state.movie);
 
         return(
             <div>
-            <form>
-            <input type="search"  placeholder="Search"/>
+            <form onSubmit={this.handleClick}>
+            <input type="search"  placeholder="Search" ref="contenttype"/>
         </form>
         </div>
         );

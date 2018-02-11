@@ -1,5 +1,5 @@
 import React from 'react';
-import {Jumbotron, Grid, Row, Col} from 'react-bootstrap';
+import {Jumbotron, Grid, Row, Col,button} from 'react-bootstrap';
 import axios from 'axios';
 import NowPlaying from './NowPlaying.js';
 import UpcomingMovies from './Upcoming.jsx';
@@ -17,7 +17,8 @@ export default class Home extends React.Component {
     this.getdata = this
       .getdata
       .bind(this);
-
+this.scrollFunction=this.scrollFunction.bind(this);
+this.topFunction=this.topFunction.bind(this);
   }
   componentDidMount() {
     this.getdata();
@@ -39,8 +40,21 @@ export default class Home extends React.Component {
       });
     console.log("results array" + this.state.movie);
   }
+   
 
+  scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
   render() {
+    window.onscroll =()=> {this.scrollFunction()};
     let baseImgURL = "https://image.tmdb.org/t/p/w500";
     let movieList = this
       .state
@@ -65,9 +79,15 @@ export default class Home extends React.Component {
     var style = {
       marginLeft: '400px'
     }
+
+
+
+
+// When the user clicks on the button, scroll to the top of the document
+
     return (
       <div>
-           
+
  
         <NowPlaying/>
         <div className="upcomingmainblog">
@@ -78,7 +98,8 @@ export default class Home extends React.Component {
         </div>
         </div>
         <Latest/>
-        
+        <button onClick={this.topFunction} id="myBtn" title="Go to top">Top</button>
+
         </div>
     
     );

@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    background: #141414;
+    /*background: #141414;*/
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -46,6 +46,7 @@ width:200px;
 /*movie name*/
 .header-wrapper{
     width:100%;
+    background-color: #081c24;
     display: flex;
     flex-direction: row;
 flex-wrap: wrap;
@@ -85,34 +86,32 @@ width:200px;
 
 
 /*navbar */
-
+.navbar-collapse{
+    padding: 0 !important ;
+}
 .navlist {
-    margin-bottom: 50px;
-    width:100%;
+    margin-bottom: 30px;
 }
 
 .navbar {
-    padding-top: 2px;
+    width:100%;
     padding-bottom: 2px;
     background: #2b2b2b;
 }
 .navbar-inverse{
     background: none;
+    margin: 0;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover {
+ .navbar-nav>li>a:hover {
     color: #3ec0e1;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-    color: white;
-    font-size: 15px;
-    font-family: Montserrat;
-    position: relative;
-    display: block;
+ 
+.navbar-collapse>.navbar-nav>li>a{
+    color:white;
 }
-
-.navbar-inverse .navbar-nav>li>a::after {
+ .navbar-nav>li>a::after {
     content: '';
     width: 100%;
     top: 100%;
@@ -123,8 +122,7 @@ width:200px;
     transform: scaleX(0);
     transition: transform 0.5s ease;
 }
-
-.navbar-inverse .navbar-nav>li>a:hover::after {
+ .navbar-nav>li>a:hover::after {
     transform: scaleX(1);
 }
 @media screen and (max-width:500px){
@@ -171,13 +169,18 @@ text-align: center;
     }
 }
 @media screen and (min-width:500px){    
-    .container{
-        width:80%;
+   .navbar{
+    border-radius:0 !important; 
+    width: 100%;
+   }
+   .navbar-default{
+       border:0 !important;
+   }
+    .navbar-header{
+        
     }
     .navlist{
         width:100%;
-margin-left:  auto;
-margin-right: auto;
 }
 .navbar-inverse{
     border:none;
@@ -196,7 +199,7 @@ margin-right: auto;
 /*thetare main blog starts*/
 
 .theater_blog {
-    width: 76%;
+    width: 75%;
     border-top: 4px solid orange;   
     margin:0 auto;   
 }
@@ -228,6 +231,7 @@ h2 span {
     background: rgba(0, 0, 0, 0.7);
 }
 .img1carousel{
+    width: 100%;
     object-fit: cover;
     object-position: center center;
 }
@@ -241,7 +245,6 @@ h2 span {
     
 }
 .upcomingmainblog{
-    padding-top:40px; 
 }
 #carouselblog{
 width:100%;
@@ -250,11 +253,11 @@ width:100%;
     text-transform: uppercase;
     font-family: Montserrat;
     font-size: 24px;
-    color:white;
+    color:black;
     font-weight: 700;
     line-height: 1.1;
     font-style: normal;
-    margin-left:11%;
+    margin-left:12%;
 }
 .carousel-inner .item img {
     width: 1200px;
@@ -298,7 +301,7 @@ h4{
     font-family: Montserrat;
     letter-spacing: 0px;
     text-align: inherit;
-    color: #ffffff;
+    color:black;
     text-transform: uppercase;
 }
 .follow-content{
@@ -540,7 +543,26 @@ input::-webkit-input-placeholder {
     color: #999;
 }
 
+/*scroll button*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
 
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
 /*footer*/
 .site-footer{
     background-color: #222222;
@@ -652,14 +674,17 @@ input[type="email"]{
 #comdey{
     color: white;
 }
-
+.well {
+    background-color: black !important;
+}
 .well img{
-    width:100%;
+    width: 100%;
 }
 
 #tvshow{
    width:18%;
    display: flex;
+   color:white;
 
 }
 
