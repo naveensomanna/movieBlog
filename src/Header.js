@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar,Nav,NavItem,form,inverse} from 'react-bootstrap';
+import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
 import {Link} from 'react-router-dom'; 
 import axios from 'axios'; 
 class MovieLogo extends React.Component{
@@ -60,7 +60,7 @@ class Searc extends React.Component{
   }
   componentDidMount(){
 let value=this.state.value;
-    let requestUrl = "https://api.themoviedb.org/3/search?query="+value+"&api_key=0060474990618f8eace5a7835";
+    let requestUrl = "https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&query="+{value};
 axios
 .get(requestUrl)
 .then(response => {
@@ -69,7 +69,14 @@ axios
   }
     render(){
         console.log("moviee search result"+this.state.movie);
-
+let title=this.state.movie.map(movie =>{
+return (
+    <div>
+        <p>{movie.overview}</p>
+        </div>
+);
+})
+console.log(title);
         return(
             <div>
             <form onSubmit={this.handleClick}>
@@ -92,7 +99,6 @@ export default class Header extends React.Component{
         </div>
         </div>
         <NavBar />
-
         </div>
 
     

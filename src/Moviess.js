@@ -8,6 +8,7 @@ export default class Moviess extends Component{
         super(props);
     this.state={
         movie:[],
+        movie1:[]
     }
     }
     componentDidMount(){
@@ -19,22 +20,57 @@ axios.get(requestUrl).then(response =>{
 )
 }
     );
+    let requestUrl1="https://api.themoviedb.org/3/movie/"+this.props.match.params.id+"/casts?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
+    axios.get(requestUrl1).then(response =>{
+        this.setState({
+            movie1:response.data.cast
+        }
+    )
+    }
+        );
 }
     
     render(){
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-
         let imgUrl=baseImgURL+this.state.movie.poster_path;
-
+        let movies=[];
+        movies= this.state.movie1.slice(1,5);
+        let movieList = movies.map(movie => {
+            console.log("mapped movie" + movie)
+            let imgurl = baseImgURL + movie.profile_path;
+            console.log("imgurl" + imgurl)
+            return (
+                <div className="well well_style">
+            <img  src={imgurl} width="206px" height="200px"/>
+            <p className="casts_name">{movie.name}</p>
+            </div>);
+        });
         return (
-            <div>
-        <div className="well movie_details">
-        <img src={imgUrl}  width="70%" height="70%"/>
-        <p>{this.state.movie.original_title}</p>
-        <p>{this.state.movie.overview}</p>
-        <p>{this.state.movie.popularity}</p>
-        <p>{this.state.movie.vote_count}</p>
+            <div id="movie_background">
+<div className="movie_details_main">
+                
+                    <div >
+        <img src={imgUrl}  width="300px" height="400px"/>
+        
+</div>
+<div className="sing_colum_blog">
+        <p className="movie_details_title">{this.state.movie.original_title}</p>
+        <p>Overview :</p>
+        <p className="movie_details">{this.state.movie.overview}</p>
+        <p>Popularity :</p>
+        <p className="movie_details">{this.state.movie.popularity}</p>
+        <p>Votes :</p>
+        <p className="movie_details">{this.state.movie.vote_count}</p>
+</div>
 
+        </div>
+        <div className="people">
+        <h2>Top Billed Cast</h2>
+
+        <div className="casts">
+        {movieList}
+        
+        </div>
         </div>
         </div>
         );

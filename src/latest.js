@@ -42,14 +42,14 @@ export default class Latest extends React.Component {
             // console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             // console.log("imgurl" + imgurl)
-            return (<img className="img1carouse" src={imgurl} width="373px" height="300px" />);
+            return (<img className="img_align" src={imgurl} width="375px" height="300px" />);
         });
         let moviess = [];
         moviess = this.state.movie1.slice(1, 4);
         let movieList1 = moviess.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (
-                <img src={imgurl} width="190px" height="140px" />
+                <img className="img_align" src={imgurl} width="190px" height="140px" />
             );
         });
         console.log("api" + moviess);

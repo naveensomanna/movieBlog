@@ -285,11 +285,15 @@ margin-left:6%;
 margin-left: 13%;
 }
 .main-blog{
-width:76%;
+width:75%;
 margin: 0 auto;
-    border-top:2px solid #3ec0e1;  
+    border-top:3px solid #3ec0e1;  
 }
 
+.img_align{
+    object-fit: cover;
+    object-position: center center;
+}    
 
 .follow-blog{
 }
@@ -674,11 +678,12 @@ input[type="email"]{
 #comdey{
     color: white;
 }
-.well {
+#tvshow .well {
     background-color: black !important;
+   box-shadow:  0 2px 8px rgba(0,0,0,0.5);
 }
-.well img{
-    width: 100%;
+#tvshow .well>img{
+    width:100%;
 }
 
 #tvshow{
@@ -700,7 +705,45 @@ margin: 0 auto;
     justify-content: space-between;
 
 }
-.movie_details{
+#movie_background{
+    background: #00d573;
+        width: 100%;
+        
+}
+.movie_details_main{
+    
+    width:1000px;
+    display: flex;
     margin:0 auto;
-    width:70%;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.sing_colum_blog{
+    padding-left: 20px;
+    color: white;
+}
+.movie_details_title{
+    font-weight: 700;
+    font-size: 2.4em;
+}
+.casts{
+    display:flex; 
+   
+}
+
+.well_style{
+    margin-right: 10px;
+    box-shadow:  0 2px 8px rgba(0,0,0,0.7);
+
+}
+.casts_name{
+color:black;
+font-weight: 700;
+text-align: center;
+margin-top: 10px;
+}
+.people{
+    margin-left: 250px;
+color:black;
+
 }
