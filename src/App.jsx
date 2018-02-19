@@ -9,7 +9,7 @@ import Footer from './Footer.js';
 import Movies from './Movies.js';
 import Moviess from './Moviess.js';
 import Moviesss from './Moviesss.js';
-
+import SearchBar from './Searchbar.jsx';
 import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
 
 export default class App extends React.Component{
@@ -38,7 +38,6 @@ render(){
 <Router>
     <div>
     <Header/>
-    
 
 <Route exact path="/" component={Home}/>
 <Route  path="/comdey" component={Comdey}/>
@@ -47,6 +46,7 @@ render(){
 <Route  path="/movies/:id" component={Movies}/>
 <Route  path="/moviess/:id" component={Moviess}/>
 <Route  path="/moviesss/:id" component={Moviesss}/>
+<Route  path="/SearchBar/:id" component={SearchBar}/>
 
 <Footer/>
 <button onClick={this.topFunction} id="myBtn" title="Go to top">Top</button>

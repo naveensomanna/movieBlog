@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
-import {Link} from 'react-router-dom'; 
+import {Link,withRouter} from 'react-router-dom'; 
 import axios from 'axios'; 
 class MovieLogo extends React.Component{
     
@@ -42,52 +42,24 @@ class NavBar extends React.Component{
     }
 }
 
-class Searc extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-        value:'',
-        movie:[]
-    }
-    this.handleClick=this.handleClick.bind(this);
-  }
-  handleClick(event){
-      event.preventDefault();
-      console.log(this.refs.contenttype.value);
-      this.setState({
-          value:this.refs.contenttype.value
-      })
-  }
-  componentDidMount(){
-let value=this.state.value;
-    let requestUrl = "https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&query="+{value};
-axios
-.get(requestUrl)
-.then(response => {
-    this.setState({movie: response.data.results})
-});
-  }
+
+ class Header extends React.Component{
+    constructor(Props) {
+        super(Props)
+        this.state = {
+          
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+      handleSubmit(event) {
+        console.log("updated");
+        event.preventDefault();
+        this.props.history.push(`/SearchBar/${this.refs.attack.value}`); // or whatever
+
+      }
     render(){
-        console.log("moviee search result"+this.state.movie);
-let title=this.state.movie.map(movie =>{
-return (
-    <div>
-        <p>{movie.overview}</p>
-        </div>
-);
-})
-console.log(title);
-        return(
-            <div>
-            <form onSubmit={this.handleClick}>
-            <input type="search"  placeholder="Search" ref="contenttype"/>
-        </form>
-        </div>
-        );
-    }
-}
-export default class Header extends React.Component{
-    render(){
+        console.log("render");
+   
         return(
             <div>
 <div className="header-wrapper">
@@ -95,13 +67,21 @@ export default class Header extends React.Component{
     <MovieLogo/>
     </div>
     <div className="header-search">
-        <Searc/>
-        </div>
+    <form  onSubmit={this.handleSubmit}>
+        <label>
+        
+          <input type="text" ref="attack"  />
+        </label>
+      </form>
+      </div>
         </div>
         <NavBar />
+        <div>
+</div>
         </div>
 
     
         );
     }
 }
+export default withRouter(Header);

@@ -123,7 +123,7 @@ width:200px;
     transition: transform 0.5s ease;
 }
  .navbar-nav>li>a:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1);   
 }
 @media screen and (max-width:500px){
     .navbar-inverse .navbar-nav>li>a::after {
@@ -505,7 +505,7 @@ input {
     margin-top: 65px;
 }
 
-input[type=search] {
+input[type=text] {
     -webkit-appearance: textfield;
     -webkit-box-sizing: content-box;
     font-family: inherit;
@@ -517,7 +517,7 @@ input::-webkit-search-cancel-button {
     display: none;
 }
 
-input[type=search] {
+input[type=text] {
     background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
     border: solid 1px #ccc;
     padding: 9px 10px 9px 32px;
@@ -530,7 +530,7 @@ input[type=search] {
     transition: all .5s;
 }
 
-input[type=search]:focus {
+input[type=text]:focus {
     width: 130px;
     background-color: #fff;
     border-color: #66CC75;
