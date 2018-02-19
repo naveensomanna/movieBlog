@@ -12,14 +12,15 @@ export default class SearchBar extends React.Component{
       }
       
         componentDidMount(){
+        
+      }
+    render(){
         let requestUrl = "https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&query="+this.props.match.params.id;
         axios
           .get(requestUrl)
           .then(response => {
             this.setState({ movie: response.data.results })
           });
-      }
-    render(){
         console.log("render");
     let baseImgURL = "https://image.tmdb.org/t/p/w500";
     let movies = [];
@@ -28,16 +29,17 @@ export default class SearchBar extends React.Component{
       let imgurl = baseImgURL + movie.poster_path;
       console.log(imgurl);
       return (
-        <div>
+        <div className="well well_searchbox">
           <img src={imgurl} width="126px" height="250px" />
         </div>
       );
     })
         return(
-            <div>
+            <div className="search_wrapper_main">
 
-   
+   <div className="search_wrapper">
       {title}
+      </div>
       </div>
        
 

@@ -120,14 +120,14 @@ let obj1=moviess.map(mov =>{
                                     {movieList1}
                                 </div>
                                 <div className="two">
-                                 <Link to={`/Movies/${obj1[0]}`}>   <h6>{movieposter[0]}</h6></Link>
+                                 <Link to={`/Movies/${obj1[0]}`} style={{ color:"white",textDecoration:"none"}}>   <h6 className="name_align">{movieposter[0]}</h6></Link>
 
                                 </div>
                                 <div className="two">
-                                <Link to={`/Moviess/${obj1[1]}`}><h6>{movieposter[1]}</h6></Link>
+                                <Link to={`/Moviess/${obj1[1]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[1]}</h6></Link>
                                 </div>
                                 <div className="two">
-                                <Link to={`/Moviesss/${obj1[2]}`}><h6>{movieposter[2]}</h6></Link>
+                                <Link to={`/Moviesss/${obj1[2]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[2]}</h6></Link>
                                 </div>
                             </div>
 

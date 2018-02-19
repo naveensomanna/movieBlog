@@ -70,7 +70,7 @@ class NavBar extends React.Component{
     <form  onSubmit={this.handleSubmit}>
         <label>
         
-          <input type="text" ref="attack"  />
+          <input type="text" ref="attack" placeholder="search movie" />
         </label>
       </form>
       </div>
