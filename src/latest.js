@@ -73,7 +73,7 @@ let obj1=moviess.map(mov =>{
             <div>
                 <div className="toprated-main">
                     <Row>
-                        <Col lg={8} md={6} xs={12}>
+                        <Col lg={8} md={6} xs={12} sm={12}>
 
                             <div className="contents-toprated">
                                 <h4>top rated movies</h4>

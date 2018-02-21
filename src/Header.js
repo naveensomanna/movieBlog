@@ -22,9 +22,10 @@ class NavBar extends React.Component{
         return(
             <div style={divStyle}>
            <Navbar  collapseOnSelect>
+           <Navbar.Toggle />
+
   <Navbar.Collapse>
     <Nav>
-
     <NavItem eventKey={1}   href=""><Link to="/"  style={{ color:"white",textDecoration:"none",":hover":{color:"green"}}}>HOME</Link></NavItem>
     <NavItem eventKey={2}    href="#"><Link to="/comdey" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>COMEDY</Link></NavItem>
     <NavItem eventKey={3}    href="#"><Link to="/drama" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>DRAMA</Link></NavItem>

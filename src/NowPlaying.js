@@ -45,16 +45,17 @@ export default class NowPlaying extends React.Component {
             marginLeft:"190px"
         }
         return (
-            <div><h4 style={Style}>In Theatre</h4>
+            <div>
+                <h4 style={Style} className="h4_theatre">In Theatre</h4>
 
                             <div class="theater_blog">
             <Row>
 
-                <Col lg={5} md={6} xs={12} sm={12}>
+                <Col lg={5}>
 
                 {movieList1}
                     </Col>
-                    <Col lg={7} md={6} xs={12} sm={12}>
+                    <Col lg={7}>
                     {movieList}
                 </Col>
             

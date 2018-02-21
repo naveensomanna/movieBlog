@@ -29,7 +29,7 @@ export default class TvShows extends React.Component {
                 <div className="well"> 
       
 
-                        <img src={imgurl} alt="" width="370px" height="300px" />
+                        <img src={imgurl} alt="" width="270px" height="400px" />
                         <p>{movie.id}</p>
                         <p>{movie.original_name}</p>
                         

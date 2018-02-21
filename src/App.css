@@ -157,7 +157,7 @@ width:200px;
     .navbar {
 width:100%;
     background: #2b2b2b;
-
+text-align: center;
     }
     .navbar-inverse {
         width:100%;
@@ -166,6 +166,113 @@ width:100%;
     
     .navbar-inverse .navbar-nav>li>a{
 text-align: center;
+    }
+
+   div.theater_blog {
+        width: 100%;
+    }
+    .img2SecondBlog{
+       width: 100%;
+    }
+    
+    #img1FirstBlog{
+width:100%;
+    }
+    .upcomingmainblog .upcomingmain {
+        border-top: 4px solid #90ee90;
+        width: 100%;
+        
+    }
+    #carouselblog{
+        width:50%;
+        }   
+        div.img1carousel{
+        width: 100%;
+        } 
+        div.upcomingmainblog{
+        width:100%;
+        }
+        div.toprated-main .contents-toprated .main-blog{
+        width:100%;
+        }
+        div.toprated-main{
+            width:100%;
+        }
+        .toprated-main .contents-toprated{
+            width:100%;
+            margin: 0;
+        }
+        #movie_background{
+            background: #00d573;
+                width: 100%;
+                
+        }
+        #movie_background .movie_details_main{
+            
+            width:100%;
+            display: flex;
+            flex-wrap: wrap;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        }
+        .sing_colum_blog{
+            color: white;
+            width:100%;
+        }
+        .movie_details_title{
+            font-weight: 700;
+            font-size: 2.4em;
+        }
+        div.people{
+            width:100%;
+margin: 0; 
+        }
+       div.people .casts{  
+display: flex;   
+flex-wrap: wrap;   
+  }
+        
+        .well_style{
+            margin:0;
+            box-shadow:  0 2px 8px rgba(0,0,0,0.7);
+        
+        }
+       
+      #tvshows .well{
+          width:100%;
+      }
+      .tvshows{
+          width:100%;
+      }   
+      .well_searchbox >img{
+          width: 100%;
+          height: 100%;
+      }
+      .search_wrapper_main{
+          width:100%;
+      }
+       .search_wrapper_main .search_wrapper{
+           width:100%;
+       }  
+      div .h4_theatre{
+margin: 0 !important;
+text-align: center;
+      }
+      /*scroll button*/
+     div #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 200px; /* Place the button at the bottom of the page */
+        right: 930px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: red; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
     }
 }
 @media screen and (min-width:500px){    
@@ -551,7 +658,7 @@ input::-webkit-input-placeholder {
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
+    bottom: 30px; /* Place the button at the bottom of the page */
     right: 30px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
@@ -683,27 +790,20 @@ input[type="email"]{
    box-shadow:  0 2px 8px rgba(0,0,0,0.5);
 }
 #tvshow .well>img{
-    width:100%;
 }
 
 #tvshow{
-   width:18%;
-   display: flex;
    color:white;
-
 }
 
 .tvshows{
-   
-    width:75%;
-margin: 0 auto;
+    width:100%;
 
 }
 .tvshows >div{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-
+justify-content: center;
 }
 #movie_background{
     background: #00d573;
