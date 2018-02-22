@@ -21,7 +21,7 @@ componentWillMount(){
     render(){
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies=[];
-        movies=this.state.movie.slice(6,9);
+        movies=this.state.movie.slice(2,5);
       let movieList = movies.map(movie => {
         return baseImgURL + movie.poster_path;
       });

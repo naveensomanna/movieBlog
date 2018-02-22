@@ -9,6 +9,7 @@ body {
     letter-spacing: 0px;
     text-align: left;
     color: #888888;
+    overflow-x: hidden;
 }
 
 /*header*/
@@ -51,6 +52,7 @@ width:200px;
     flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
+
 }
 
     .header-search{
@@ -89,6 +91,10 @@ width:200px;
 .navbar-collapse{
     padding: 0 !important ;
 }
+
+   .navbar-default{
+       border:0 !important;
+   }
 .navlist {
     margin-bottom: 30px;
 }
@@ -97,19 +103,27 @@ width:200px;
     width:100%;
     padding-bottom: 2px;
     background: #2b2b2b;
+    border-radius:0 !important; 
+   
 }
 .navbar-inverse{
     background: none;
     margin: 0;
 }
 
- .navbar-nav>li>a:hover {
+.navbar-nav li a{
+    color:white;
+    text-decoration: none;
+display: block;
+}
+ .navbar-nav li a:hover {
     color: #3ec0e1;
+    text-decoration: none;
 }
 
- 
 .navbar-collapse>.navbar-nav>li>a{
     color:white;
+    text-decoration: none;
 }
  .navbar-nav>li>a::after {
     content: '';
@@ -126,6 +140,9 @@ width:200px;
     transform: scaleX(1);   
 }
 @media screen and (max-width:500px){
+    #root{
+        overflow-x: hidden;
+    }
     .navbar-inverse .navbar-nav>li>a::after {
         content: '';
         width: 100%;
@@ -173,7 +190,8 @@ text-align: center;
     }
     .img2SecondBlog{
        width: 100%;
-    }
+       cursor:pointer;
+        }
     
     #img1FirstBlog{
 width:100%;
@@ -262,8 +280,8 @@ text-align: center;
      div #myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
-        bottom: 200px; /* Place the button at the bottom of the page */
-        right: 930px; /* Place the button 30px from the right */
+        bottom: 0px; /* Place the button at the bottom of the page */
+        right: 10px; /* Place the button 30px from the right */
         z-index: 99; /* Make sure it does not overlap */
         border: none; /* Remove borders */
         outline: none; /* Remove outline */
@@ -275,38 +293,11 @@ text-align: center;
         font-size: 18px; /* Increase font size */
     }
 }
-@media screen and (min-width:500px){    
-   .navbar{
-    border-radius:0 !important; 
-    width: 100%;
-   }
-   .navbar-default{
-       border:0 !important;
-   }
-    .navbar-header{
-        
-    }
-    .navlist{
-        width:100%;
-}
-.navbar-inverse{
-    border:none;
-    width:100%;
-}
-.navbar-nav{
-    width:100%;
-}
-.navbar-collapse{
-    width:100%;
-}
-    .navbar-inverse .navbar-nav>li>a{
-        text-align: center;
-            }
-}
+
 /*thetare main blog starts*/
 
 .theater_blog {
-    width: 75%;
+    width: 76%;
     border-top: 4px solid orange;   
     margin:0 auto;   
 }
@@ -320,8 +311,7 @@ text-align: center;
     object-position: center center;}
 
 .img1carousel{
-    object-fit: cover;
-    object-position: center center;
+  
 }
 
 .theatremainblog h2 {
@@ -337,11 +327,7 @@ h2 span {
     padding: 10px;
     background: rgba(0, 0, 0, 0.7);
 }
-.img1carousel{
-    width: 100%;
-    object-fit: cover;
-    object-position: center center;
-}
+
 
 
 /* theatre main blog ends here*/
@@ -808,7 +794,8 @@ justify-content: center;
 #movie_background{
     background: #00d573;
         width: 100%;
-        
+        height: auto;
+        margin-top: -20px;
 }
 .movie_details_main{
     

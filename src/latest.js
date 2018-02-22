@@ -41,8 +41,9 @@ export default class Latest extends React.Component {
         let movieList = movies.map(movie => {
             // console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
+            let main_imgid=movie.id;
             // console.log("imgurl" + imgurl)
-            return (<img className="img_align" src={imgurl} width="375px" height="300px" />);
+            return (<Link to={`/Movies/${main_imgid}`}><img className="img_align" src={imgurl} width="375px" height="300px" /></Link>);
         });
         let moviess = [];
         moviess = this.state.movie1.slice(1, 4);
@@ -124,10 +125,10 @@ let obj1=moviess.map(mov =>{
 
                                 </div>
                                 <div className="two">
-                                <Link to={`/Moviess/${obj1[1]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[1]}</h6></Link>
+                                <Link to={`/Movies/${obj1[1]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[1]}</h6></Link>
                                 </div>
                                 <div className="two">
-                                <Link to={`/Moviesss/${obj1[2]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[2]}</h6></Link>
+                                <Link to={`/Movies/${obj1[2]}`} style={{ color:"white",textDecoration:"none"}}><h6 className="name_align">{movieposter[2]}</h6></Link>
                                 </div>
                             </div>
 

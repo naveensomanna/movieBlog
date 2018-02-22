@@ -10,8 +10,7 @@ export default class NowPlaying extends React.Component {
         }
     }
     componentWillMount() {
-        let requestUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key=0060474990618f8eace5a7835" +
-                "a1fead6&language=en-US&page=1";
+        let requestUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios
             .get(requestUrl)
             .then(response => {
@@ -30,8 +29,10 @@ export default class NowPlaying extends React.Component {
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
+            let mainid_image2= movie.id;
             console.log("imgurl" + imgurl)
-            return (<img className="img2SecondBlog" src={imgurl} width="326px" height="250px"/>);
+            return (
+            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/></NavLink>);
         });
         let movies1 = [];
         movies1 = this.state .movie
@@ -39,23 +40,29 @@ export default class NowPlaying extends React.Component {
         console.log("movies1" + movies1);
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
-            return (<img id="img1FirstBlog" src={imgurl} width="500px" height="500px"/>);
+            return (<div>
+            <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
+            </div>
+            );
         });
+        
+      let  mainid_image1= movies1.map(movie =>{
+return movie.id;
+       });
         var Style={
             marginLeft:"190px"
         }
         return (
-            <div>
-                <h4 style={Style} className="h4_theatre">In Theatre</h4>
+            <div><h4 style={Style}>In Theatre</h4>
 
                             <div class="theater_blog">
             <Row>
 
-                <Col lg={5}>
+                <Col lg={5} md={6} xs={12} sm={12}>
 
-                {movieList1}
+               <NavLink to={`/Movies/${mainid_image1[0]}`} className="hover_movienname"> {movieList1}</NavLink>
                     </Col>
-                    <Col lg={7}>
+                    <Col lg={7} md={6} xs={12} sm={12}>
                     {movieList}
                 </Col>
             

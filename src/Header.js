@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
-import {Link,withRouter} from 'react-router-dom'; 
+import {NavLink,withRouter} from 'react-router-dom'; 
 import axios from 'axios'; 
 class MovieLogo extends React.Component{
     
@@ -26,14 +26,14 @@ class NavBar extends React.Component{
 
   <Navbar.Collapse>
     <Nav>
-    <NavItem eventKey={1}   href=""><Link to="/"  style={{ color:"white",textDecoration:"none",":hover":{color:"green"}}}>HOME</Link></NavItem>
-    <NavItem eventKey={2}    href="#"><Link to="/comdey" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>COMEDY</Link></NavItem>
-    <NavItem eventKey={3}    href="#"><Link to="/drama" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>DRAMA</Link></NavItem>
-    <NavItem eventKey={4}     href="">ACTION</NavItem>
-    <NavItem eventKey={5}    href="#">HORROR</NavItem>
-    <NavItem eventKey={6}    href="#">SCI-FI</NavItem>
-    <NavItem eventKey={7}    href=""><Link to="tvshows" style={{ color:"white",textDecoration:"none",":hover": { background: "green" }}}>TV SHOWS</Link></NavItem>
-    <NavItem eventKey={8}    href="#">OTHER GENRES</NavItem>
+    <NavItem eventKey={1}   href=""><NavLink to="/"   className="nav_achor">HOME</NavLink></NavItem>
+    <NavItem eventKey={2}    href="#"><NavLink to="/comdey"  className="nav_achor">COMEDY</NavLink></NavItem>
+    <NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
+    <NavItem eventKey={4}     href="" ><NavLink to=""  className="nav_achor">ACTION</NavLink></NavItem>
+    <NavItem eventKey={5}    href="#" ><NavLink to=""  className="nav_achor">HORROR</NavLink></NavItem>
+    <NavItem eventKey={6}    href="#" ><NavLink to=""  className="nav_achor">SCI-FI</NavLink></NavItem>
+    <NavItem eventKey={7}    href="" ><NavLink to="tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
+    <NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">OTHER GENRES</NavLink></NavItem>
 
     </Nav>
   </Navbar.Collapse>

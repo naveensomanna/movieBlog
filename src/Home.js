@@ -17,8 +17,7 @@ export default class Home extends React.Component {
     this.getdata = this
       .getdata
       .bind(this);
-this.scrollFunction=this.scrollFunction.bind(this);
-this.topFunction=this.topFunction.bind(this);
+
   }
   componentDidMount() {
     this.getdata();
@@ -42,19 +41,8 @@ this.topFunction=this.topFunction.bind(this);
   }
    
 
-  scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+  
   render() {
-    window.onscroll =()=> {this.scrollFunction()};
     let baseImgURL = "https://image.tmdb.org/t/p/w500";
     let movieList = this
       .state
@@ -98,7 +86,6 @@ topFunction() {
         </div>
         </div>
         <Latest/>
-        <button onClick={this.topFunction} id="myBtn" title="Go to top">Top</button>
 
         </div>
     
