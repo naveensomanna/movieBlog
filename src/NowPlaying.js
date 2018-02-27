@@ -25,23 +25,33 @@ export default class NowPlaying extends React.Component {
         movies = this
             .state
             .movie
-            .slice(13, 17);
+            .slice(3, 7);
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
-            let mainid_image2= movie.id;
+            let mainid_image2=movie.id;
             console.log("imgurl" + imgurl)
             return (
-            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/></NavLink>);
+                <div className="ptag"> 
+          <NavLink to={`/Movies/${mainid_image2}`}>
+           <img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/>
+           <p style={{marginTop:"-30.8px",color:"white"}}>{movie.title}</p>
+           </NavLink>
+          
+            </div>
+            );
         });
         let movies1 = [];
         movies1 = this.state .movie
-            .slice(4, 5);
+            .slice(1, 2);
         console.log("movies1" + movies1);
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (<div>
             <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
+            <div className="movie_title">
+            {movie.title}
+            </div>
             </div>
             );
         });
@@ -49,6 +59,7 @@ export default class NowPlaying extends React.Component {
       let  mainid_image1= movies1.map(movie =>{
 return movie.id;
        });
+      
         var Style={
             marginLeft:"190px"
         }
@@ -60,10 +71,11 @@ return movie.id;
 
                 <Col lg={5} md={6} xs={12} sm={12}>
 
-               <NavLink to={`/Movies/${mainid_image1[0]}`} className="hover_movienname"> {movieList1}</NavLink>
+               <NavLink to={`/Movies/${mainid_image1[0]}`}  > {movieList1}</NavLink>
                     </Col>
-                    <Col lg={7} md={6} xs={12} sm={12}>
+                    <Col lg={7} md={6} xs={12} sm={12} className="wrap_nowplaying" >
                     {movieList}
+                    
                 </Col>
             
                 </Row>

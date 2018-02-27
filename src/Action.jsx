@@ -3,7 +3,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import './App.css';
 
-export default class Comdey extends React.Component{
+export default class Action extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -11,7 +11,7 @@ export default class Comdey extends React.Component{
         }
     }
     componentWillMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/35/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = "https://api.themoviedb.org/3/genre/28/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios
             .get(requestUrl)
             .then(response => {
@@ -46,7 +46,7 @@ export default class Comdey extends React.Component{
     
         return(
             <div>
-            <h2 style={{fontSize:"1.5em",color:"black",margin:"0 0 8px 250px",fontWeight:"600"}}>Comedy Movies</h2>
+            <h2 style={{fontSize:"1.5em",color:"black",margin:"0 0 8px 250px",fontWeight:"600"}}>Action Movies</h2>
             <div className="main_wrapper">
                 
                 {movieList}

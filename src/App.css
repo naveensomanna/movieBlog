@@ -652,9 +652,9 @@ input::-webkit-input-placeholder {
     background-color: red; /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    padding: 20px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 15px; /* Increase font size */
 }
 
 #myBtn:hover {
@@ -850,4 +850,51 @@ color:black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+/*comedy*/
+.main_wrapper{
+    width:70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+margin:0 auto;
+}
+.wrap_nowplaying{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.movie_title{
+    color:white;
+    font-family: Montserrat;
+    text-decoration: none;
+    position: absolute;
+bottom:0;
+    font-size: 1.1em;
+   line-height: 2.9em;
+    width:100%;
+    box-sizing: border-box;
+}
+ .well {
+width:483px;
+    display: flex;
+    overflow: hidden;
+}
+.well .details_movie{
+    color:#000;
+    overflow: hidden; 
+    margin-left: 20px;
+}
+.well .details_movie p:first-child{
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: center;
+}
+.well .details_movie p:nth-child(2){
+height: 80px;
+overflow: hidden;
+}
+.well .details_movie .more_card{
+    border-top:1px solid #e3e3e3;
+   
 }

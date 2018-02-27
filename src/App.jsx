@@ -4,6 +4,9 @@ import Header from './Header.js';
 import Home from './Home.js';
 import Comdey from './Comdey.js';
 import Drama from './Drama.js';
+import Action from './Action.jsx';
+import Horror from './Horror.jsx';
+
 import TvShows from './TvShows.js';
 import Footer from './Footer.js';
 import Movies from './Movies.js';
@@ -40,6 +43,8 @@ render(){
 <Route exact path="/" component={Home}/>
 <Route  path="/comdey" component={Comdey}/>
 <Route  path="/drama" component={Drama}/>
+<Route  path="/action" component={Action}/>
+<Route  path="/horror" component={Horror}/>
 <Route  path="/tvshows" component={TvShows}/>
 <Route  path="/movies/:id" component={Movies}/>
 <Route  path="/SearchBar/:id" component={SearchBar}/>

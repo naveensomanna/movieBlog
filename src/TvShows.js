@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Col ,Well,Row,Grid} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 export default class TvShows extends React.Component {
 
     constructor(props) {
@@ -23,17 +24,17 @@ export default class TvShows extends React.Component {
             // console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             // console.log("imgurl" + imgurl)
+            let tv_id=movie.id;
             return (   
                 <div id="tvshow">
 
                 <div className="well"> 
       
 
-                        <img src={imgurl} alt="" width="270px" height="400px" />
+                      <NavLink to=""> <img src={imgurl} alt="" width="270px" height="400px" /></NavLink>
                         <p>{movie.id}</p>
                         <p>{movie.original_name}</p>
                         
-
                     </div>
                 </div>
             );
