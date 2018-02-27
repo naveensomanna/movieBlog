@@ -4,13 +4,12 @@ import Header from './Header.js';
 import Home from './Home.js';
 import Comdey from './Comdey.js';
 import Drama from './Drama.js';
-import Action from './Action.jsx';
-import Horror from './Horror.jsx';
-
+import Action from './Action.js';
+import Horror from './Horror.js';
 import TvShows from './TvShows.js';
 import Footer from './Footer.js';
 import Movies from './Movies.js';
-import SearchBar from './Searchbar.jsx';
+import SearchBar from './Searchbar.js';
 import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
 
 export default class App extends React.Component{

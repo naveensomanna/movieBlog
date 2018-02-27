@@ -31,7 +31,7 @@ export default class Action extends React.Component{
             console.log("imgurl" + imgurl)
             return (
                 <div className="well">
-            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="220px"/></NavLink>
+            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="270px" height="400px"/></NavLink>
             <div className="details_movie">
                 <p>{movie.title}</p>
                 <p>{movie.overview}</p>
@@ -46,7 +46,7 @@ export default class Action extends React.Component{
     
         return(
             <div>
-            <h2 style={{fontSize:"1.5em",color:"black",margin:"0 0 8px 250px",fontWeight:"600"}}>Action Movies</h2>
+            <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Action Movies</h2>
             <div className="main_wrapper">
                 
                 {movieList}

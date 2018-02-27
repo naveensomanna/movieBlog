@@ -772,14 +772,13 @@ input[type="email"]{
     color: white;
 }
 #tvshow .well {
-    background-color: black !important;
    box-shadow:  0 2px 8px rgba(0,0,0,0.5);
 }
 #tvshow .well>img{
 }
 
 #tvshow{
-   color:white;
+   color:black;
 }
 
 .tvshows{
@@ -853,7 +852,7 @@ color:black;
 }
 /*comedy*/
 .main_wrapper{
-    width:70%;
+    width:78%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -876,9 +875,11 @@ bottom:0;
     box-sizing: border-box;
 }
  .well {
-width:483px;
+width:583px;
     display: flex;
     overflow: hidden;
+    box-shadow:  0 2px 8px rgba(0,0,0,0.5);
+
 }
 .well .details_movie{
     color:#000;
@@ -889,9 +890,10 @@ width:483px;
     font-size: 1.4em;
     font-weight: 600;
     text-align: center;
+    line-height: 2em;
 }
 .well .details_movie p:nth-child(2){
-height: 80px;
+height: 12em;
 overflow: hidden;
 }
 .well .details_movie .more_card{
