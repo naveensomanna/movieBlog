@@ -35,9 +35,12 @@ export default class NowPlaying extends React.Component {
                 <div className="ptag"> 
           <NavLink to={`/Movies/${mainid_image2}`}>
            <img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/>
-           <p style={{marginTop:"-30.8px",color:"white"}}>{movie.title}</p>
-           </NavLink>
-          
+          <div className="movie_title">
+          {movie.title}
+          <p>{movie.release_date}</p>
+              </div>
+              </NavLink>
+
             </div>
             );
         });
@@ -47,10 +50,11 @@ export default class NowPlaying extends React.Component {
         console.log("movies1" + movies1);
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
-            return (<div>
+            return (<div style={{overflow:"hidden"}} >
             <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
             <div className="movie_title">
             {movie.title}
+           <div > {movie.release_date}</div>
             </div>
             </div>
             );
@@ -64,23 +68,22 @@ return movie.id;
             marginLeft:"190px"
         }
         return (
-            <div><h4 style={Style}>In Theatre</h4>
+            <div>
+                <h4 style={Style}>In Theatre</h4>
 
                             <div class="theater_blog">
-            <Row>
 
-                <Col lg={5} md={6} xs={12} sm={12}>
+                <div className="wrap_firstimg">
 
                <NavLink to={`/Movies/${mainid_image1[0]}`}  > {movieList1}</NavLink>
-                    </Col>
-                    <Col lg={7} md={6} xs={12} sm={12} className="wrap_nowplaying" >
+                </div>
+                    <div className="wrap_secondimg" >
                     {movieList}
                     
-                </Col>
-            
-                </Row>
                 </div>
 </div>
+</div>
+
                );
     }
 }

@@ -25,22 +25,30 @@ export default class SearchBar extends React.Component{
     let baseImgURL = "https://image.tmdb.org/t/p/w500";
     let movies = [];
     movies = this.state.movie;
-    let title = movies.map(movie => {
+    let search_result = movies.map(movie => {
       let imgurl = baseImgURL + movie.poster_path;
       console.log(imgurl);
       return (
-        <div className="well well_searchbox">
-          <img src={imgurl} width="126px" height="250px" />
+        <div className="well" id="well_searchbox">
+          <img src={imgurl} width="186px" height="270px" />
+          <div className="search_content">
+          <p>{movie.title}</p>
+          <p>{movie.overview}</p>
+        </div>
         </div>
       );
     })
         return(
-            <div className="search_wrapper_main">
+          <div id="search_wrapper_main">
 
+            <div>
+            <h2>Search <span className="glyphicons glyphicons-chevron-right x1 breadcrumb"></span>Movie Results</h2>
    <div className="search_wrapper">
-      {title}
+      {search_result}
       </div>
       </div>
+      </div>
+
        
 
 

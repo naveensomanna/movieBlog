@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body {
     width: 100%;
     /*background: #141414;*/
@@ -297,10 +300,53 @@ text-align: center;
 /*thetare main blog starts*/
 
 .theater_blog {
-    width: 76%;
+    width   : 76%;
     border-top: 4px solid orange;   
-    margin:0 auto;   
+    margin:0 auto;
+    position: relative;   
+    display: flex;
+    overflow-y: hidden;
 }
+.ptag{
+    position: relative;
+}
+.ptag div{
+    position: absolute;
+    bottom:0;
+    font-size: 1.2em;
+    background-color: #2b2b2b;
+    height: 30px;
+    transition-property: height,background-color;
+    transition-duration: 1s;
+    transition-delay: 0.1s;
+    overflow-y: hidden;
+}
+.wrap_secondimg{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie_title{
+    color:white;
+    font-family: Montserrat;
+    text-decoration: none;
+    position: absolute;
+bottom:0;
+    font-size: 1.2em;
+    line-height: 2.3em;
+    width:100%;
+    box-sizing: border-box;
+    background-color: #2b2b2b;
+    height: 30px;
+    transition-property: height,background-color;
+    transition-duration: 1s;
+    transition-delay: 0.1s;
+}
+.wrap_firstimg{
+}
+ .movie_title:hover{
+    height: 90px;
+}
+
 .img2SecondBlog{
     object-fit: cover;
     object-position: center center;
@@ -355,6 +401,8 @@ width:100%;
 .carousel-inner .item img {
     width: 1200px;
     height: 800px;
+    background-position: center;
+    background-size: cover;
 }
 
 .glyphicon-chevron-left {
@@ -782,16 +830,17 @@ input[type="email"]{
 }
 
 .tvshows{
-    width:100%;
+width: 80%;
+margin: 0 auto;
 
 }
 .tvshows >div{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-justify-content: center;
+    justify-content: space-around;
 }
 #movie_background{
-    background: #00d573;
         width: 100%;
         height: auto;
         margin-top: -20px;
@@ -806,7 +855,7 @@ padding-bottom: 40px;
 }
 .sing_colum_blog{
     padding-left: 20px;
-    color: white;
+    color:#000;
 }
 .movie_details_title{
     font-weight: 700;
@@ -837,19 +886,38 @@ color:black;
     padding: 35px;
 }
 /*search wrapper*/
-.search_wrapper_main{
-    width:90%;
-    margin: 0 auto;
+#search_wrapper_main{
+    width: 100%;
+    
+    }
+    #search_wrapper_main div{
+        width:60%;
+        margin: 0 auto;
+    }
+#search_wrapper_main div h2{
+color: #000;
+
 }
-.well_searchbox{
-    background: black !important;
+#well_searchbox{
+width:100% !important;
+margin: 0 0 12px 0 !important;
 }
-.search_wrapper{
+#search_wrapper_main div .search_wrapper{
     width:100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
+.search_content{
+    padding: 10px 16px 16px 16px;
+}
+.search_content p:first-child{
+    color:#000;
+
+font-weight: 600;
+font-size: 1.1em;
+line-height: 1.1em;
+}
+
 /*comedy*/
 .main_wrapper{
     width:78%;
@@ -858,22 +926,7 @@ color:black;
     justify-content: space-around;
 margin:0 auto;
 }
-.wrap_nowplaying{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-}
-.movie_title{
-    color:white;
-    font-family: Montserrat;
-    text-decoration: none;
-    position: absolute;
-bottom:0;
-    font-size: 1.1em;
-   line-height: 2.9em;
-    width:100%;
-    box-sizing: border-box;
-}
+
  .well {
 width:583px;
     display: flex;

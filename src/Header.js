@@ -29,10 +29,10 @@ class NavBar extends React.Component{
     <NavItem eventKey={1}   href=""><NavLink to="/"   className="nav_achor">HOME</NavLink></NavItem>
     <NavItem eventKey={2}    href="#"><NavLink to="/comdey"  className="nav_achor">COMEDY</NavLink></NavItem>
     <NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
-    <NavItem eventKey={4}     href="" ><NavLink to="action"  className="nav_achor">ACTION</NavLink></NavItem>
-    <NavItem eventKey={5}    href="#" ><NavLink to="horror"  className="nav_achor">HORROR</NavLink></NavItem>
+    <NavItem eventKey={4}     href="" ><NavLink to="/action"  className="nav_achor">ACTION</NavLink></NavItem>
+    <NavItem eventKey={5}    href="#" ><NavLink to="/horror"  className="nav_achor">HORROR</NavLink></NavItem>
     <NavItem eventKey={6}    href="#" ><NavLink to=""  className="nav_achor">SCI-FI</NavLink></NavItem>
-    <NavItem eventKey={7}    href="" ><NavLink to="tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
+    <NavItem eventKey={7}    href="" ><NavLink to="/tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
     <NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">OTHER GENRES</NavLink></NavItem>
 
     </Nav>
@@ -60,7 +60,6 @@ class NavBar extends React.Component{
       }
     render(){
         console.log("render");
-   
         return(
             <div>
 <div className="header-wrapper">
@@ -71,7 +70,7 @@ class NavBar extends React.Component{
     <form  onSubmit={this.handleSubmit}>
         <label>
         
-          <input type="text" ref="attack" placeholder="search movie" />
+          <input type="text" ref="attack" placeholder="search movie"  />
         </label>
       </form>
       </div>

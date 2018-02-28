@@ -32,8 +32,12 @@ export default class TvShows extends React.Component {
       
 
                       <NavLink to=""> <img src={imgurl} alt="" width="270px" height="400px" /></NavLink>
-                        <p>{movie.id}</p>
-                        <p>{movie.original_name}</p>
+                      <div className="details_movie">
+                      <p>{movie.original_name}</p>
+
+                <p>{movie.overview}</p>
+                
+                </div>
                         
                     </div>
                 </div>
