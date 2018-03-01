@@ -36,7 +36,7 @@ export default class NowPlaying extends React.Component {
           <NavLink to={`/Movies/${mainid_image2}`}>
            <img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/>
           <div className="movie_title">
-          {movie.title}
+         <p> {movie.title}</p>
           <p>{movie.release_date}</p>
               </div>
               </NavLink>
@@ -53,8 +53,8 @@ export default class NowPlaying extends React.Component {
             return (<div style={{overflow:"hidden"}} >
             <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
             <div className="movie_title">
-            {movie.title}
-           <div > {movie.release_date}</div>
+           <p> {movie.title}</p>
+           <p > {movie.release_date}</p>
             </div>
             </div>
             );

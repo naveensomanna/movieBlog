@@ -8,7 +8,8 @@ export default class Movies extends Component{
         super(props);
     this.state={
         movie:[],
-        movie1:[]
+        movie1:[],
+        movie2:[]
     }
     }
     componentDidMount(){
@@ -28,12 +29,26 @@ axios.get(requestUrl).then(response =>{
     )
     }
         );
+        let requestUrl2="https://api.themoviedb.org/3/movie/"+this.props.match.params.id+"/videos?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
+        axios.get(requestUrl2).then(response =>{
+            this.setState({
+                movie2:response.data.results
+            }
+        )
+        }
+            );   
 
 }
     
     render(){
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-
+let URL_YOUTUBE='https://www.youtube.com/embed/';
+let videos=[];
+ videos=this.state.movie2.slice(0,3);
+ let link=videos.map(trailer =>{
+return trailer.key;
+ });
+ let link1=URL_YOUTUBE+link[0];
         let imgUrl=baseImgURL+this.state.movie.poster_path;
         let movies=[];
         movies= this.state.movie1.slice(1,5);
@@ -74,6 +89,8 @@ axios.get(requestUrl).then(response =>{
         
         </div>
         </div>
+        <div style={{marginLeft:"250px"}}><h2 style={{color:"black"}}>Trailer</h2>
+        <iframe src={link1} allowFullScreen /></div>
         </div>
         );
 }
