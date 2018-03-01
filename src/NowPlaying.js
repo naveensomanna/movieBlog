@@ -50,13 +50,15 @@ export default class NowPlaying extends React.Component {
         console.log("movies1" + movies1);
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
-            return (<div style={{overflow:"hidden"}} >
+            return (
+            <div style={{overflow:"hidden"}} className="background" >
             <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
             <div className="movie_title">
            <p> {movie.title}</p>
            <p > {movie.release_date}</p>
             </div>
             </div>
+        
             );
         });
         
@@ -71,7 +73,7 @@ return movie.id;
             <div>
                 <h4 style={Style}>In Theatre</h4>
 
-                            <div class="theater_blog">
+                            <div className="theater_blog">
 
                 <div className="wrap_firstimg">
 

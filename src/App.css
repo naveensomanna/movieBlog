@@ -188,9 +188,12 @@ text-align: center;
 text-align: center;
     }
 
-   div.theater_blog {
-        width: 100%;
+   .theater_blog  {
+       width: 100% !important;
+        display: flex;
+        flex-wrap: wrap;
     }
+    
     .img2SecondBlog{
        width: 100%;
        cursor:pointer;
@@ -307,14 +310,23 @@ text-align: center;
     display: flex;
     overflow-y: hidden;
 }
+.background img{
+    position: relative;
+    z-index: -1;
+}
+.theater_blog .wrap_firstimg:hover {
+    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
+}
+
 .ptag{
     position: relative;
+
 }
 .ptag div{
     position: absolute;
     bottom:0;
     font-size: 20px;
-    background:rgba(43,43,43,0.6); 
+    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
        height: 40px;
     transition-property: height,background-color;
     transition-duration: 1s;
@@ -337,8 +349,8 @@ bottom:0;
 
     width:100%;
     box-sizing: border-box;
-    background:rgba(43,43,43,0.6);
-    height: 50px;
+    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
+    height: 57px;
     transition-property: height,background-color;
     transition-duration: 1s;
     transition-delay: 0.1s;

@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "install": "^0.10.2",
     "react": "^16.2.0",
+    "react-autosuggest": "^9.3.4",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
     "react-router": "2.0.0",
