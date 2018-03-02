@@ -301,76 +301,48 @@ text-align: center;
 }
 
 /*thetare main blog starts*/
-
+.np_block_wrapper{
+    width:100%;
+}
 .theater_blog {
-    width   : 76%;
-    border-top: 4px solid orange;   
-    margin:0 auto;
-    position: relative;   
+    width:76%;
+    height: auto;
+    margin: 0 auto;
+    border-top:3px solid #f1bd3b;
     display: flex;
-    overflow-y: hidden;
 }
-.background img{
+.block_item1{
     position: relative;
-    z-index: -1;
-}
-.theater_blog .wrap_firstimg:hover {
-    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
 }
 
-.ptag{
-    position: relative;
-
+.block_item2{
+    position: relative; 
 }
-.ptag div{
-    position: absolute;
-    bottom:0;
-    font-size: 20px;
-    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
-       height: 40px;
-    transition-property: height,background-color;
-    transition-duration: 1s;
-    transition-delay: 0.1s;
-    overflow-y: hidden;
-    font-weight: 400;
-}
-.wrap_secondimg{
+.wrap_img {
     display: flex;
     flex-wrap: wrap;
 }
-.movie_title{
-    color:white;
-    font-family: Montserrat;
-    text-decoration: none;
+.boxshadow_img{
+    position: relative;
+}
+.boxshadow_img::before{
+    content:"";
     position: absolute;
-bottom:0;
-    font-size: 30px;
-    font-weight: 400;
-
-    width:100%;
-    box-sizing: border-box;
-    background: linear-gradient(to bottom, rgba(43,43,43,0), rgba(43,43,43,1));
-    height: 57px;
-    transition-property: height,background-color;
-    transition-duration: 1s;
-    transition-delay: 0.1s;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0px -126px 81px -30px rgba(34,34,34,0.9);
+    z-index: 0;
+    transition: all 0.3s ease;
+    border-radius: 0;
 }
-.movie_title p:first-child{
-    margin-left: 25px;
-}
-.movie_title p:nth-child(2){
-    margin-left: 25px;
-    font-size: 13px;
-}
-.movie_title p:hover:nth-child(2){
-color:red;
-}
-.wrap_firstimg{
-}
- .movie_title:hover{
-    height: 75px;
-   color: #3ec0e1;
-}
+ .movie_title{
+     position: absolute;
+     bottom: 0;
+     left:0;
+     color:white;
+ }
 
 .img2SecondBlog{
     object-fit: cover;

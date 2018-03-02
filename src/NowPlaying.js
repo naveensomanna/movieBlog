@@ -26,22 +26,24 @@ export default class NowPlaying extends React.Component {
             .state
             .movie
             .slice(3, 7);
+            let mainid_image2;
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
-            let mainid_image2=movie.id;
+             mainid_image2=movie.id;
             console.log("imgurl" + imgurl)
             return (
-                <div className="ptag"> 
-          <NavLink to={`/Movies/${mainid_image2}`}>
-           <img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/>
+                <div className="block_item2"> 
+                <div className="boxshadow_img">
+                 <img className="img2SecondBlog" src={imgurl} width="329px" height="250px"/>           
+
+           </div>
           <div className="movie_title">
-         <p> {movie.title}</p>
+        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p></NavLink>
           <p>{movie.release_date}</p>
               </div>
-              </NavLink>
-
             </div>
+
             );
         });
         let movies1 = [];
@@ -51,8 +53,10 @@ export default class NowPlaying extends React.Component {
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (
-            <div style={{overflow:"hidden"}} className="background" >
+                <div className="block_item1">
+            <div style={{overflow:"hidden"}} className="boxshadow_img" >
             <img id="img1FirstBlog" src={imgurl} width="495px" height="500px"/>
+            </div>
             <div className="movie_title">
            <p> {movie.title}</p>
            <p > {movie.release_date}</p>
@@ -70,18 +74,17 @@ return movie.id;
             marginLeft:"190px"
         }
         return (
-            <div>
-                <h4 style={Style}>In Theatre</h4>
+            <div className="np_block_wrapper">
+                <h4>In Theatre</h4>
 
                             <div className="theater_blog">
 
-                <div className="wrap_firstimg">
+                <div >
 
                <NavLink to={`/Movies/${mainid_image1[0]}`}  > {movieList1}</NavLink>
                 </div>
-                    <div className="wrap_secondimg" >
-                    {movieList}
-                    
+                    <div className="wrap_img" >
+                     {movieList}
                 </div>
 </div>
 </div>
