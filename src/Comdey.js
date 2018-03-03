@@ -1,26 +1,52 @@
 import React from 'react';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
+import {Pager ,Item} from 'react-bootstrap';
 import './App.css';
 
 export default class Comdey extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            movie: []
+            movie: [],
+            count:1,
+            pagecount:1
         }
+        this.handleClick=this.handleClick.bind(this);
+        this.handlePrevious=this.handlePrevious.bind(this);
     }
     componentWillMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/35/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+       
+        console.log("url" + this.state.movie);
+    }
+    handleClick(e){
+e.preventDefault();
+let co=++this.state.pagecount;
+if(true){
+this.setState({
+    count:co
+
+    });
+}
+    }
+handlePrevious(e){
+    e.preventDefault();
+let co=--this.state.pagecount;
+    this.setState({
+        count:co
+    })
+}
+    render()
+    {
+        let requestUrl = "https://api.themoviedb.org/3/genre/35/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+this.state.count;
         axios
             .get(requestUrl)
             .then(response => {
                 this.setState({movie: response.data.results})
             });
-        console.log("url" + this.state.movie);
-    }
-    render()
-    {
+
+
+
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this.state.movie;
@@ -30,7 +56,7 @@ export default class Comdey extends React.Component{
             let mainid_image2= movie.id;
             console.log("imgurl" + imgurl)
             return (
-                <div className="well">
+                <div className="well well_genres">
             <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="270px" height="400px"/></NavLink>
             <div className="details_movie">
                 <p>{movie.title}</p>
@@ -51,6 +77,10 @@ export default class Comdey extends React.Component{
                 
                 {movieList}
                 </div>
+                <Pager>
+  <Pager.Item href="#" onClick={this.handlePrevious}>Previous</Pager.Item>{' '}
+  <Pager.Item href="" onClick={this.handleClick}>Next</Pager.Item>
+</Pager>
                 </div>
         );
     }

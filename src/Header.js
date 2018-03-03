@@ -1,15 +1,19 @@
 import React from 'react';
 import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
 import {NavLink,withRouter} from 'react-router-dom'; 
+import Logo from '../src/images/youtubelogo.png'
 import axios from 'axios'; 
 class MovieLogo extends React.Component{
     
     render(){
-           var imageName = require('./images/icon.png')
         return(
-<div className="nameblog">
-<img src={imageName} alt="" width="100px" height="100px"/>
-<h1 className="moviename">movie<span>spot</span><p id="subtitle">YOUR FAVORITE MOVIES</p></h1>
+<div className="nameblog" >
+<div className="logoimg">
+</div>
+<div className="moviename">
+<h1 >MOVIE<span>SPOT</span><p id="subtitle">YOUR FAVORITE MOVIES</p></h1>
+
+    </div>
     </div>
         );
     }
@@ -63,6 +67,7 @@ class NavBar extends React.Component{
         return(
             <div>
 <div className="header-wrapper">
+<div className="header-section">
     <div className="header-logo">
     <MovieLogo/>
     </div>
@@ -74,6 +79,7 @@ class NavBar extends React.Component{
         </label>
       </form>
       </div>
+        </div>
         </div>
         <NavBar />
         <div>

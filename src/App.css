@@ -29,43 +29,33 @@ body {
    
     }
 
-@media screen and (min-width:800px){
-.header-wrapper{
-width:100%;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-around;
-}
-.header-logo{
-    flex-grow: 1;
-padding-right: 330px;
-}
-    .header-search{
-        flex-grow: 1;
-        margin-top: -30px;
-width:200px;
-}
-}
+
 /*movie name*/
 .header-wrapper{
     width:100%;
-    background-color: #081c24;
+    /*background-color: #081c24;*/
+    box-sizing: border-box; 
+
+    
+}
+.header-wrapper .header-section{
+    width:76%;
     display: flex;
-    flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    box-sizing: border-box; 
 
 }
 
     .header-search{
-width:200px;
+        padding: 25px;
 }
-.nameblog {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.nameblog .logoimg{
+    display: inline;
+    
 }
+
 
 .nameblog a {
     text-decoration: none;
@@ -73,11 +63,13 @@ width:200px;
 
 .moviename {
     color: #f15f60;
-     align-self: center;
+font-family: 'Roboto Mono', monospace;
+display: inline-block;
 }
-
+.moviename h1{
+}
 .moviename span {
-    color:white;
+    color:#081c24;
 
 }
 
@@ -89,7 +81,50 @@ width:200px;
     opacity: 0.4;
 }
 
+input {
+    outline: none;
+}
 
+input[type=text] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+    display: none;
+}
+
+input[type=text] {
+    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+input[type=text]:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #66CC75;
+    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+}
+
+input:-moz-placeholder {
+    color: #999;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+}
 /*navbar */
 .navbar-collapse{
     padding: 0 !important ;
@@ -103,7 +138,8 @@ width:200px;
 }
 
 .navbar {
-    width:100%;
+    width:76%;
+    margin: 0 auto;
     padding-bottom: 2px;
     background: #2b2b2b;
     border-radius:0 !important; 
@@ -304,12 +340,18 @@ text-align: center;
 .np_block_wrapper{
     width:100%;
 }
+.np_block_wrapper h4{
+    margin-left: 180px;
+}
 .theater_blog {
     width:76%;
     height: auto;
     margin: 0 auto;
     border-top:3px solid #f1bd3b;
     display: flex;
+}
+.theater_blog div:nth-child(1){
+
 }
 .block_item1{
     position: relative;
@@ -342,7 +384,19 @@ text-align: center;
      bottom: 0;
      left:0;
      color:white;
+     font-size: 20px;
  }
+ .movie_title p:nth-child(2){
+    font-size: 14px;
+   
+    transition: all 0.3s ease;
+ }
+ .block_item1:hover{
+    background-color: rgba(34, 34, 34, 0.9);
+}
+.block_item2:hover{
+    background-color: rgba(34, 34, 34, 0.9);
+}
 
 .img2SecondBlog{
     object-fit: cover;
@@ -630,60 +684,9 @@ text-decoration: none;
     animation: box-name 1s linear 2s;
 }
 
-@media screen and (max-width:768px){
-    input{
-        margin-bottom:70px;
-    margin-left: 50px;
-    }
-}
 
-input {
-    outline: none;
-    margin-right: 100px;
-    margin-top: 65px;
-}
 
-input[type=text] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-}
 
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-    display: none;
-}
-
-input[type=text] {
-    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    border: solid 1px #ccc;
-    padding: 9px 10px 9px 32px;
-    width: 55px;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    border-radius: 10em;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-
-input[type=text]:focus {
-    width: 130px;
-    background-color: #fff;
-    border-color: #66CC75;
-    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-}
-
-input:-moz-placeholder {
-    color: #999;
-}
-
-input::-webkit-input-placeholder {
-    color: #999;
-}
 
 /*scroll button*/
 #myBtn {
@@ -849,6 +852,7 @@ margin: 0 auto;
     margin:0 auto;
 padding-top: 40px;
 padding-bottom: 40px;
+font-family: 'Roboto Mono';
 }
 .sing_colum_blog{
     padding-left: 20px;
@@ -856,11 +860,12 @@ padding-bottom: 40px;
 }
 .movie_details_title{
     font-weight: 700;
-    font-size: 2.4em;
+    font-size: 40px;
 }
 .casts{
     display:flex; 
-   
+    font-family: 'Roboto Mono';
+
 }
 
 .well_style{
@@ -924,7 +929,7 @@ line-height: 1.1em;
 margin:0 auto;
 }
 
- .well {
+ .well_genres {
 width:583px;
     display: flex;
     overflow: hidden;
