@@ -81,14 +81,14 @@ return(
                                     {movieList1}
                                 </div>
                                 <div className="two">
-                                    <Link to={`/Movies/${obj1[0]}`} style={{ color: "white", textDecoration: "none" }}>   <h6 className="name_align">{movieposter[0]}</h6></Link>
+                                <h6 className="name_align">{movieposter[0]}</h6> <Link to={`/Movies/${obj1[0]}`}> &#x3e; </Link>
 
                                 </div>
                                 <div className="two">
-                                    <Link to={`/Movies/${obj1[1]}`} style={{ color: "white", textDecoration: "none" }}><h6 className="name_align">{movieposter[1]}</h6></Link>
+                                <h6 className="name_align">{movieposter[1]}</h6> <Link to={`/Movies/${obj1[1]}`}>&#x3e;</Link>
                                 </div>
                                 <div className="two">
-                                    <Link to={`/Movies/${obj1[2]}`} style={{ color: "white", textDecoration: "none" }}><h6 className="name_align">{movieposter[2]}</h6></Link>
+                                <h6 className="name_align">{movieposter[2]}</h6> <Link to={`/Movies/${obj1[2]}`} >&#x3e;</Link>
                                 </div>
                             </div>
                             </div>

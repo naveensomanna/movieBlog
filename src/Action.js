@@ -1,127 +1,122 @@
 import React from 'react';
 import axios from 'axios';
-import {NavLink} from 'react-router-dom';
-import {Pager,Item} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { Pager, Item } from 'react-bootstrap';
 import SubscrbPopular from './SubscrbPopular.js';
+import Pagination from './Pagination.js';
+import ReactPaginate from 'react-paginate';
 
 import './App.css';
 
-export default class Action extends React.Component{
+export default class Action extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            data:[],
             movie: [],
-            movie1:[],
-            count:1,
-            pagecount:1
+            pageCount: 10,
+            currentPage:1
         }
-        this.handleClick=this.handleClick.bind(this);
-        this.handlePrevious=this.handlePrevious.bind(this);
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
     componentWillMount() {
-        
-        console.log("url" + this.state.movie);
-    }
-    handleClick(e){
-        e.preventDefault();
-        let co=++this.state.pagecount;
-        if(true){
-        this.setState({
-            count:co
-        
-            });
-        }
+        console.log("will mount");
             }
-        handlePrevious(e){
-            e.preventDefault();
-        let co=--this.state.pagecount;
-            this.setState({
-                count:co
-            })
-        }
-    render()
-    {
-        let requestUrl = "https://api.themoviedb.org/3/genre/28/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+this.state.count;
+    componentDidMount() {
+console.log("did mount");
+let requestUrl = "https://api.themoviedb.org/3/genre/28/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios
             .get(requestUrl)
             .then(response => {
-                this.setState({movie: response.data.results})
+                this.setState({ movie: response.data.results })
             });
-            
-           
+    }
+componentWillUpdate(){
+    console.log(" willupdate");
+
+}
+componentDidUpdate(){
+    console.log(" didupdate");
+
+}
+
+componentWillUnmount(){
+    console.log(" willUnmount");
+
+}
+componentWillReceiveProps(){
+    console.log(" receiveprops");
+
+}
+    handlePageClick(data) {
+        console.log("selected");
+let pagevalue=data.selected+1;
+        let requestUrl = "https://api.themoviedb.org/3/genre/28/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=" + pagevalue;
+        axios
+            .get(requestUrl)
+            .then(response => {
+                this.setState({ movie: response.data.results })
+            });
+
+
+    }
+    render() {
+console.log("render called");
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-        
+
         let movies = [];
-        movies = this.state.movie.slice(0,5);
+        movies = this.state.movie.slice(0, 7);
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
-            let mainid_image2= movie.id;
+            let mainid_image2 = movie.id;
             console.log("imgurl" + imgurl)
             return (
                 <div className=" well_genres">
-            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="200px"/></NavLink>
-            <div className="details_movie">
-                <p>{movie.title}</p>
-                <p>{movie.overview}</p>
-                
+                    <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="200px" /></NavLink>
+                    <div className="details_movie">
+                        <p>{movie.title}</p>
+                        <p>{movie.overview}</p>
+
+                    </div>
+
                 </div>
-               
-            </div>
             );
         });
-        
-    
-        let movieLi = movies.map(tr=>{
-return tr.id;
-        });
-        let requestUrl2 = "https://api.themoviedb.org/3/movie/" +movieLi+ "/videos?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
-        axios.get(requestUrl2).then(response => {
-            this.setState({
-                movie1: response.data.results
-            }
-            )
-        }
-        );
-        let videos = [];
-        videos = this.state.movie1.slice(0, 12);
-        let link = videos.map(trailer => {
-            return trailer.key;
-        });
-let links=link[0];
-let linkss=link[1];
-        
-        return(
+
+
+
+
+        return (
             <div className="genre_blog">
-            <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Action Movies</h2>
-            <div className="genre_details">
-            <div className="main_wrapper">
-            <iframe
-                className="youtube-frame"
-                src={`https://www.youtube.com/embed/${links}`}
-                allowFullScreen
-            />
-            <br/>
-            <iframe
-                className="youtube-frame"
-                src={`https://www.youtube.com/embed/${linkss}`}
-                allowFullScreen
-            />
-                {movieList} 
-              
-                
-        
-       </div>
-        
-                <div>
-                <SubscrbPopular/>
+                <h2 style={{ fontSize: "2.1em", color: "black", margin: "0 0 8px 180px", fontWeight: "600" }}>Action Movies</h2>
+                <div className="genre_details">
+                    <div className="main_wrapper">
+
+                        {movieList}
+
+
+
                     </div>
-                </div>
-                <Pager>
-  <Pager.Item href="#" onClick={this.handlePrevious}>Previous</Pager.Item>{' '}
-  <Pager.Item href="" onClick={this.handleClick}>Next</Pager.Item>
-</Pager>
-                </div>
+
+                    <div>
+                        <SubscrbPopular />
+                    </div>
+                    <ReactPaginate previousLabel={"previous"}
+                    nextLabel={"next"}
+                    breakLabel={<a href="">...</a>}
+                    breakClassName={"break-me"}
+                    pageCount={this.props.pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                
+                />                </div>
+                
+            </div>
         );
     }
 }

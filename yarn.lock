@@ -2495,7 +2495,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.16:
+fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -5192,6 +5192,14 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-addons-create-fragment@^15.0.0:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-addons-create-fragment/-/react-addons-create-fragment-15.6.2.tgz#a394de7c2c7becd6b5475ba1b97ac472ce7c74f8"
+  dependencies:
+    fbjs "^0.8.4"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.0"
+
 react-autosuggest@^9.3.4:
   version "9.3.4"
   resolved "https://registry.yarnpkg.com/react-autosuggest/-/react-autosuggest-9.3.4.tgz#e47ff800081b2f7c678165bfb7cc84b07f462336"
@@ -5271,6 +5279,14 @@ react-overlays@^0.8.0:
     prop-types-extra "^1.0.1"
     react-transition-group "^2.2.0"
     warning "^3.0.0"
+
+react-paginate@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-5.1.0.tgz#9bee5fa9498812042d783f181b1ca043b57b85a5"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    react-addons-create-fragment "^15.0.0"
 
 react-prop-types@^0.4.0:
   version "0.4.0"
