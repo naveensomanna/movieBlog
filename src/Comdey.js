@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import {Pager ,Item} from 'react-bootstrap';
+import SubscrbPopular from './SubscrbPopular.js';
+
 import './App.css';
 
 export default class Comdey extends React.Component{
@@ -56,26 +58,30 @@ let co=--this.state.pagecount;
             let mainid_image2= movie.id;
             console.log("imgurl" + imgurl)
             return (
-                <div className="well well_genres">
-            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="270px" height="400px"/></NavLink>
+                <div className="well_genres">
+            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="200px"/></NavLink>
             <div className="details_movie">
                 <p>{movie.title}</p>
                 <p>{movie.overview}</p>
                 
                 </div>
-                <div className="more_card">
-                <NavLink to={`/Movies/${mainid_image2}`}><p>More</p></NavLink>
-                </div>
+                
             </div>
             );
         });
     
         return(
-            <div>
+            <div className="genre_blog">
             <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Comedy Movies</h2>
+            <div className="genre_details">
             <div className="main_wrapper">
                 
                 {movieList}
+                </div>
+                <div>
+                <SubscrbPopular/>
+
+                </div>
                 </div>
                 <Pager>
   <Pager.Item href="#" onClick={this.handlePrevious}>Previous</Pager.Item>{' '}

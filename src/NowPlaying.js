@@ -18,7 +18,9 @@ export default class NowPlaying extends React.Component {
             });
         console.log("url" + this.state.movie);
     }
+    
     render() {
+        
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this
@@ -51,13 +53,14 @@ export default class NowPlaying extends React.Component {
         console.log("movies1" + movies1);
         let movieList1 = movies1.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
+           let mainid_image1=movie.id;
             return (
                 <div className="block_item1">
                     <div style={{ overflow: "hidden" }} className="boxshadow_img" >
                         <img id="img1FirstBlog" src={imgurl} width="578px" height="500px" />
                     </div>
                     <div className="movie_title">
-                        <p> {movie.title}</p>
+                    <NavLink to={`/Movies/${mainid_image1}`}>   <p> {movie.title}</p></NavLink>
                         <p > {movie.release_date}</p>
                     </div>
                 </div>
@@ -65,9 +68,7 @@ export default class NowPlaying extends React.Component {
             );
         });
 
-        let mainid_image1 = movies1.map(movie => {
-            return movie.id;
-        });
+        
 
         var Style = {
             marginLeft: "190px"
@@ -80,7 +81,7 @@ export default class NowPlaying extends React.Component {
 
                     <div >
 
-                        <NavLink to={`/Movies/${mainid_image1[0]}`}  > {movieList1}</NavLink>
+                        {movieList1}
                     </div>
                     <div className="wrap_img" >
                         {movieList}
