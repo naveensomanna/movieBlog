@@ -3,6 +3,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import {Pager,Item} from 'react-bootstrap';
 import SubscrbPopular from './SubscrbPopular.js';
+
 import './App.css';
 
 export default class Action extends React.Component{
@@ -87,10 +88,8 @@ return tr.id;
         let link = videos.map(trailer => {
             return trailer.key;
         });
-        let URL_YOUTUBE = 'https://www.youtube.com/embed/';
-
-        let link1 = URL_YOUTUBE + link[0];
-
+let links="https://www.youtube.com/embed/"+link[0];
+        
         return(
             <div className="genre_blog">
             <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Action Movies</h2>
@@ -98,9 +97,13 @@ return tr.id;
             <div className="main_wrapper">
                 
                 {movieList} 
-                
-              <div> {link1} </div>
-                </div>
+                <div style={{ marginLeft: "250px" }}><h2 style={{ color: "black" }}>Trailer</h2>
+                    <iframe src={links} allowFullScreen /></div>
+              
+    
+        
+       </div>
+        
                 <div>
                 <SubscrbPopular/>
                     </div>

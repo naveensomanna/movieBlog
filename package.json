@@ -4,14 +4,15 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
-    "install": "^0.10.2",
+    "install": "^0.10.4",
     "react": "^16.2.0",
     "react-autosuggest": "^9.3.4",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
     "react-router": "2.0.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "react-youtube": "^7.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
