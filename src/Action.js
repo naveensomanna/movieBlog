@@ -84,23 +84,32 @@ return tr.id;
         }
         );
         let videos = [];
-        videos = this.state.movie1.slice(0, 3);
+        videos = this.state.movie1.slice(0, 12);
         let link = videos.map(trailer => {
             return trailer.key;
         });
-let links="https://www.youtube.com/embed/"+link[0];
+let links=link[0];
+let linkss=link[1];
         
         return(
             <div className="genre_blog">
             <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Action Movies</h2>
             <div className="genre_details">
             <div className="main_wrapper">
-                
+            <iframe
+                className="youtube-frame"
+                src={`https://www.youtube.com/embed/${links}`}
+                allowFullScreen
+            />
+            <br/>
+            <iframe
+                className="youtube-frame"
+                src={`https://www.youtube.com/embed/${linkss}`}
+                allowFullScreen
+            />
                 {movieList} 
-                <div style={{ marginLeft: "250px" }}><h2 style={{ color: "black" }}>Trailer</h2>
-                    <iframe src={links} allowFullScreen /></div>
               
-    
+                
         
        </div>
         
