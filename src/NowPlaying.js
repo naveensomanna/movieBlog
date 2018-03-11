@@ -36,7 +36,7 @@ export default class NowPlaying extends React.Component {
             return (
                 <div className="block_item2">
                     <div className="boxshadow_img">
-                        <img className="img2SecondBlog" src={imgurl} width="288px" height="250px" />
+                        <img className="img2SecondBlog" src={imgurl}  />
 
                     </div>
                     <div className="movie_title">
@@ -56,8 +56,8 @@ export default class NowPlaying extends React.Component {
            let mainid_image1=movie.id;
             return (
                 <div className="block_item1">
-                    <div style={{ overflow: "hidden" }} className="boxshadow_img" >
-                        <img id="img1FirstBlog" src={imgurl} width="578px" height="500px" />
+                    <div style={{ overflow: "hidden",height:"500px" }} className="boxshadow_img" >
+                        <img id="img1FirstBlog" src={imgurl}   />
                     </div>
                     <div className="movie_title">
                     <NavLink to={`/Movies/${mainid_image1}`}>   <p> {movie.title}</p></NavLink>

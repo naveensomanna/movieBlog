@@ -304,16 +304,7 @@ flex-wrap: wrap;
       .tvshows{
           width:100%;
       }   
-      .well_searchbox >img{
-          width: 100%;
-          height: 100%;
-      }
-      .search_wrapper_main{
-          width:100%;
-      }
-       .search_wrapper_main .search_wrapper{
-           width:100%;
-       }  
+      
       div .h4_theatre{
 margin: 0 !important;
 text-align: center;
@@ -337,6 +328,15 @@ text-align: center;
 }
 
 /*In thetare main  blog starts*/
+ #img1FirstBlog{
+width:41em;
+}
+ .img2SecondBlog{
+    height: 17.8em;
+    width:20.7em;
+    object-fit: cover;
+    object-position: center center;
+ }
 .np_block_wrapper{
     width:100%;
 }
@@ -355,24 +355,41 @@ text-align: center;
 }
 .block_item1{
     position: relative;
+    
 }
+
 .block_item1 img{
     position: relative;
     z-index: -1;
+    transform: scale3d(1, 1, 1);
+transition: all 0.5s linear;
 }
 .block_item2 img{
     position: relative;
     z-index: -1;
+    transform: scale3d(1, 1, 1);
+    transition: all 0.5s linear;
+    
+
 }
 .block_item2{
     position: relative; 
+    overflow: hidden;
+}
+.block_item2 .boxshadow_img
+{
+    
+    background-size: cover;
+
 }
 .wrap_img {
     display: flex;
     flex-wrap: wrap;
 }
-.boxshadow_img{
+.block_item1 .boxshadow_img{
     position: relative;
+    background-size: contain;
+
 }
 .boxshadow_img::before{
     content:"";
@@ -412,27 +429,19 @@ text-align: center;
 font-size: 13px;
 color:red;
 }
-.movie_title:hover{
+
+
+.block_item1:hover .movie_title{
     height: 74px;
 }
- .block_item1:hover{
-    background-color: rgba(34, 34, 34, 0.9);
+.block_item2:hover .movie_title{
+    height: 74px;
 }
-.block_item2:hover{
-    background-color: rgba(34, 34, 34, 0.9);
+ .block_item1:hover img{
+     transform: scale3d(1.2,1.2,1.2);
 }
-
-.img2SecondBlog{
-    object-fit: cover;
-    object-position: center center;
-}
-
-.img1FirstBlog{
-    object-fit: cover;
-    object-position: center center;}
-
-.img1carousel{
-  
+.block_item2:hover img{
+    transform: scale3d(1.2,1.2,1.2);
 }
 
 .theatremainblog h2 {
@@ -449,19 +458,89 @@ h2 span {
     background: rgba(0, 0, 0, 0.7);
 }
 
-
-
+/*comedy*/
+.well_comedy{
+}
+.comedy_details{
+    display: flex;
+    width:78%;
+    margin: 0 auto;
+}
+.comedy_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.comedy_image{
+    object-fit:cover;
+    object-position: center center;
+}
+#comedy_carousel_blog {
+  
+    height: 20em;
+    width:76%;
+    margin: 0 auto;
+    background-color: rgba(91,99,106,0.6);
+    position: relative;
+    border-radius: 3px;
+}
+#comedy_carousel_blog h1{
+   color:white;
+   position: absolute;
+   top:100px;
+   left:100px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.genre_blog #comedy_carousel_blog #fade_carousel_blog{
+    width:20em;
+    height: 17em;
+    position: absolute;
+    bottom: 0;
+    right:120px;
+    background: #00d573; 
+    border-radius: 4px;
+    overflow: hidden;
+}
+.comedy_fade_in{
+    float: left;
+    width:20em;
+    height: 17em;
+    object-fit: cover;
+    object-position: center;
+}
+#img_fade{
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+   display: flex;
+   flex-wrap: nowrap;
+}
+#slide{
+}
 /* theatre main blog ends here*/
 .upcomingmain {
     margin: 0 auto;
     border-top: 4px solid #90ee90;
     width: 76%;
-    
+    overflow: hidden;
+
 }
 .upcomingmainblog{
 }
 #carouselblog{
 width:100%;
+
+}
+#carouselblog img{
+    height: 55em;
+    object-fit: cover;
+    object-position: center center;
+    overflow: hidden;
+}
+.carousel_image{
+    width:100%;
+
 }
 .contentheading{
     text-transform: uppercase;
@@ -474,10 +553,10 @@ width:100%;
     margin-left:12%;
 }
 .carousel-inner .item img {
-    width: 1200px;
-    height: 800px;
-    background-position: center;
-    background-size: cover;
+    width:82.5em;
+    height: 60em;
+    background-size:contain; 
+
 }
 
 .glyphicon-chevron-left {
@@ -512,7 +591,10 @@ margin: 0 auto;
     object-fit: cover;
     object-position: center center;
 }    
+.block_item2 #up_movies{
+    background-size: cover;
 
+}
 .follow-blog{
 }
 h4{
@@ -664,46 +746,54 @@ text-decoration: none;
 }
 .one{
     width:70px;
-    height: 50px;
+    height: 55px;
     float: left;
     display: inline;
 }
 .two{
     width:180px;
-    height: 140px;
+    height: 141px;
     background:#2b2b2b;
-    transform: translate(0,-50);
-    transition: all 0.3s ease;
-    margin-left: auto;
     position:relative;
     top:0;
     left:0;
-    margin-bottom: -10px;
+    transform: translate(0,-50);
+    transition: all 0.3s ease;
+    margin-left: auto;
+    overflow: hidden;
+}
+.two .pop_link{
+    width:20px;
+    opacity: 0;
+    position: relative;
 }
 .two:hover{
     width:280px;
+}
+.two:hover .pop_link{
+    opacity: 1;
 }
 .two h6{
     color:white;
     text-align: center;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-family: Montserrat;
     letter-spacing: 0px;
 }
-.two a{
+.two .pop_link a{
     width:40px;
     height: 40px;
     background: #00ada9;
-    position: absolute;
-    bottom: 0;
-    right:0;
-    top:50px;
     color:white;
-    padding: 6px 0 0 18px;
+    position: absolute;
+    top:-90px;
+    left:235px;
+    padding: 5px 0 0 16px;
     font-size: 1.4em;
     font-weight: bold;
     text-decoration: none;
+
 }
 /*topratedblog ends*/
 .moviedetails {
@@ -919,39 +1009,44 @@ color:black;
 .name_align{
     padding: 35px;
 }
+.people_casting{
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+    object-position: center center;
+}
 /*search wrapper*/
 #search_wrapper_main{
     width: 100%;
-    
+    color:white;
+    font-family: Roboto Mono;
+
     }
-    #search_wrapper_main div{
-        width:60%;
-        margin: 0 auto;
-    }
-#search_wrapper_main div h2{
-color: #000;
+   
+
+#well_searchbox{
+width:100%;
 
 }
 #well_searchbox{
-width:100% !important;
-margin: 0 0 12px 0 !important;
-}
-#search_wrapper_main div .search_wrapper{
     width:100%;
     display: flex;
-    flex-wrap: wrap;
-}
-.search_content{
-    padding: 10px 16px 16px 16px;
-}
-.search_content p:first-child{
-    color:#000;
+    overflow: hidden;
+    box-shadow:  0 2px 8px rgba(0,0,0,0.5);
+    background: #2b2b2b;
+    margin-bottom: 10px;
 
-font-weight: 600;
-font-size: 1.1em;
-line-height: 1.1em;
 }
+.search_details{
+    width:100%;
+display: flex;
+flex-wrap: wrap;
 
+}
+.search_wrapper{
+    width:70%;
+    margin: 0 auto;
+}
 /*comedy*/
 .genre_blog{
     width:100%;

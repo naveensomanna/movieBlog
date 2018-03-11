@@ -30,20 +30,20 @@ componentWillMount(){
             <div id="carouselblog">
 <div >
             <Carousel >
-    <Carousel.Item>
-      <img className="img1carousel" width={1000} height={300} alt="900x500" src={movieList[0]} />
+    <Carousel.Item className="carousel_image">
+      <img className="img1carousel"  alt="900x500" src={movieList[0]} />
       <Carousel.Caption>
        <h5></h5>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img className="img1carousel" width={1000} height={300} alt="900x500" src={movieList[1]} />
+      <img className="img1carousel"  alt="900x500" src={movieList[1]} />
       <Carousel.Caption>
         
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img className="img1carousel" width={1000} height={300} alt="900x500" src={movieList[2]} />
+      <img className="img1carousel"  alt="900x500" src={movieList[2]} />
       <Carousel.Caption>
         
       </Carousel.Caption>

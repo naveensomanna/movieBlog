@@ -14,6 +14,7 @@ export default class Action extends React.Component {
         this.state = {
             data:[],
             movie: [],
+            movie2:[],
             pageCount: 10,
             currentPage:1
         }
@@ -30,6 +31,8 @@ let requestUrl = "https://api.themoviedb.org/3/genre/28/movies?api_key=006047499
             .then(response => {
                 this.setState({ movie: response.data.results })
             });
+           
+           
     }
 componentWillUpdate(){
     console.log(" willupdate");
@@ -63,7 +66,13 @@ let pagevalue=data.selected+1;
     render() {
 console.log("render called");
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-
+        let URL_YOUTUBE = 'https://www.youtube.com/embed/';
+        let videos = [];
+        videos = this.state.movie2.slice(0, 3);
+        let link = videos.map(trailer => {
+            return trailer.key;
+        });
+        let link1 = URL_YOUTUBE + link[0];
         let movies = [];
         movies = this.state.movie.slice(0, 7);
         let movieList = movies.map(movie => {
@@ -96,7 +105,7 @@ console.log("render called");
                         {movieList}
 
 
-
+{link1}
                     </div>
 
                     <div>
@@ -106,7 +115,7 @@ console.log("render called");
                     nextLabel={"next"}
                     breakLabel={<a href="">...</a>}
                     breakClassName={"break-me"}
-                    pageCount={this.props.pageCount}
+                    pageCount={this.state.pageCount}
                     marginPagesDisplayed={1}
                     pageRangeDisplayed={5}
                     onPageChange={this.handlePageClick}

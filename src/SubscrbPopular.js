@@ -26,7 +26,7 @@ export default class SubscrbPopular extends React.Component {
         let movieList1 = moviess.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (
-                <img className="img_align" src={imgurl} width="190px" height="140px" />
+                <img className="img_align" src={imgurl} width="190px" height="141px" />
             );
         });
         console.log("api" + moviess);
@@ -81,14 +81,21 @@ return(
                                     {movieList1}
                                 </div>
                                 <div className="two">
-                                <h6 className="name_align">{movieposter[0]}</h6> <Link to={`/Movies/${obj1[0]}`}> &#x3e; </Link>
+                                
+                                    <h6 className="name_align">{movieposter[0]}</h6> 
+                                    <div className="pop_link"> <Link to={`/Movies/${obj1[0]}`}> &#x3e; </Link>
+                                    </div>
 
                                 </div>
                                 <div className="two">
-                                <h6 className="name_align">{movieposter[1]}</h6> <Link to={`/Movies/${obj1[1]}`}>&#x3e;</Link>
+                                <h6 className="name_align">{movieposter[1]}</h6>                      
+                                          <div className="pop_link">
+ <Link to={`/Movies/${obj1[1]}`}>&#x3e;</Link>
+                                </div>
                                 </div>
                                 <div className="two">
-                                <h6 className="name_align">{movieposter[2]}</h6> <Link to={`/Movies/${obj1[2]}`} >&#x3e;</Link>
+                                <h6 className="name_align">{movieposter[2]}</h6><div className="pop_link"> <Link to={`/Movies/${obj1[2]}`} >&#x3e;</Link>
+                                </div>
                                 </div>
                             </div>
                             </div>

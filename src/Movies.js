@@ -58,7 +58,7 @@ export default class Movies extends Component {
             console.log("imgurl" + imgurl)
             return (
                 <div className="well well_style">
-                    <img src={imgurl} width="206px" height="200px" /><p className="casts_name">{movie.name}</p>
+                    <img src={imgurl} className="people_casting" /><p className="casts_name">{movie.name}</p>
 
                 </div>);
         });

@@ -2,13 +2,14 @@ import React from 'react';
 import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
 import {NavLink,withRouter} from 'react-router-dom'; 
 import Logo from '../src/images/youtubelogo.png'
-import axios from 'axios'; 
+import axios from 'axios';
 class MovieLogo extends React.Component{
     
     render(){
         return(
 <div className="nameblog" >
-<div className="logoimg">
+<div id="logoimg">
+
 </div>
 <div className="moviename">
 <h1 >MOVIE<span>SPOT</span><p id="subtitle">YOUR FAVORITE MOVIES</p></h1>
