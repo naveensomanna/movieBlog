@@ -39,7 +39,7 @@ export default class Latest extends React.Component {
             // console.log("imgurl" + imgurl)
             return (<div className="block_item2">
             <div className="boxshadow_img" id="up_movies">
-            <img className="img_align" src={imgurl}  width="375px" height="270px"/>  </div>
+            <img className="img_align" src={imgurl}  width="372px" height="270px"/>  </div>
                               <div className="movie_title">
 <Link to={`/Movies/${main_imgid}`}>{movie.title}</Link><p>{movie.release_date}</p></div></div>
 

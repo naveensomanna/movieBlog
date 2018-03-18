@@ -10,6 +10,7 @@ import TvShows from './TvShows.js';
 import Footer from './Footer.js';
 import Movies from './Movies.js';
 import SearchBar from './Searchbar.js';
+import People from './People.js';
 import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
 
 export default class App extends React.Component{
@@ -47,7 +48,7 @@ render(){
 <Route  path="/tvshows" component={TvShows}/>
 <Route  path="/movies/:id" component={Movies}/>
 <Route  path="/SearchBar/:id" component={SearchBar}/>
-
+<Route path="/people" component={People}/>
 <Footer/>
 <button onClick={this.topFunction} id="myBtn" title="Go to top"> &#8593;</button>
 

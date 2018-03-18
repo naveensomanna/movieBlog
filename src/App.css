@@ -333,7 +333,7 @@ width:41em;
 }
  .img2SecondBlog{
     height: 17.8em;
-    width:20.7em;
+    width:20.3em;
     object-fit: cover;
     object-position: center center;
  }
@@ -460,9 +460,17 @@ h2 span {
 
 /*comedy*/
 .well_comedy{
+    width:240px;
+    height: auto;
+    background: white;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
 }
 .comedy_details{
     display: flex;
+    justify-content: space-around;
     width:78%;
     margin: 0 auto;
 }
@@ -470,6 +478,16 @@ h2 span {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top:5px; 
+}
+.comedy_title {
+color:#555;
+font-family: Roboto Mono;
+box-sizing: border-box;
+width: 240px;
+height: auto;
+}
+.comedy_title p{
 }
 .comedy_image{
     object-fit:cover;
@@ -483,20 +501,21 @@ h2 span {
     background-color: rgba(91,99,106,0.6);
     position: relative;
     border-radius: 3px;
+    margin-top: -10px;
 }
 #comedy_carousel_blog h1{
    color:white;
    position: absolute;
-   top:100px;
+   top:60px;
    left:100px;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+   font-family: Roboto Mono;
 }
 .genre_blog #comedy_carousel_blog #fade_carousel_blog{
     width:20em;
     height: 17em;
     position: absolute;
     bottom: 0;
-    right:120px;
+    right:80px;
     background: #00d573; 
     border-radius: 4px;
     overflow: hidden;
@@ -519,30 +538,12 @@ h2 span {
 #slide{
 }
 /* theatre main blog ends here*/
-.upcomingmain {
-    margin: 0 auto;
+.carousel{
     border-top: 4px solid #90ee90;
-    width: 76%;
     overflow: hidden;
 
 }
-.upcomingmainblog{
-}
-#carouselblog{
-width:100%;
-
-}
-#carouselblog img{
-    height: 55em;
-    object-fit: cover;
-    object-position: center center;
-    overflow: hidden;
-}
-.carousel_image{
-    width:100%;
-
-}
-.contentheading{
+#upcoming_main-blog h3{
     text-transform: uppercase;
     font-family: Montserrat;
     font-size: 24px;
@@ -550,13 +551,18 @@ width:100%;
     font-weight: 700;
     line-height: 1.1;
     font-style: normal;
-    margin-left:12%;
 }
-.carousel-inner .item img {
-    width:82.5em;
-    height: 60em;
-    background-size:contain; 
-
+.carousel-inner>.item{
+    width: 100%;
+    height: 1200px;
+}
+.carousel-inner>.item>img{
+    position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 1200px;
+  max-width: none;
 }
 
 .glyphicon-chevron-left {
@@ -1091,5 +1097,52 @@ width:100%;
 height: 8em;
 text-overflow: ellipsis;
 }
+/*people*/
+.person_wrap{
+    width: 100%;
+    background: #f4f4f4;
+    padding-top: 7px;
+    margin-top: -6px;
+}
+ .person_wrap .media_people{
+    width:1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+.person_wrap .media_people h2{
+    color:#000;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 0 0 18px 0;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 
-
+}
+  .results_people{
+ background: #fff;
+ box-sizing: border-box;
+ margin-bottom: 12px;
+}
+.people_img{
+    width: 235px;
+    margin: 0;
+    
+}
+.people_content{
+    padding: 4px 8px;
+}
+.people_name{
+    color:#000;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    width: 100%;
+    line-height: 1.2em;
+    margin: 0;
+}
+ .person_wrap .media_people  .item_card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

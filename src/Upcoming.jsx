@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Carousel,CarouselCaption,CarouselItem} from 'react-bootstrap';
+import {Carousel,CarouselCaption,CarouselItem,Row,Col, Grid} from 'react-bootstrap';
 
 export default class UpcomingMovies extends React.Component{
     constructor(props){
@@ -19,7 +19,7 @@ componentWillMount(){
     console.log("url"+this.state.movie);
 }
     render(){
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
+        let baseImgURL = "https://image.tmdb.org/t/p/w780";
         let movies=[];
         movies=this.state.movie.slice(2,5);
       let movieList = movies.map(movie => {
@@ -27,29 +27,37 @@ componentWillMount(){
       });
         return (
 
-            <div id="carouselblog">
-<div >
-            <Carousel >
-    <Carousel.Item className="carousel_image">
-      <img className="img1carousel"  alt="900x500" src={movieList[0]} />
-      <Carousel.Caption>
-       <h5></h5>
-      </Carousel.Caption>
+            <div >
+            <Grid>
+            <Row>
+              <Col>
+              <div md={12} id="upcoming_main-blog">
+             <h3> up coming </h3>  
+              </div>
+              </Col>
+              </Row>
+              </Grid>
+              <Grid>
+              <Row>
+                <Col>
+                <div md={12} id="carousell">   
+                         <Carousel>
+    <Carousel.Item>
+      <img   alt="900x500" src={movieList[0]} width="100%" height="1200px" /> 
     </Carousel.Item>
     <Carousel.Item>
-      <img className="img1carousel"  alt="900x500" src={movieList[1]} />
-      <Carousel.Caption>
-        
-      </Carousel.Caption>
+      <img  className="carousel_image" alt="900x500" src={movieList[1]} width="400px" height="1200px"/>
+      
     </Carousel.Item>
     <Carousel.Item>
-      <img className="img1carousel"  alt="900x500" src={movieList[2]} />
-      <Carousel.Caption>
-        
-      </Carousel.Caption>
+      <img className="carousel_image" alt="900x500" src={movieList[2]} width="400px" height="1200px"/>
+      
     </Carousel.Item>
   </Carousel>     
- </div>
+        </div>
+        </Col>
+        </Row>
+        </Grid>
         </div>
         );
       

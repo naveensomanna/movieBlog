@@ -9,7 +9,7 @@ export default class NowPlaying extends React.Component {
             movie: []
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         let requestUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios
             .get(requestUrl)

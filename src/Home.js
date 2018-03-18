@@ -78,16 +78,11 @@ export default class Home extends React.Component {
 
  
         <NowPlaying/>
-        <div className="upcomingmainblog">
-        <h5 className="contentheading">upcoming news</h5> 
 
-        <div className="upcomingmain">
           <UpcomingMovies/>
-        </div>
-        </div>
         <Latest/>
-
         </div>
+
     
     );
 

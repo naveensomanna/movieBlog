@@ -36,7 +36,7 @@ class NavBar extends React.Component{
     <NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
     <NavItem eventKey={4}     href="" ><NavLink to="/action"  className="nav_achor">ACTION</NavLink></NavItem>
     <NavItem eventKey={5}    href="#" ><NavLink to="/horror"  className="nav_achor">HORROR</NavLink></NavItem>
-    <NavItem eventKey={6}    href="#" ><NavLink to=""  className="nav_achor">SCI-FI</NavLink></NavItem>
+    <NavItem eventKey={6}    href="#" ><NavLink to="/people"  className="nav_achor">PEOPLE</NavLink></NavItem>
     <NavItem eventKey={7}    href="" ><NavLink to="/tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
     <NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">OTHER GENRES</NavLink></NavItem>
 
