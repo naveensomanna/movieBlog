@@ -1,7 +1,7 @@
 import React from 'react';
-import {Navbar,Nav,NavItem,form,inverse, PageHeader} from 'react-bootstrap';
+import {Navbar,Nav,NavItem,form,inverse, PageHeader,FormGroup,FormControl} from 'react-bootstrap';
 import {NavLink,withRouter} from 'react-router-dom'; 
-import Logo from '../src/images/youtubelogo.png'
+import Logo from '../src/images/title.png'
 import axios from 'axios';
 class MovieLogo extends React.Component{
     
@@ -20,14 +20,21 @@ class MovieLogo extends React.Component{
     }
 }
 class NavBar extends React.Component{
+    
     render(){
         var divStyle={
             marginBottom:"10px",
+        
         };
         return(
             <div style={divStyle}>
-           <Navbar  collapseOnSelect>
-           <Navbar.Toggle />
+           <Navbar  collapseOnSelect fixedTop >
+           <Navbar.Header>
+    <Navbar.Brand >
+      <a id="logo" ><img src={Logo}  width="91" height="91"/></a>
+    </Navbar.Brand>
+    <Navbar.Toggle />
+  </Navbar.Header>
 
   <Navbar.Collapse>
     <Nav>
@@ -41,6 +48,11 @@ class NavBar extends React.Component{
     <NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">OTHER GENRES</NavLink></NavItem>
 
     </Nav>
+    <Navbar.Form pullRight>
+      <FormGroup>
+        <FormControl type="text" placeholder="Search" />
+      </FormGroup>{' '}
+    </Navbar.Form>    
   </Navbar.Collapse>
 </Navbar>
         </div>
@@ -58,36 +70,54 @@ class NavBar extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
       }
       handleSubmit(event) {
-        console.log("updated");
+        console.log("update");
         event.preventDefault();
-        this.props.history.push(`/SearchBar/${this.refs.attack.value}`); // or whatever
-
+        this.props.history.push(`/SearchBar/${event.target.value}`); // or whatever
       }
     render(){
         console.log("render");
+        var divStyle={
+            marginBottom:"10px",
+        
+        };
         return(
             <div>
 <div className="header-wrapper">
 <div className="header-section">
-    <div className="header-logo">
-    <MovieLogo/>
+       <Navbar  collapseOnSelect fixedTop >
+       <Navbar.Header>
+<Navbar.Brand >
+  <a id="logo" ><img src={Logo}  width="91" height="91"/></a>
+</Navbar.Brand>
+<Navbar.Toggle />
+</Navbar.Header>
+
+<Navbar.Collapse>
+<Nav>
+<NavItem eventKey={1}   href=""><NavLink to="/"   className="nav_achor">HOME</NavLink></NavItem>
+<NavItem eventKey={2}    href="#"><NavLink to="/comdey"  className="nav_achor">COMEDY</NavLink></NavItem>
+<NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
+<NavItem eventKey={4}     href="" ><NavLink to="/action"  className="nav_achor">ACTION</NavLink></NavItem>
+<NavItem eventKey={5}    href="#" ><NavLink to="/horror"  className="nav_achor">HORROR</NavLink></NavItem>
+<NavItem eventKey={6}    href="#" ><NavLink to="/people"  className="nav_achor">PEOPLE</NavLink></NavItem>
+<NavItem eventKey={7}    href="" ><NavLink to="/tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
+<NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">OTHER GENRES</NavLink></NavItem>
+
+</Nav>
+<Navbar.Form pullRight>
+  <FormGroup>
+    <FormControl type="text" ref="attack" placeholder="Search" onChange={this.handleSubmit}/>
+  </FormGroup>{' '}
+</Navbar.Form>    
+</Navbar.Collapse>
+</Navbar>
     </div>
-    <div className="header-search">
-    <form  onSubmit={this.handleSubmit}>
-        <label>
-        
-          <input type="text" ref="attack" placeholder="search movie"  />
-        </label>
-      </form>
-      </div>
-        </div>
-        </div>
-        <NavBar />
-        <div>
-</div>
+    </div>
+    
+           
+           
         </div>
 
-    
         );
     }
 }

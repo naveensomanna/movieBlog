@@ -10,7 +10,8 @@ export default  class ReactSlickDemo extends React.Component {
         this.state = {
             movie1:[],
             movie2:[],
-            movie3:[]
+            movie3:[],
+            movie4:[]
         
     
         }
@@ -45,7 +46,14 @@ this.setState({
     movie3: response.data.results
 }
 );
-});          
+});   
+let requestUrl4 = "https://api.themoviedb.org/3/movie/" +nextProps.data[3]+ "/videos?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
+axios.get(requestUrl4).then(response => {
+this.setState({
+    movie4: response.data.results
+}
+);
+});        
             }
     
             
@@ -83,7 +91,14 @@ this.setState({
                   });
                   let linksss='https://www.youtube.com/embed/'+link2[0];
 
-
+                  let videos3 = [];
+                  videos3=  this.state.movie4.slice(0,5);
+                        let link3=[];
+                         link3 = videos3.map(trailer => {
+                            return trailer.key;
+                        });
+                        let linkssss='https://www.youtube.com/embed/'+link3[0];
+      
 
       var settings = {
         dots: true,
@@ -91,20 +106,26 @@ this.setState({
         speed: 500,
         slidesToShow: 3,
     
+    
       };
       return (
-        <div className="container" style={{backgroundColor:'lightblue'}}>
+          <div id="video_slick" >
+        <div  style={{backgroundColor:'lightblue'}}>
           <Slider {...settings} >
             <div>
-            <iframe src={links} allowFullScreen />
+            <iframe src={links} allowFullScreen width="230px"/>
             </div>
             <div>
-            <iframe src={linkss} allowFullScreen />
+            <iframe src={linkss} allowFullScreen width="230px" />
             </div>
             <div>
             <iframe src={linksss} allowFullScreen />
             </div>
+            <div>
+            <iframe src={linkssss} allowFullScreen />
+            </div>
           </Slider>
+        </div>
         </div>
       );
     }

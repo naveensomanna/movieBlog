@@ -39,17 +39,11 @@ body {
     
 }
 .header-wrapper .header-section{
-    width:76%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    box-sizing: border-box; 
+    
 
 }
 
     .header-search{
-        padding: 25px;
 }
 .nameblog .logoimg{
     display: inline;
@@ -84,39 +78,38 @@ display: inline-block;
 input {
     outline: none;
 }
+.header-search{
+    width: 100%;
+    height: 46px;
+    border-bottom: 1px solid #dedede;
+}
+.header-search .sub-search{
+   width:50%;
+}
+.header-search .sub-search {
+margin: 0 auto;
+}
 
-input[type=text] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
+ #search_text {
+    width: 100%;
+    height: 46px;
+    border: none !important;
+    outline: none;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-weight: light;
     font-size: 100%;
+    line-height: 1.2em;
+    color: #acacac;
+    box-sizing: border-box;
+    text-indent: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: -10px;
+
 }
 
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-    display: none;
-}
 
-input[type=text] {
-    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    border: solid 1px #ccc;
-    padding: 9px 10px 9px 32px;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    border-radius: 10em;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-
-input[type=text]:focus {
-    width: 130px;
-    background-color: #fff;
-    border-color: #66CC75;
-    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-}
 
 input:-moz-placeholder {
     color: #999;
@@ -126,10 +119,19 @@ input::-webkit-input-placeholder {
     color: #999;
 }
 /*navbar */
+#logo{
+    position: relative !important;
+    top:-30px !important;
+    left:0;
+
+}
 .navbar-collapse{
     padding: 0 !important ;
 }
-
+.navbar .container{
+    padding: 0;
+    overflow: hidden;
+}
    .navbar-default{
        border:0 !important;
    }
@@ -138,12 +140,12 @@ input::-webkit-input-placeholder {
 }
 
 .navbar {
-    width:76%;
+    width:100%;
+    height: 70px;
     margin: 0 auto;
-    padding-bottom: 2px;
     background: #2b2b2b;
     border-radius:0 !important; 
-   
+padding: 10px;   
 }
 .navbar-inverse{
     background: none;
@@ -164,18 +166,18 @@ display: block;
     color:white;
     text-decoration: none;
 }
- .navbar-nav>li>a::after {
+ .navbar-nav li a ::after {
     content: '';
     width: 100%;
     top: 100%;
     left: 0%;
     position: absolute;
     background: #3ec0e1;
-    height: 2px;
+    height: 4px;
     transform: scaleX(0);
     transition: transform 0.5s ease;
 }
- .navbar-nav>li>a:hover::after {
+ .navbar-nav li a :hover::after {
     transform: scaleX(1);   
 }
 @media screen and (max-width:500px){
@@ -339,6 +341,7 @@ width:41em;
  }
 .np_block_wrapper{
     width:100%;
+    margin-top: 100px;
 }
 .np_block_wrapper h4{
     margin-left: 180px;
@@ -462,11 +465,10 @@ h2 span {
 .well_comedy{
     width:240px;
     height: auto;
-    background: white;
-    border: 1px solid silver;
+    background:#fff;
     box-sizing: border-box;
     margin-bottom: 10px;
-
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .comedy_details{
     display: flex;
@@ -481,13 +483,17 @@ h2 span {
     margin-top:5px; 
 }
 .comedy_title {
-color:#555;
-font-family: Roboto Mono;
+color:#000;
+font-weight: 600;
+font-family: 'Source Sans Pro';
 box-sizing: border-box;
-width: 240px;
 height: auto;
 }
-.comedy_title p{
+.title_movies {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.5em;
+    font-family: 'Source Sans Pro';
 }
 .comedy_image{
     object-fit:cover;
@@ -495,10 +501,9 @@ height: auto;
 }
 #comedy_carousel_blog {
   
-    height: 20em;
+    height: 10em;
     width:76%;
     margin: 0 auto;
-    background-color: rgba(91,99,106,0.6);
     position: relative;
     border-radius: 3px;
     margin-top: -10px;
@@ -536,6 +541,16 @@ height: auto;
    flex-wrap: nowrap;
 }
 #slide{
+}
+#video_slick> div{
+width:100%;
+}
+.slick-prev{
+    left:-6px !important;
+    z-index: 99;
+}
+.slick-next{
+    right:-3px !important;
 }
 /* theatre main blog ends here*/
 .carousel{
@@ -968,23 +983,46 @@ margin: 0 auto;
 }
 
 /*movies*/
-#movie_background{
-        width: 100%;
-        height: auto;
-        margin-top: -20px;
-}
-.movie_details_main{
-    
+ .movie_details_main{  
     width:1000px;
+    position: relative;
     display: flex;
     margin:0 auto;
 padding-top: 40px;
 padding-bottom: 40px;
 font-family: 'Roboto Mono';
+color:#000;
+font-weight: 700;
 }
+.movie_details_main img{
+    border-radius:4px; 
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+.first{
+    position: relative;
+width: 100%;
+
+}
+div.first .second{
+    position: relative;
+    z-index: 1;
+}
+ #bg_image{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: -1;
+
+}
+
+ 
 .sing_colum_blog{
     padding-left: 20px;
-    color:#000;
+    color:#fff;
+    
 }
 .movie_details_title{
     font-weight: 700;
@@ -1100,8 +1138,7 @@ text-overflow: ellipsis;
 /*people*/
 .person_wrap{
     width: 100%;
-    background: #f4f4f4;
-    padding-top: 7px;
+    padding-top: 3px;
     margin-top: -6px;
 }
  .person_wrap .media_people{
@@ -1118,10 +1155,15 @@ text-overflow: ellipsis;
     font-family: 'Source Sans Pro', Arial, sans-serif;
 
 }
+.people_img img{
+    object-fit: cover;
+    object-position: center center;
+}
   .results_people{
  background: #fff;
  box-sizing: border-box;
  margin-bottom: 12px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .people_img{
     width: 235px;

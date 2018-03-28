@@ -75,20 +75,18 @@ export default class Comdey extends React.Component{
         
         console.log("fadeblog");
 
-        let styles = {
-            
-               backgroundImage: `url(${template})`,
-               backgroundRepeat: 'repeat-x',
-               backgroundPosition: 'bottom',
-          
-        }
         return(
             <div className="genre_blog">
-            <div id="comedy_carousel_blog" style={styles}>
-            <h1>Comedy Movies</h1>
+            <div id="comedy_carousel_blog" >
             <ReactSlick data={movieLi}/>
             </div>
+            <div className="title_movies container">
+            <h2>Comedy Movies</h2>
+
+            </div>
             <div className="comedy_details">
+
+
             <div className="comedy_wrapper">
                 
                 {movieList}

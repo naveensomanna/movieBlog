@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { params, match, NavLink } from 'react-router-dom';
 import { Col, Row, Thumbnail, Jumbotron } from 'react-bootstrap';
 import axios from 'axios';
+import index from 'axios';
 
 export default class Movies extends Component {
     constructor(props) {
@@ -50,6 +51,7 @@ export default class Movies extends Component {
         });
         let link1 = URL_YOUTUBE + link[0];
         let imgUrl = baseImgURL + this.state.movie.poster_path;
+        let imgUrl111="https://image.tmdb.org/t/p/w1280"+this.state.movie.backdrop_path;
         let movies = [];
         movies = this.state.movie1.slice(1, 5);
         let movieList = movies.map(movie => {
@@ -62,10 +64,16 @@ export default class Movies extends Component {
 
                 </div>);
         });
+        var Style={
+            'background-image':`url(${imgUrl111}) `,
+            'background-repeat':'no-repeat',
+            'background-size':'cover'
+        }
         return (
-            <div id="movie_background">
-                <div className="movie_details_main">
-
+            <div>
+            <div className="first" >
+                <div id="bg_image" className="second" style={Style}></div>
+<div className="movie_details_main">
                     <div >
                         <img src={imgUrl} width="300px" height="400px" />
 
@@ -79,8 +87,10 @@ export default class Movies extends Component {
                         <p>Votes :</p>
                         <p className="movie_details">{this.state.movie.vote_count}</p>
                     </div>
-
+</div>
                 </div>
+            
+
                 <div className="people">
                     <h2>Top Billed Cast</h2>
 
@@ -90,8 +100,9 @@ export default class Movies extends Component {
                     </div>
                 </div>
                 <div style={{ marginLeft: "250px" }}><h2 style={{ color: "black" }}>Trailer</h2>
-                    <iframe src={link1} allowFullScreen /></div>
-            </div>
+                    <iframe src={link1} allowFullScreen />
+                    </div>
+                </div>
         );
     }
 }
