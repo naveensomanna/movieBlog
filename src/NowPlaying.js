@@ -2,11 +2,16 @@ import React from 'react'
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+
+var arr;
+var nam,aa=[];
 export default class NowPlaying extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movie: []
+            movie: [],
+            movie1:[],
+    
         }
     }
     componentDidMount() {
@@ -16,7 +21,8 @@ export default class NowPlaying extends React.Component {
             .then(response => {
                 this.setState({ movie: response.data.results })
             });
-        console.log("url" + this.state.movie);
+        console.log("url" + arr);
+       
     }
     
     render() {
@@ -28,11 +34,17 @@ export default class NowPlaying extends React.Component {
             .movie
             .slice(3, 7);
         let mainid_image2;
+       arr=movies.map(id=>{
+            return id.id;
+                    });
+            nam=this.state.movie1.map(na=>{
+                return na.name;
+            });
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             mainid_image2 = movie.id;
-            console.log("imgurl" + imgurl)
+            console.log("imgurl" + imgurl);
             return (
                 <div className="block_item2">
                     <div className="boxshadow_img">
@@ -40,7 +52,7 @@ export default class NowPlaying extends React.Component {
 
                     </div>
                     <div className="movie_title">
-                        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p></NavLink>
+                        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p>{nam}</NavLink>
                         <p>{movie.release_date}</p>
                     </div>
                 </div>
@@ -60,7 +72,7 @@ export default class NowPlaying extends React.Component {
                         <img id="img1FirstBlog" src={imgurl}   />
                     </div>
                     <div className="movie_title">
-                    <NavLink to={`/Movies/${mainid_image1}`}>   <p> {movie.title}</p></NavLink>
+                    <NavLink to={`/Movies/${mainid_image1}`}>   <p> {movie.title}</p><p></p></NavLink>
                         <p > {movie.release_date}</p>
                     </div>
                 </div>
@@ -69,7 +81,6 @@ export default class NowPlaying extends React.Component {
         });
 
         
-
         var Style = {
             marginLeft: "190px"
         }

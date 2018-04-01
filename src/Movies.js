@@ -3,7 +3,7 @@ import { params, match, NavLink } from 'react-router-dom';
 import { Col, Row, Thumbnail, Jumbotron } from 'react-bootstrap';
 import axios from 'axios';
 import index from 'axios';
-
+import Recommendation from './Recommendations.js';
 export default class Movies extends Component {
     constructor(props) {
         super(props);
@@ -54,16 +54,24 @@ export default class Movies extends Component {
         let imgUrl111="https://image.tmdb.org/t/p/w1280"+this.state.movie.backdrop_path;
         let movies = [];
         movies = this.state.movie1.slice(1, 5);
+        
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
-            let imgurl = baseImgURL + movie.profile_path;
-            console.log("imgurl" + imgurl)
+            var imgurl;
+       
+                imgurl = baseImgURL + movie.profile_path;
+
+                console.log("imgurl" + imgurl);
+
+              
+         
             return (
-                <div className="well well_style">
-                    <img src={imgurl} className="people_casting" /><p className="casts_name">{movie.name}</p>
+                <div className="well_style">
+                    <img src={imgurl} id="e" className="people_casting" /><p className="casts_name">{movie.name}</p>
 
                 </div>);
         });
+        
         var Style={
             'background-image':`url(${imgUrl111}) `,
             'background-repeat':'no-repeat',
@@ -89,7 +97,7 @@ export default class Movies extends Component {
                     </div>
 </div>
                 </div>
-            
+       <div className="movie_detail_section">     
 
                 <div className="people">
                     <h2>Top Billed Cast</h2>
@@ -97,11 +105,14 @@ export default class Movies extends Component {
                     <div className="casts">
                         {movieList}
 
+                    
                     </div>
                 </div>
-                <div style={{ marginLeft: "250px" }}><h2 style={{ color: "black" }}>Trailer</h2>
+                <div className="trailer"><h2>Trailer</h2>
                     <iframe src={link1} allowFullScreen />
                     </div>
+                    <Recommendation id={this.props.match.params.id}/>
+                </div>
                 </div>
         );
     }

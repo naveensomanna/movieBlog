@@ -10,7 +10,6 @@ export default class Latest extends React.Component {
         }
     }
     componentDidMount() {
-        console.log("componentWillMount");
         let requestUrl = "https://api.themoviedb.org/3/person/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl).then(response => {
             this.setState({

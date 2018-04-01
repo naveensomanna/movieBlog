@@ -334,17 +334,21 @@ text-align: center;
 width:41em;
 }
  .img2SecondBlog{
-    height: 17.8em;
-    width:20.3em;
+    height: 17.9em;
+    width:20.7em;
     object-fit: cover;
     object-position: center center;
  }
 .np_block_wrapper{
     width:100%;
     margin-top: 100px;
+
 }
 .np_block_wrapper h4{
     margin-left: 180px;
+    font-family: 'Source Sans Pro';
+font-size: 1.6em;
+font-weight: 600;
 }
 .theater_blog {
     width:76%;
@@ -353,9 +357,7 @@ width:41em;
     border-top:3px solid #f1bd3b;
     display: flex;
 }
-.theater_blog :hover{
-  background:   rgba(34,34,34,0.1);
-}
+
 .block_item1{
     position: relative;
     
@@ -372,7 +374,7 @@ transition: all 0.5s linear;
     z-index: -1;
     transform: scale3d(1, 1, 1);
     transition: all 0.5s linear;
-    
+    overflow: hidden;
 
 }
 .block_item2{
@@ -394,18 +396,7 @@ transition: all 0.5s linear;
     background-size: contain;
 
 }
-.boxshadow_img::before{
-    content:"";
-    position: absolute;
-    top:0;
-    left:0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0px -126px 81px -30px rgba(34,34,34,0.9);
-    z-index: 0;
-    transition: all 0.3s ease;
-    border-radius: 0;
-}
+
  .movie_title{
      position: absolute;
      bottom: 0;
@@ -421,7 +412,9 @@ transition: all 0.5s linear;
  .movie_title a{
      color:white;
      text-decoration: none;
-     font-size: 23px;
+     font-family: 'Source Sans Pro';
+
+     font-size: 1.3em;
      line-height: 0.9em;
  }
  .movie_title a:hover{
@@ -430,7 +423,7 @@ transition: all 0.5s linear;
  }
  .movie_title p:nth-child(2){
 font-size: 13px;
-color:red;
+color:#00d573;
 }
 
 
@@ -467,7 +460,7 @@ h2 span {
     height: auto;
     background:#fff;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin: 10px 0  10px 0 ;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .comedy_details{
@@ -480,7 +473,7 @@ h2 span {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top:5px; 
+
 }
 .comedy_title {
 color:#000;
@@ -490,9 +483,12 @@ box-sizing: border-box;
 height: auto;
 }
 .title_movies {
+   margin-top: 19px;
+}
+.title_movies h2{
     color: #000;
-    font-weight: 700;
-    font-size: 1.5em;
+    font-weight: 600;
+    font-size: 1.6em;
     font-family: 'Source Sans Pro';
 }
 .comedy_image{
@@ -500,13 +496,11 @@ height: auto;
     object-position: center center;
 }
 #comedy_carousel_blog {
-  
     height: 10em;
     width:76%;
     margin: 0 auto;
     position: relative;
     border-radius: 3px;
-    margin-top: -10px;
 }
 #comedy_carousel_blog h1{
    color:white;
@@ -558,18 +552,20 @@ width:100%;
     overflow: hidden;
 
 }
+#upcoming_main-blog{
+}
 #upcoming_main-blog h3{
     text-transform: uppercase;
-    font-family: Montserrat;
-    font-size: 24px;
-    color:black;
-    font-weight: 700;
+    font-family: 'Source Sans Pro';
+    font-size: 1.6em;
+    color:#000;
+    font-weight: 600;
     line-height: 1.1;
     font-style: normal;
 }
 .carousel-inner>.item{
     width: 100%;
-    height: 1200px;
+    height: 1100px;
 }
 .carousel-inner>.item>img{
     position: absolute;
@@ -595,10 +591,10 @@ height: auto;
 }
 .contents-toprated{
     width:100%;
-margin-left:6%; 
+margin-left:5%; 
 }
 .contents-toprated h4{
-margin-left: 13%;
+margin-left: 12%;
 }
 .main-blog{
 width:75%;
@@ -619,14 +615,13 @@ margin: 0 auto;
 .follow-blog{
 }
 h4{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 1.6em;
     line-height: 1.1;
-    font-family: Montserrat;
+    font-family: 'Source Sanse Pro';
     letter-spacing: 0px;
     text-align: inherit;
-    color:black;
+    color:#000;
     text-transform: uppercase;
 }
 .follow-content{
@@ -988,7 +983,7 @@ margin: 0 auto;
     position: relative;
     display: flex;
     margin:0 auto;
-padding-top: 40px;
+padding-top: 150px;
 padding-bottom: 40px;
 font-family: 'Roboto Mono';
 color:#000;
@@ -1030,7 +1025,7 @@ div.first .second{
 }
 .casts{
     display:flex; 
-    font-family: 'Roboto Mono';
+    font-family: 'Source Sans Pro';
 
 }
 
@@ -1048,7 +1043,11 @@ margin-top: 10px;
 .people{
     margin-left: 250px;
 color:black;
-
+}
+.people h2{
+    font-family: 'Source Sans Pro';
+font-weight: 600;
+font-size: 1.4em;
 }
 .name_align{
     padding: 35px;
@@ -1059,6 +1058,58 @@ color:black;
     object-fit: cover;
     object-position: center center;
 }
+.movie_detail_section{
+width:100%;
+height: auto;
+background-color: #f4f4f4;
+}
+#img_main_blog {
+margin-right: 10px; 
+}
+#img_main_blog img{
+    border-radius: 4px;
+    width: 250px;
+    height: 141px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+#img_main_blog p{
+    display: flex;
+    justify-content: space-between;
+    color:#000;
+    font-weight: 400;
+    font-size: 1em; 
+}
+.main_recommend{
+    margin-left: 250px;
+ }
+ .main_recommend h2{
+     color:#000;
+    font-family: 'Source Sanse Pro';
+    font-weight: 600;
+    font-size: 1.4em;
+
+ }
+ .movie_recommend{
+     width: 780px;
+     height: 190px;
+ display: flex;
+ overflow-x: scroll;
+     overflow-y: hidden;
+ white-space: nowrap;
+ justify-content: space-between;
+ }
+ .trailer{
+     width:100%;
+     margin-left: 250px;
+
+ }
+ .trailer h2{
+     color:#000;
+     font-family:'Source Sanse Pro';
+     font-size: 1.4em;
+     font-weight: 600;
+ }
 /*search wrapper*/
 #search_wrapper_main{
     width: 100%;
@@ -1094,7 +1145,7 @@ flex-wrap: wrap;
 /*comedy*/
 .genre_blog{
     width:100%;
-
+margin-top:80px;
 }
 .genre_details{
     width:75%;
@@ -1135,17 +1186,17 @@ width:100%;
 height: 8em;
 text-overflow: ellipsis;
 }
+
 /*people*/
 .person_wrap{
     width: 100%;
-    padding-top: 3px;
-    margin-top: -6px;
+
 }
  .person_wrap .media_people{
     width:1000px;
     margin: 0 auto;
     margin-bottom: 50px;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 .person_wrap .media_people h2{
     color:#000;

@@ -31,7 +31,7 @@ componentWillMount(){
             <Grid>
             <Row>
               <Col>
-              <div md={12} id="upcoming_main-blog">
+              <div md={12} id="upcoming_main-blog" >
              <h3> up coming </h3>  
               </div>
               </Col>
