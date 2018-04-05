@@ -46,7 +46,7 @@ export default class Drama extends React.Component{
                 <div className="well_genres">
             <NavLink to={`/Movies/${mainid_image2}`}><img  className="genre_image" src={imgurl} width="240px" height="230px"/></NavLink>
             <div className="genre_title">
-                <p>{movie.title}</p>
+                <p>{movie.title}<span className="vote_genres">{movie.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
                 
                 </div>
                 

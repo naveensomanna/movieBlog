@@ -455,8 +455,12 @@ h2 span {
 }
 
 /*comedy*/
+.well_genres .genre_title p .vote_genres{
+    float:right;
+}
 .genre_blog{
     margin-top: 80px;
+    box-sizing: border-box;
 }
 .well_genres{
     width:240px;
@@ -470,6 +474,8 @@ h2 span {
     
     width:78.5%;
     margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
 }
 .genre_wrapper{
     display: flex;
@@ -1155,7 +1161,6 @@ flex-wrap: wrap;
 /*people*/
 .person_wrap{
     width: 100%;
-
 }
  .person_wrap .media_people{
     width:76%;
