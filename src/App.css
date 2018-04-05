@@ -127,10 +127,13 @@ input::-webkit-input-placeholder {
 }
 .navbar-collapse{
     padding: 0 !important ;
+    display: block;
 }
 .navbar .container{
     padding: 0;
     overflow: hidden;
+    display: block;
+
 }
    .navbar-default{
        border:0 !important;
@@ -146,6 +149,7 @@ input::-webkit-input-placeholder {
     background: #2b2b2b;
     border-radius:0 !important; 
 padding: 10px;   
+background-color: #3953BF !important;
 }
 .navbar-inverse{
     background: none;
@@ -158,7 +162,7 @@ padding: 10px;
 display: block;
 }
  .navbar-nav li a:hover {
-    color: #3ec0e1;
+    color: #000;
     text-decoration: none;
 }
 
@@ -166,19 +170,21 @@ display: block;
     color:white;
     text-decoration: none;
 }
- .navbar-nav li a ::after {
-    content: '';
+@media screen and (min-width:500px){
+ .navbar-nav>li>a::after {
+    content:"";
     width: 100%;
-    top: 100%;
+    top: 90%;
     left: 0%;
     position: absolute;
-    background: #3ec0e1;
-    height: 4px;
+    background-color: #bb0000;
+    height: 2px;
     transform: scaleX(0);
     transition: transform 0.5s ease;
 }
- .navbar-nav li a :hover::after {
-    transform: scaleX(1);   
+  .navbar-nav>li>a:hover::after {
+    transform: scaleX(1);
+}
 }
 @media screen and (max-width:500px){
     #root{
@@ -336,8 +342,8 @@ width:41em;
  .img2SecondBlog{
     height: 17.9em;
     width:20.7em;
-    object-fit: cover;
-    object-position: center center;
+    object-fit:cover;
+    object-position: 80% 20%;
  }
 .np_block_wrapper{
     width:100%;
@@ -415,15 +421,14 @@ transition: all 0.5s linear;
      font-family: 'Source Sans Pro';
 
      font-size: 1.3em;
-     line-height: 0.9em;
  }
  .movie_title a:hover{
     color: #3ec0e1;
 
  }
  .movie_title p:nth-child(2){
-font-size: 13px;
-color:#00d573;
+font-size: 16px;
+color:white;
 }
 
 
@@ -498,7 +503,7 @@ height: auto;
 }
 .genre_image{
     object-fit:cover;
-    object-position: center center;
+    object-position: 80% 20%;
 }
 #comedy_carousel_blog {
     height: 10em;
@@ -612,7 +617,7 @@ margin: 0 auto;
 
 .img_align{
     object-fit: cover;
-    object-position: center center;
+    object-position: 80% 20%;
 }    
 .block_item2 #up_movies{
     background-size: cover;
@@ -622,7 +627,7 @@ margin: 0 auto;
 }
 h4{
     font-weight: 600;
-    font-size: 1.6em;
+    font-size: 1.5em;
     line-height: 1.1;
     font-family: 'Source Sanse Pro';
     letter-spacing: 0px;
@@ -857,12 +862,25 @@ width:35px; /* Some padding */
 }
 /*footer*/
 .site-footer{
-    background-color: #222222;
+   
     max-width: 100%;
     margin-top: 20px;
+
+    position: relative;
+}
+.site-footer::after{
+    content: '';
+background-image:url(./images/footer.png); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
 }
 .invert{
-    color:#ffffff;
+    color:black;
     padding-top: 30px;
     padding-left: 80px;
 }
@@ -883,17 +901,18 @@ width:35px; /* Some padding */
 }
 .invert ul li a{
     text-decoration: none;
-    color:#3ec0e1;
+    color:#f4f4f4;
     font-size: 15px;
     
 }
 .invert ul li a:hover{
-    color:#ffffff;
+    color:#3ec0e1;
 }
 .invert ul li:last-child{
     border: none;
 } 
 .widget-title{
+    color:red;
     font-size: 24px;
     font-family: Montserrat;  
 font-weight: bold;
@@ -1002,7 +1021,6 @@ font-weight: 700;
 .first{
     position: relative;
 width: 100%;
-
 }
 div.first .second{
     position: relative;
@@ -1059,25 +1077,29 @@ font-size: 1.4em;
     padding: 35px;
 }
 .people_casting{
-    height: 10em;
+    height: 14em;
     width: 10em;
     object-fit: cover;
-    object-position: center center;
+    object-position: 80% 20%;
 }
 .movie_detail_section{
 width:100%;
 height: auto;
 background-color: #f4f4f4;
+margin-top: -18px;
 }
 #img_main_blog {
-margin-right: 10px; 
+margin-right: 10px;
+box-sizing: border-box;
+ 
 }
 #img_main_blog img{
+    box-sizing: border-box;
     border-radius: 4px;
     width: 250px;
     height: 141px;
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: 80% 20%;
 }
 #img_main_blog p{
     display: flex;
@@ -1085,6 +1107,9 @@ margin-right: 10px;
     color:#000;
     font-weight: 400;
     font-size: 1em; 
+    box-sizing: border-box;
+    width:250px;
+text-overflow: ellipsis;
 }
 .main_recommend{
     margin-left: 250px;
@@ -1120,11 +1145,11 @@ margin-right: 10px;
 #search_wrapper_main{
     width: 100%;
     color:white;
-    font-family: Roboto Mono;
-
+    font-family: 'Source Sanse Pro';
+margin-top: 100px;
     }
    
-
+   
 #well_searchbox{
 width:100%;
 
@@ -1145,7 +1170,7 @@ flex-wrap: wrap;
 
 }
 .search_wrapper{
-    width:70%;
+    width:76%;
     margin: 0 auto;
 }
 

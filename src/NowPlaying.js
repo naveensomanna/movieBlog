@@ -34,7 +34,9 @@ export default class NowPlaying extends React.Component {
        arr=movies.map(id=>{
             return id.id;
                     });
-           
+                    let name=this.state.movie1.map(n=>{
+                        return n.name;
+                    })
          movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
@@ -44,10 +46,10 @@ export default class NowPlaying extends React.Component {
                 <div className="block_item2">
                     <div className="boxshadow_img">
                         <img className="img2SecondBlog" src={imgurl}  />
-
                     </div>
                     <div className="movie_title">
-                        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p><Cast id={arr}/></NavLink>
+            <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p>
+              </NavLink>
                         <p>{movie.release_date}</p>
                     </div>
                 </div>

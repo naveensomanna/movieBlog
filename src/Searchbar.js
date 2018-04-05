@@ -7,12 +7,10 @@ export default class SearchBar extends React.Component{
     constructor(Props) {
         super(Props)
         this.state = {
-          val: ' ',
+          
           movie: [],
-          query:"",
           data:[],
             pageCount: 10,
-            currentPage:1
         }
         this.handlePageClick = this.handlePageClick.bind(this);
 
@@ -29,7 +27,7 @@ export default class SearchBar extends React.Component{
       handlePageClick(data) {
         console.log("selected");
 let pagevalue=data.selected+1;
-let requestUrl = "https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+pagevalue+"&query="+this.props.match.params.id;
+let requestUrl = `https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=${pagevalue}&query=`+this.props.match.params.id;
 axios
   .get(requestUrl)
   .then(response => {
@@ -61,12 +59,13 @@ axios
           <div id="search_wrapper_main">
 
            
-            <h2>Search Movie Results</h2>
+            <h3 className="genre_title container">Search Movie Results</h3>
    <div className=" search_details" >
    <div className="search_wrapper">
       {search_result}
       </div>
       </div>
+      <div className="pagination">
       <ReactPaginate previousLabel={"previous"}
                     nextLabel={"next"}
                     breakLabel={<a href="">...</a>}
@@ -80,6 +79,7 @@ axios
                     activeClassName={"active"}
                 
                 />            
+                </div>
       </div>
       
 

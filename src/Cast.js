@@ -37,7 +37,7 @@ export default class Cast extends React.Component {
         })
 return(
 <div>
-    {name}
+{name1}
 </div>
 );
     }

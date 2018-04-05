@@ -27,7 +27,7 @@ var poster=img_slice.map(img=>{
     var bgimg=path+img.poster_path;
     return(
         <div id="img_main_blog">
-            <img src={bgimg} />
+            <img  src={bgimg} />
             <p>{img.title}<span >{img.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
         </div>
     )

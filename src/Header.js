@@ -32,14 +32,14 @@ import axios from 'axios';
        <Navbar  collapseOnSelect fixedTop >
        <Navbar.Header>
 <Navbar.Brand >
-  <a id="logo" ><img src={Logo}  width="91" height="91"/></a>
+  <a id="logo" ><img src={Logo}  width="81" height="71"/></a>
 </Navbar.Brand>
 <Navbar.Toggle />
 </Navbar.Header>
 
 <Navbar.Collapse>
 <Nav>
-<NavItem eventKey={1}   href=""><NavLink to="/"   className="nav_achor">HOME</NavLink></NavItem>
+<NavItem eventKey={1}   href=""><NavLink to="/" className="nav_achor">HOME</NavLink></NavItem>
 <NavItem eventKey={2}    href="#"><NavLink to="/comdey"  className="nav_achor">COMEDY</NavLink></NavItem>
 <NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
 <NavItem eventKey={4}     href="" ><NavLink to="/action"  className="nav_achor">ACTION</NavLink></NavItem>
@@ -50,8 +50,8 @@ import axios from 'axios';
 
 </Nav>
 <Navbar.Form pullRight>
-  <FormGroup>
-    <FormControl type="text"  placeholder="Search" onChange={this.handleSubmit}/>
+  <FormGroup  >
+    <FormControl type="text"  placeholder="Search" onChange={this.handleSubmit} />
   </FormGroup>{' '}
 </Navbar.Form>    
 </Navbar.Collapse>
