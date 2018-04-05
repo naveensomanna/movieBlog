@@ -11,58 +11,13 @@ export default class Home extends React.Component {
     this.state = {
       movie: []
     }
-    this.handleClick = this
-      .handleClick
-      .bind(this);
-    this.getdata = this
-      .getdata
-      .bind(this);
-
-  }
-  componentDidMount() {
-    this.getdata();
-
-  }
-  handleClick(data) {
-
-    console.log("click value" + data);
-    console.log(data);
-
-    this.getdata(data.selected + 1);
-  }
-  getdata(value) {
-    let requestUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0060474990618f8eace5a7835a1fead6&page=" + value;
-    axios
-      .get(requestUrl)
-      .then(response => {
-        this.setState({movie: response.data.results})
-      });
-    console.log("results array" + this.state.movie);
   }
    
 
   
   render() {
-    let baseImgURL = "https://image.tmdb.org/t/p/w500";
-    let movieList = this
-      .state
-      .movie
-      .map(movie => {
-        console.log("mapped movie" + movie)
-        let imgurl = baseImgURL + movie.poster_path;
-        console.log("imgurl" + imgurl)
-        return (
-          <div>
-
-            <a href=""><img src={imgurl} alt="" width="250px" height="250px"/></a>
-            <div className="moviedetails">
-              {movie.title}
-              {movie.release_date}
-            </div>
-
-          </div>
-        );
-      });
+    
+  
 
     var style = {
       marginLeft: '400px'

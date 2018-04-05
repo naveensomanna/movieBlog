@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
-import {Pager ,Item} from 'react-bootstrap';
-import SubscrbPopular from './SubscrbPopular.js';
+import ReactPaginate from 'react-paginate';
+
 import './App.css';
 
 export default class Horror extends React.Component{
@@ -10,43 +10,37 @@ export default class Horror extends React.Component{
         super(props);
         this.state = {
             movie: [],
-            count:1,
-            pagecount:1
+            data:[],
+            pageCount:10
         }
-        this.handleClick=this.handleClick.bind(this);
-        this.handlePrevious=this.handlePrevious.bind(this);
+        this.handlePageClick=this.handlePageClick.bind(this);
     }
     componentWillMount() {
         
         console.log("url" + this.state.movie);
     }
-    handleClick(e){
-        e.preventDefault();
-        let co=++this.state.pagecount;
-        if(true){
-        this.setState({
-            count:co
-        
-            });
-        }
-            }
-        handlePrevious(e){
-            e.preventDefault();
-        let co=--this.state.pagecount;
-            this.setState({
-                count:co
-            })
-        }
-    render()
-    {
-        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+this.state.count;
+    handlePageClick(data){
+        var pageValue=data.selected+1;
+        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+pageValue;
         axios
             .get(requestUrl)
             .then(response => {
                 this.setState({movie: response.data.results})
             });
-
-
+        }
+            
+        
+        componentDidMount()
+        {
+            let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        axios
+            .get(requestUrl)
+            .then(response => {
+                this.setState({movie: response.data.results})
+            });
+        }
+    render()
+    {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this.state.movie;
@@ -57,35 +51,42 @@ export default class Horror extends React.Component{
             console.log("imgurl" + imgurl)
             return (
                 <div className=" well_genres">
-            <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="200px"/></NavLink>
-            <div className="details_movie">
+            <NavLink to={`/Movies/${mainid_image2}`}><img  className="genre_image" src={imgurl} width="240px" height="230px"/></NavLink>
+            <div className="genre_title">
                 <p>{movie.title}</p>
-                <p>{movie.overview}</p>
-                
                 </div>
-                
             </div>
-        
             );
         });
-    
-        return(
+        return (
             <div className="genre_blog">
-            <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Horror Movies</h2>
+            <div className="title_movies container">            <h2>Horror Movies</h2>
+</div>
             <div className="genre_details">
-            <div className="main_wrapper">
+            <div className="genre_wrapper">
                 
                 {movieList}
                 </div>
-                <div>
-                    <SubscrbPopular/>
-                    </div>
+                
                 </div>
-                <Pager>
-  <Pager.Item href="#" onClick={this.handlePrevious}>Previous</Pager.Item>{' '}
-  <Pager.Item href="" onClick={this.handleClick}>Next</Pager.Item>
-</Pager>
+                <div className="pagination">                   
+                    <ReactPaginate previousLabel={"previous"}
+                    nextLabel={"next"}
+                    breakLabel={<a href="">...</a>}
+                    breakClassName={"break-me"}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                
+                />       
+                         </div>
                 </div>
         );
     }
 }
+
+

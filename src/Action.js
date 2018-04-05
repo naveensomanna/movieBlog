@@ -15,8 +15,7 @@ export default class Action extends React.Component {
             data:[],
             movie: [],
             movie2:[],
-            pageCount: 10,
-            currentPage:1
+            pageCount: 10
         }
         this.handlePageClick = this.handlePageClick.bind(this);
     }
@@ -66,15 +65,9 @@ let pagevalue=data.selected+1;
     render() {
 console.log("render called");
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-        let URL_YOUTUBE = 'https://www.youtube.com/embed/';
-        let videos = [];
-        videos = this.state.movie2.slice(0, 3);
-        let link = videos.map(trailer => {
-            return trailer.key;
-        });
-        let link1 = URL_YOUTUBE + link[0];
+       
         let movies = [];
-        movies = this.state.movie.slice(0, 7);
+        movies = this.state.movie;
         let movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
@@ -82,10 +75,9 @@ console.log("render called");
             console.log("imgurl" + imgurl)
             return (
                 <div className=" well_genres">
-                    <NavLink to={`/Movies/${mainid_image2}`}><img className="img2SecondBlog" src={imgurl} width="200px" height="200px" /></NavLink>
-                    <div className="details_movie">
+                    <NavLink to={`/Movies/${mainid_image2}`}><img className="genre_image" src={imgurl} width="240px" height="230px" /></NavLink>
+                    <div className="genre_title">
                         <p>{movie.title}</p>
-                        <p>{movie.overview}</p>
 
                     </div>
 
@@ -98,19 +90,17 @@ console.log("render called");
 
         return (
             <div className="genre_blog">
-                <h2 style={{ fontSize: "2.1em", color: "black", margin: "0 0 8px 180px", fontWeight: "600" }}>Action Movies</h2>
+            <div className="title_movies container">                <h2>Action Movies</h2>
+</div>
                 <div className="genre_details">
-                    <div className="main_wrapper">
+                    <div className="genre_wrapper">
 
                         {movieList}
 
 
-{link1}
                     </div>
-
-                    <div>
-                        <SubscrbPopular />
-                    </div>
+</div>
+<div className="pagination">                   
                     <ReactPaginate previousLabel={"previous"}
                     nextLabel={"next"}
                     breakLabel={<a href="">...</a>}

@@ -113,16 +113,16 @@ this.setState({
         <div  style={{backgroundColor:'lightblue'}}>
           <Slider {...settings} >
             <div>
-            <iframe src={links} allowFullScreen width="230px"/>
+            <iframe src={links} allowFullScreen width="330px" height="200px"/>
             </div>
             <div>
-            <iframe src={linkss} allowFullScreen width="230px" />
+            <iframe src={linkss} allowFullScreen width="330px" height="200px"/>
             </div>
             <div>
-            <iframe src={linksss} allowFullScreen />
+            <iframe src={linksss} allowFullScreen width="330px" height="200px"/>
             </div>
             <div>
-            <iframe src={linkssss} allowFullScreen />
+            <iframe src={linkssss} allowFullScreen width="330px" height="200px"/>
             </div>
           </Slider>
         </div>

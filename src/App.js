@@ -39,7 +39,6 @@ render(){
 <Router>
     <div>
     <Header/>
-
 <Route exact path="/" component={Home}/>
 <Route  path="/comdey" component={Comdey}/>
 <Route  path="/drama" component={Drama}/>

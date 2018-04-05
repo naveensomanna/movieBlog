@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
+import Cast from './Cast.js';
 var arr;
 var nam,aa=[];
 export default class NowPlaying extends React.Component {
@@ -28,19 +28,14 @@ export default class NowPlaying extends React.Component {
     render() {
         
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-        let movies = [];
-        movies = this
-            .state
-            .movie
-            .slice(3, 7);
-        let mainid_image2;
+        let movies = [], mainid_image2,movieList ;
+        
+        movies = this.state.movie.slice(3, 7);
        arr=movies.map(id=>{
             return id.id;
                     });
-            nam=this.state.movie1.map(na=>{
-                return na.name;
-            });
-        let movieList = movies.map(movie => {
+           
+         movieList = movies.map(movie => {
             console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             mainid_image2 = movie.id;
@@ -52,7 +47,7 @@ export default class NowPlaying extends React.Component {
 
                     </div>
                     <div className="movie_title">
-                        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p>{nam}</NavLink>
+                        <NavLink to={`/Movies/${mainid_image2}`}> <p> {movie.title}</p><Cast id={arr}/></NavLink>
                         <p>{movie.release_date}</p>
                     </div>
                 </div>

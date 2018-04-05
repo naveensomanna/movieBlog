@@ -1,19 +1,31 @@
 import React from 'react';
 import axios from 'axios';
-import { Col ,Well,Row,Grid} from 'react-bootstrap';
-import SubscrbPopular from './SubscrbPopular.js';
 import {NavLink} from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
+
 export default class TvShows extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             movie: [],
+            data:[],
+pageCount:10
         }
+        this.handlePageClick=this.handlePageClick.bind(this);
     }
     componentDidMount() {
         let requestUrl = " https://api.themoviedb.org/3/tv/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl).then(response => {
+            this.setState({
+                movie: response.data.results
+            });
+        })
+    }
+    handlePageClick(data){
+        var pageValue=data.selected+1;
+        let requestUrl1 = " https://api.themoviedb.org/3/tv/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+pageValue;
+        axios.get(requestUrl1).then(response => {
             this.setState({
                 movie: response.data.results
             });
@@ -30,13 +42,10 @@ export default class TvShows extends React.Component {
             return (   
 
                 <div className=" well_genres"> 
-      
-
-                      <NavLink to=""> <img src={imgurl} alt="" width="220px" height="200px" /></NavLink>
-                      <div className="details_movie">
+                      <NavLink to=""> <img className="genre_image" src={imgurl} alt="" width="240px" height="230px" /></NavLink>
+                      <div className="genre_title">
                       <p>{movie.original_name}</p>
 
-                <p>{movie.overview}</p>
                 
                 </div>
                         
@@ -46,17 +55,29 @@ export default class TvShows extends React.Component {
         });
         return (
 <div className="genre_blog">
-            <h2 style={{fontSize:"2.1em",color:"black",margin:"0 0 8px 180px",fontWeight:"600"}}>Tv</h2>
+<div className="title_movies container"><h2>Tv</h2></div>
+            
             <div className="genre_details">
-            <div className="main_wrapper">
+            <div className="genre_wrapper">
                 
                 {movieList}
                 </div>
-                <div>
-                <SubscrbPopular/>
-
+              
                 </div>
-                </div>
+                <div className="pagination">                   
+                    <ReactPaginate previousLabel={"previous"}
+                    nextLabel={"next"}
+                    breakLabel={<a href="">...</a>}
+                    breakClassName={"break-me"}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                
+                />                </div>
                 </div>
         );
     }

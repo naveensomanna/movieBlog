@@ -455,7 +455,10 @@ h2 span {
 }
 
 /*comedy*/
-.well_comedy{
+.genre_blog{
+    margin-top: 80px;
+}
+.well_genres{
     width:240px;
     height: auto;
     background:#fff;
@@ -463,35 +466,31 @@ h2 span {
     margin: 10px 0  10px 0 ;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.comedy_details{
-    display: flex;
-    justify-content: space-around;
-    width:78%;
+.genre_details{
+    
+    width:78.5%;
     margin: 0 auto;
 }
-.comedy_wrapper{
+.genre_wrapper{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
 }
-.comedy_title {
+.genre_title {
 color:#000;
 font-weight: 600;
 font-family: 'Source Sans Pro';
 box-sizing: border-box;
 height: auto;
 }
-.title_movies {
-   margin-top: 19px;
-}
 .title_movies h2{
     color: #000;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.6em;
     font-family: 'Source Sans Pro';
 }
-.comedy_image{
+.genre_image{
     object-fit:cover;
     object-position: center center;
 }
@@ -501,6 +500,7 @@ height: auto;
     margin: 0 auto;
     position: relative;
     border-radius: 3px;
+    margin-bottom: 59px;
 }
 #comedy_carousel_blog h1{
    color:white;
@@ -1142,61 +1142,26 @@ flex-wrap: wrap;
     width:70%;
     margin: 0 auto;
 }
-/*comedy*/
-.genre_blog{
-    width:100%;
-margin-top:80px;
-}
-.genre_details{
-    width:75%;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-margin: 0 auto;
-}
-.main_wrapper{
-    width:55%;
-border-top:4px solid #fd7b35;
-}
-#comdey{
-    color: white;
+
+
+ 
+/*pagination*/
+.pagination{
+    width: 100%;
+    margin: 10px 0 0 300px;
 }
 
- .well_genres {
-width:100%;
-    display: flex;
-    overflow: hidden;
-    box-shadow:  0 2px 8px rgba(0,0,0,0.5);
-    background: #2b2b2b;
-
-}
- .details_movie{
-    overflow: hidden; 
-    margin-left: 20px;
-}
-.well_genres .details_movie p:first-child{
-    font-size: 1.4em;
-    font-weight: 600;
-
-    line-height: 2em;
-    color:white;
-
-}
- .details_movie p:nth-child(2){
-height: 8em;
-text-overflow: ellipsis;
-}
-
+/*pagination end*/
 /*people*/
 .person_wrap{
     width: 100%;
 
 }
  .person_wrap .media_people{
-    width:1000px;
+    width:76%;
     margin: 0 auto;
     margin-bottom: 50px;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 .person_wrap .media_people h2{
     color:#000;
