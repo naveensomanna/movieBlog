@@ -1,10 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import { Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import Cast from './Cast.js';
+
 var arr;
-var nam,aa=[];
 export default class NowPlaying extends React.Component {
     constructor(props) {
         super(props);
@@ -78,25 +76,23 @@ export default class NowPlaying extends React.Component {
         });
 
         
-        var Style = {
-            marginLeft: "190px"
-        }
+
         return (
             <div className="np_block_wrapper">
-                <h4>In Theatre</h4>
-
+                <div className="_intheatre">
+                <h4 className="title_">In Theaters</h4>
                 <div className="theater_blog">
 
-                    <div >
+                    <React.Fragment>
 
                         {movieList1}
-                    </div>
+                    </React.Fragment>
                     <div className="wrap_img" >
                         {movieList}
                     </div>
                 </div>
             </div>
-
+            </div>
         );
     }
 }

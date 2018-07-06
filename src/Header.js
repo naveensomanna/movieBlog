@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar,Nav,NavItem,form,inverse, PageHeader,FormGroup,FormControl} from 'react-bootstrap';
-import {NavLink,withRouter} from 'react-router-dom'; 
+import {Link,withRouter} from 'react-router-dom';
 import Logo from '../src/images/title.png'
 import axios from 'axios';
 
@@ -26,40 +26,24 @@ import axios from 'axios';
         
         };
         return(
-            <div>
 <div className="header-wrapper">
 <div className="header-section">
-       <Navbar  collapseOnSelect fixedTop >
-       <Navbar.Header>
-<Navbar.Brand >
-  <a id="logo" ><img src={Logo}  width="81" height="71"/></a>
-</Navbar.Brand>
-<Navbar.Toggle />
-</Navbar.Header>
+<div>
+  <a id="logo" ><img src="https://www.themoviedb.org/static_cache/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg"  width="81" height="71"/></a>
+</div>
+<ul>
+<li><Link to="/" className="nav_achor">HOME</Link></li>
+<li><Link to="/comdey"  className="nav_achor">COMEDY</Link></li>
+<li><Link to="/drama"  className="nav_achor">DRAMA</Link></li>
+<li><Link to="/action"  className="nav_achor">ACTION</Link></li>
+<li><Link to="/horror"  className="nav_achor">HORROR</Link></li>
+<li><Link to="/people"  className="nav_achor">PEOPLE</Link></li>
 
-<Navbar.Collapse>
-<Nav>
-<NavItem eventKey={1}   href=""><NavLink to="/" className="nav_achor">HOME</NavLink></NavItem>
-<NavItem eventKey={2}    href="#"><NavLink to="/comdey"  className="nav_achor">COMEDY</NavLink></NavItem>
-<NavItem eventKey={3}    href="#"><NavLink to="/drama"  className="nav_achor">DRAMA</NavLink></NavItem>
-<NavItem eventKey={4}     href="" ><NavLink to="/action"  className="nav_achor">ACTION</NavLink></NavItem>
-<NavItem eventKey={5}    href="#" ><NavLink to="/horror"  className="nav_achor">HORROR</NavLink></NavItem>
-<NavItem eventKey={6}    href="#" ><NavLink to="/people"  className="nav_achor">PEOPLE</NavLink></NavItem>
-<NavItem eventKey={7}    href="" ><NavLink to="/tvshows"  className="nav_achor">TV SHOWS</NavLink></NavItem>
-<NavItem eventKey={8}    href="#"><NavLink to=""  className="nav_achor">CONTACT</NavLink></NavItem>
-
-</Nav>
-<Navbar.Form pullRight>
-  <FormGroup  >
-    <FormControl type="text"  placeholder="Search" onChange={this.handleSubmit} />
-  </FormGroup>{' '}
-</Navbar.Form>    
-</Navbar.Collapse>
-</Navbar>
+</ul>
+ <div className="searchbox">
+    <input type="text"  placeholder="Search" onChange={this.handleSubmit} />
     </div>
     </div>
-    
-           
            
         </div>
 

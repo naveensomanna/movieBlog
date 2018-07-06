@@ -44,7 +44,6 @@ render(){
 <Route  path="/drama" component={Drama}/>
 <Route  path="/action" component={Action}/>
 <Route  path="/horror" component={Horror}/>
-<Route  path="/tvshows" component={TvShows}/>
 <Route  path="/movies/:id" component={Movies}/>
 <Route  path="/SearchBar/:id" component={SearchBar}/>
 <Route path="/people" component={People}/>

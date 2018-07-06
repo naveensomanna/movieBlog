@@ -75,11 +75,11 @@ console.log("render called");
             console.log("imgurl" + imgurl)
             return (
                 <div className=" well_genres">
-                    <NavLink to={`/Movies/${mainid_image2}`}><img className="genre_image" src={imgurl} width="240px" height="230px" /></NavLink>
+                    <NavLink to={`/Movies/${mainid_image2}`}><img className="genre_image" src={imgurl} width="200px" height="300px" /></NavLink>
                     <div className="genre_title">
-                        <p>{movie.title}<span className="vote_genres">{movie.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
-
+                        <p>{movie.title}</p>
                     </div>
+                    <div className="vote_genres">{movie.release_date}</div>
 
                 </div>
             );
@@ -90,8 +90,7 @@ console.log("render called");
 
         return (
             <div className="genre_blog">
-            <div className="title_movies container">                <h2>Action Movies</h2>
-</div>
+
                 <div className="genre_details">
                     <div className="genre_wrapper">
 

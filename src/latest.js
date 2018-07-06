@@ -54,13 +54,14 @@ export default class Latest extends React.Component {
                         <Col lg={8} md={6} xs={12} sm={12}>
 
                             <div className="contents-toprated">
-                                <h4>top rated movies</h4>
                                 <div className="main-blog">
+                                <h4 className="toprated_title">top rated movies</h4>
+                                <div className="inner-blog">
 
                                     {movieList}
 
                                 </div>
-
+                                </div>
                             </div>
                         </Col>
                         <Col lg={4}>
@@ -68,7 +69,6 @@ export default class Latest extends React.Component {
                         </Col>
                     </Row>
                 </div>
-
             </div>
 
         );
