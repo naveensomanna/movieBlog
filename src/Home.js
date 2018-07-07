@@ -42,8 +42,9 @@ let movied=[];
         });
         return (
             <div>
-                <NowPlaying/>
                 <UpcomingMovies/>
+                <NowPlaying/>
+
                 <Latest/>
 
             </div>

@@ -563,29 +563,51 @@ position: relative;
     font-weight: 600;
     line-height: 1.1;
     font-style: normal;
+
 }
 
-.carousel-inner > .item {
+#carousell{
     width: 100%;
-    height: 1100px;
-}
+    height: 1000px;
+    margin-top: 90px;
+position: relative;
+    display: inline-block;
 
-.carousel-inner > .item > img {
-    position: absolute;
+}
+#carousell::before{
+    content: " ";
     top: 0;
     left: 0;
-    min-width: 100%;
-    height: 1200px;
-    max-width: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 49%, rgba(0, 0, 0, 1) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(49%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 49%, rgba(0, 0, 0, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 1) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 49%, rgba(255, 255, 255, 1) 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 1) 96%);
+    /* W3C */
+
+}
+#carousell img {
+    height: 1000px;
+    max-width: 100%;
+background-repeat: no-repeat;
+    object-position: center center;
+    object-fit: cover;
+    position:relative;
+     z-index:-1;
+    display:block;
 }
 
-.glyphicon-chevron-left {
-    visibility: hidden;
-}
 
-.glyphicon-chevron-right {
-    visibility: hidden;
-}
+
 
 /*topratedblog*/
 .toprated-main {
