@@ -63,7 +63,7 @@ export default class NowPlaying extends React.Component {
            let mainid_image1=movie.id;
             return (
                 <div className="block_item1">
-                    <div style={{ overflow: "hidden",height:"500px" }} className="boxshadow_img" >
+                    <div style={{ overflow: "hidden"}} className="boxshadow_img" >
                         <img id="img1FirstBlog" src={imgurl}   />
                     </div>
                     <div className="movie_title">
@@ -78,21 +78,21 @@ export default class NowPlaying extends React.Component {
         
 
         return (
-            <div className="np_block_wrapper">
+            <React.Fragment>
+                <div className="np_block_wrapper">
                 <div className="_intheatre">
                 <h4 className="title_">In Theaters</h4>
                 <div className="theater_blog">
 
-                    <React.Fragment>
-
                         {movieList1}
-                    </React.Fragment>
+                
                     <div className="wrap_img" >
                         {movieList}
                     </div>
                 </div>
             </div>
             </div>
+            </React.Fragment>
         );
     }
 }

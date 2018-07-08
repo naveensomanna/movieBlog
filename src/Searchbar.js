@@ -42,6 +42,7 @@ axios
     let baseImgURL = "https://image.tmdb.org/t/p/w500";
     let movies = [];
     movies = this.state.movie;
+  
     let search_result = movies.map(movie => {
       let imgurl = baseImgURL + movie.poster_path;
       console.log(imgurl);

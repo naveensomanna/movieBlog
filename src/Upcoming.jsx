@@ -15,22 +15,20 @@ componentWillMount(){
         movie: response.data.results
       })
     });
-    console.log("url"+this.state.movie);
 }
     render(){
         let baseImgURL = "https://image.tmdb.org/t/p/w1280";
         let movies=[];
-        movies=this.state.movie.slice(2,5);
+        movies=this.state.movie.slice(2,6);
       let movieList = movies.map(movie => {
         return baseImgURL + movie.poster_path;
       });
         return (
 
             <div >
-              <div id="upcoming_main-blog" >
-              </div>
+              
                 <span id="carousell">
-      <img  className="carousel_image" alt="900x500" src={movieList[2]} width="100%"  height="1200px"/>
+      <img  className="carousel_image" alt="900x500" src={movieList[1]} width="100%"  height="1200px"/>
 
         </span>
 
