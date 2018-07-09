@@ -203,9 +203,8 @@ display: none;
 .movie_title {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 5px;
     margin-top: 10px !important;
-    color: white;
     height: 42px;
     line-height: 2.4em;
     transition: height 0.5s ease;
@@ -213,14 +212,16 @@ display: none;
     text-overflow: ellipsis;
     color: #fff;
     text-shadow: 1px 1px 0 #000;
+    font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .movie_title a {
-    color: white;
+    color:#fff;
     text-decoration: none;
-    font-family: 'Source Sans Pro';
-
-    font-size: 1.3em;
+    font-family: 'Pathway Gothic One', sans-serif;
+font-weight: 500;
+    font-size: 1.4em;
 }
 
 .movie_title a:hover {
@@ -229,8 +230,8 @@ display: none;
 }
 
 .movie_title p:nth-child(2) {
-    font-size: 16px;
-    color: white;
+    font-size: 1em;
+    color:#fff;
 }
 
 .block_item1:hover .movie_title {
@@ -1168,7 +1169,21 @@ position: relative;
         margin: 0;
     }
    
-
+    #open-slide{
+        display: none;
+            }
+}
+.side-nav{
+    height: 100%;
+    width:0;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left:0;
+    background: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.3s;
 }
 @media (min-width:1281px){
     
@@ -1302,20 +1317,16 @@ overflow: hidden;
     #root {
         overflow-x: hidden;
     }
-   
-
-    #header-wrapper{
-        height: -10px;
-        width:100%;
-    }
-     #tooglbar{
-        visibility: visible;
-    }
-
-}
-#header-wrapper #tooglbar{
-    visibility: hidden;
-}
-#header-wrapper .sidenav{
+    
+   #open-slide{
+       display: block;
+   }
+#logo{
     display: none;
+}
+.header-section ul li{
+    display: none;
+}
+  
+
 }

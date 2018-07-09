@@ -16,7 +16,7 @@ import {BrowserRouter as Router,Route,NavLink} from 'react-router-dom';
 export default class App extends React.Component{
     constructor(props) {
         super(props)
-        
+       
       
     this.scrollFunction=this.scrollFunction.bind(this);
     this.topFunction=this.topFunction.bind(this);
@@ -32,12 +32,14 @@ export default class App extends React.Component{
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
+    
 render(){
     window.onscroll =()=> {this.scrollFunction()};
 
     return(
 <Router>
     <div>
+
     <Header/>
 <Route exact path="/" component={Home}/>
 <Route  path="/comdey" component={Comdey}/>

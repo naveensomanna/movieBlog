@@ -1,5 +1,8 @@
 import React from 'react';
 import {Col,Row} from 'react-bootstrap';
+import facebook from './images/facebook.png';
+import twitter from './images/twitter.png';
+import insta from './images/insta.png';
 export default class Footer extends React.Component{
     render(){
         return(
@@ -58,7 +61,12 @@ export default class Footer extends React.Component{
 <div className="footer-title">
     </div>
     <p id="imdb">IMDb</p>
+<div>
+    <img src={facebook} width="18px" height="18px" style={{marginRight:'5px'}}/>
+    <img src={twitter} width="20px" height="20px" style={{marginRight:'5px'}}/>
+    <img src={insta} width="20px" height="20px"/>
 
+    </div>
     </div>
 </Col>
 </Row>

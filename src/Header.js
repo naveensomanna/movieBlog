@@ -8,7 +8,7 @@ import {NavLink,withRouter} from 'react-router-dom';
     constructor(Props) {
         super(Props)
         this.state = {
-          
+          btnclick:false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
       }
@@ -24,13 +24,16 @@ import {NavLink,withRouter} from 'react-router-dom';
        
 
     }
-     
+btnclick=()=>{
+    document.getElementById('side-menu').style.width='250px';
+}     
     render(){
         return(
 <div id="header-wrapper">
-
 <div className="header-section">
 <div>
+<span id="open-slide" style={{cursor:'pointer'}} onClick={this.btnclick}>&#9776;</span>
+
   <a id="logo" ><img src="https://www.themoviedb.org/static_cache/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg"  width="81" height="71"/></a>
 </div>
 <ul>
@@ -45,11 +48,17 @@ import {NavLink,withRouter} from 'react-router-dom';
  <div className="searchbox">
     <input type="text"  placeholder="Search" onChange={this.handleSubmit} />
     </div>
+    <div id="side-menu" className="side-nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    </div>
+    </div>
     </div>
            
-        </div>
 
         );
     }
 }
+
 export default withRouter(Header);
