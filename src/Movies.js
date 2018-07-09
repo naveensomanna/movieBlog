@@ -108,8 +108,11 @@ export default class Movies extends Component {
                     
                     </div>
                 </div>
-                <div className="trailer"><h2>Trailer</h2>
+                <div className="trailer">
+                    <div className="trailer-body">
+                        <h2>Trailer</h2>
                     <iframe src={link1} allowFullScreen />
+                    </div>
                     </div>
                     <Recommendation id={this.props.match.params.id}/>
                 </div>

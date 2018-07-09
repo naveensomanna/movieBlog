@@ -41,7 +41,7 @@ export default class NowPlaying extends React.Component {
             mainid_image2 = movie.id;
             console.log("imgurl" + imgurl);
             return (
-                <div className="block_item2">
+                <div className="block_item2 top-blog">
                     <div className="boxshadow_img">
                         <img className="img2SecondBlog" src={imgurl}  />
                     </div>

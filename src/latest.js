@@ -32,9 +32,11 @@ export default class Latest extends React.Component {
         let movieList = movies.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             let main_imgid = movie.id;
-            return (<div className="block_item2">
+            return (
+                <div className="block_item2">
             <div className="boxshadow_img" id="up_movies">
-            <img className="img_align" src={imgurl}  />  </div>
+            <img className="img_align" src={imgurl}  />
+            </div>
                               <div className="movie_title">
 <Link to={`/Movies/${main_imgid}`}>{movie.title}</Link><p>{movie.release_date}</p></div></div>
 
@@ -46,7 +48,7 @@ export default class Latest extends React.Component {
             <div>
                 <div className="toprated-main">
                     <Row>
-                        <Col lg={8} md={8} xs={12} sm={8}>
+                        <Col lg={8} md={8} xs={12} sm={8} xs={12}>
 
                             <div className="contents-toprated">
                                 <div className="main-blog">
