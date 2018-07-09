@@ -83,9 +83,9 @@ export default class NowPlaying extends React.Component {
                 <div className="_intheatre">
                 <h4 className="title_">In Theaters</h4>
                 <div className="theater_blog">
-
+<div>
                         {movieList1}
-                
+                </div>
                     <div className="wrap_img" >
                         {movieList}
                     </div>

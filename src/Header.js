@@ -27,8 +27,12 @@ import {NavLink,withRouter} from 'react-router-dom';
 btnclick=()=>{
     document.getElementById('side-menu').style.width='250px';
 }     
+btnclose=()=>{
+document.getElementById('side-menu').style.width='0';
+    }
     render(){
         return(
+
 <div id="header-wrapper">
 <div className="header-section">
 <div>
@@ -49,9 +53,14 @@ btnclick=()=>{
     <input type="text"  placeholder="Search" onChange={this.handleSubmit} />
     </div>
     <div id="side-menu" className="side-nav">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#" className="btn-close" onClick={this.btnclose}>&times;</a>
+    <NavLink exact to="/" className="nav_achor" activeStyle={{ color: '#FB0378' }}>Home</NavLink>
+<NavLink to="/comdey"  className="nav_achor" activeStyle={{ color: '#FB0378' }}>Comedy</NavLink>
+<NavLink  to="/drama"  className="nav_achor" activeStyle={{ color: '#FB0378' }}>Drama</NavLink>
+<NavLink to="/action"  className="nav_achor" activeStyle={{ color: '#FB0378' }}>Action</NavLink>
+<NavLink to="/horror"  className="nav_achor" activeStyle={{ color: '#FB0378' }}>Horror</NavLink>
+<NavLink to="/people"  className="nav_achor" activeStyle={{ color: '#FB0378' }}>People</NavLink>
+
     </div>
     </div>
     </div>

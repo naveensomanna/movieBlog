@@ -191,6 +191,7 @@ display: none;
 
 .wrap_img {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -1092,87 +1093,7 @@ div.first .second {
 #togglebar{
     display: none;
     }
-@media (max-width:1366px){
-    #header-wrapper #togglebar{
-        display: none;
-        }
-    .bdy_bckColor{
-        margin-top: -17px;
-        margin-bottom: -18px;
-        padding-bottom: 10px;
-    }
-    .np_block_wrapper{
-        width:100%;
-        box-sizing: border-box;
-        padding-top:15px; 
-    }
-    .np_block_wrapper ._intheatre{
-        width:70%;
-        margin: 0 auto;
-    }
-    #img1FirstBlog{
-max-width:28.6em;
-max-height:40em ;
-position: relative;
-    }
-    .img2SecondBlog{
-    height: 19.9em;
-    max-width: 17.5em;
-position: relative;
-    }
-    /*to rated*/
-    #up_movies .img_align {
-    width:22.2em;
-    height: 19em;
-    }
-    .one .img_align{
-        width:10em;
-        height: 10em;
-    }
-    /*latest follow content*/
-    .follow-blog .follow-content{
-        max-width: 300px;
-    }
-    .popularmain{
-        max-width:300px;
-        padding-top: 15px;
-    }
-    .popularmain .two{
-        width: 160px;
-        height: 10em;
-    
-    }
-    .popularmain .two:hover{
-        width:220px;
-    }
-  
-    .popularmain .two .pop_link a {
-        width: 30px;
-        height: 30px;
-       
-        position: absolute;
-        top: -90px;
-        left: 190px;
-        padding: 3px 0 0 8px;
-        font-size: 1.2em;
-        
-    
-    }
 
-    .main-blog {
-        width: 74%;
-    }
-    .toprated-main{
-        padding-top:35px; 
-    }
-    .toprated-main .contents-toprated{
-        margin: 0;
-    }
-   
-    #open-slide{
-        display: none;
-            }
-}
 .side-nav{
     height: 100%;
     width:0;
@@ -1184,10 +1105,86 @@ position: relative;
     opacity: 0.9;
     overflow-x: hidden;
     transition: 0.3s;
+    padding-top: 60px;
 }
-@media (min-width:1281px){
-    
+.side-nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+  }
+  .side-nav .btn-close{
+    position: absolute;
+    top:0;
+    right:20px;
+    font-size: 30px;
+  }
+#open-slide{
+        display: none;
+            }
+
+
+/*media query*/
+@media(max-width: 600px) {
+    #root {
+        overflow-x: hidden;
+    }
+    .header-section .searchbox{
+        width:200px;
+    }
+   #open-slide{
+       display: block;
+       color:#000;
+       font-size: 20px;
+       position: absolute;
+       top:25px;
+       left:20px;
+   }
+#logo{
+    display: none;
 }
+.header-section ul li{
+    display: none;
+}
+/*in theatre*/
+.np_block_wrapper .theater_blog {
+      display: flex;
+      flex-direction: column;
+    }
+    .wrap_img{
+    }
+    #img1FirstBlog{
+        width:100%;
+        position: relative;
+            }
+            .blockitem2{
+                width:100%;
+            }
+        
+  .img2SecondBlog{
+    width:100%;
+position: relative;
+    }
+  /*to rated*/
+  .img_align{
+    width: 100%;
+  }
+
+/*follow content*/
+.follow-blog .toprated_title{
+    margin-left: 30px;
+}
+.follow-blog .follow-content{
+    margin: 0 auto;
+}
+/*popular main*/
+.popularmain{
+    margin: 0 auto;
+}
+}
+
+
 @media (max-width:960px){
     /*navbar*/
     .header-section{
@@ -1212,8 +1209,8 @@ position: relative;
         position: relative;
             }
     .img2SecondBlog{
-        max-height: 16.2em;
-    max-width: 13.2em;
+        height: 16.2em;
+    width: 13.2em;
 position: relative;
     }
     /*top rated*/
@@ -1313,20 +1310,85 @@ overflow: hidden;
 }
 
 }
-@media screen and (max-width: 600px) {
-    #root {
-        overflow-x: hidden;
-    }
-    
-   #open-slide{
-       display: block;
-   }
-#logo{
-    display: none;
-}
-.header-section ul li{
-    display: none;
-}
-  
 
+
+
+@media (max-width:1366px){
+    #header-wrapper #togglebar{
+        display: none;
+        }
+    .bdy_bckColor{
+        margin-top: -17px;
+        margin-bottom: -18px;
+        padding-bottom: 10px;
+    }
+    .np_block_wrapper{
+        width:100%;
+        box-sizing: border-box;
+        padding-top:15px; 
+    }
+    .np_block_wrapper ._intheatre{
+        width:70%;
+        margin: 0 auto;
+    }
+    #img1FirstBlog{
+max-width:28.6em;
+max-height:40em ;
+position: relative;
+    }
+    .img2SecondBlog{
+    height: 19.9em;
+    width: 17.5em;
+position: relative;
+    }
+    /*to rated*/
+    #up_movies .img_align {
+    width:22.2em;
+    height: 19em;
+    }
+    .one .img_align{
+        width:10em;
+        height: 10em;
+    }
+    /*latest follow content*/
+    .follow-blog .follow-content{
+        max-width: 300px;
+    }
+    .popularmain{
+        max-width:300px;
+        padding-top: 15px;
+    }
+    .popularmain .two{
+        width: 160px;
+        height: 10em;
+    
+    }
+    .popularmain .two:hover{
+        width:220px;
+    }
+  
+    .popularmain .two .pop_link a {
+        width: 30px;
+        height: 30px;
+       
+        position: absolute;
+        top: -90px;
+        left: 190px;
+        padding: 3px 0 0 8px;
+        font-size: 1.2em;
+        
+    
+    }
+
+    .main-blog {
+        width: 74%;
+    }
+    .toprated-main{
+        padding-top:35px; 
+    }
+    .toprated-main .contents-toprated{
+        margin: 0;
+    }
+   
+    
 }
