@@ -17,7 +17,6 @@ export default class SubscrbPopular extends React.Component {
             this.setState({
                 movie: response.data.results
             });
-            console.log("got the results");
         });
     }
 
@@ -28,10 +27,9 @@ export default class SubscrbPopular extends React.Component {
         let movieList1 = moviess.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (
-                <img className="img_align" src={imgurl}/>
+                <img key={movie.id} className="img_align" src={imgurl} alt=" "/>
             );
         });
-        console.log("api" + moviess);
         let obj1 = moviess.map(mov => {
             return mov.id;
         });
@@ -57,10 +55,10 @@ export default class SubscrbPopular extends React.Component {
                             ...and share the links to videos with your friends on Facebook & More!
                         </div>
                         <div className="follow-social">
-                            <a href="#" class="fa fa-facebook"></a>
-                            <a href="#" class="fa fa-twitter"></a>
-                            <a href="#" class="fa fa-google"></a>
-                            <a href="#" class="fa fa-youtube"></a>
+                            <a href="" className="fa fa-facebook"></a>
+                            <a href="" className="fa fa-twitter"></a>
+                            <a href="" className="fa fa-google"></a>
+                            <a href="" className="fa fa-youtube"></a>
 
                         </div>
                         <div id="subscribe-blog">

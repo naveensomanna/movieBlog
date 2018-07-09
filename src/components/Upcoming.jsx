@@ -25,13 +25,15 @@ componentWillMount(){
       });
         return (
 
-            <div >
+            <div>
               
                 <span id="carousell">
       <img  className="carousel_image" alt="900x500" src={movieList[1]} width="100%"  height="1200px"/>
 
         </span>
-
+                <div className="home-title"> <p>Collections & Entertainment</p>
+                </div>
+<p id="home-title-button">Read More</p>
 
 
         </div>

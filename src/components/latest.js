@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SubscrbPopular from './SubscrbPopular.js';
-let datas = [];
 export default class Latest extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +11,6 @@ export default class Latest extends React.Component {
         }
     }
     componentDidMount() {
-        console.log("componentWillMount");
         let requestUrl = "https://api.themoviedb.org/3/movie/top_rated?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl).then(response => {
             this.setState({
@@ -33,9 +31,9 @@ export default class Latest extends React.Component {
             let imgurl = baseImgURL + movie.poster_path;
             let main_imgid = movie.id;
             return (
-                <div className="block_item2">
+                <div className="block_item2" key={movie.id}>
             <div className="boxshadow_img" id="up_movies">
-            <img className="img_align" src={imgurl}  />
+            <img className="img_align" src={imgurl}  alt=" "/>
             </div>
                               <div className="movie_title">
 <Link to={`/Movies/${main_imgid}`}>{movie.title}</Link><p>{movie.release_date}</p></div></div>
@@ -48,7 +46,7 @@ export default class Latest extends React.Component {
             <div>
                 <div className="toprated-main">
                     <Row>
-                        <Col lg={8} md={8} xs={12} sm={8} xs={12}>
+                        <Col lg={8} md={8}  sm={8} xs={12}>
 
                             <div className="contents-toprated">
                                 <div className="main-blog">

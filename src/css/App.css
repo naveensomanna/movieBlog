@@ -90,7 +90,7 @@ input {
     border: solid 1px #ccc;
     padding: 5px 10px 5px 32px;
     width: 125px;
-outline: none;
+    outline: none;
     -webkit-border-radius: 10em;
     -moz-border-radius: 10em;
     border-radius: 10em;
@@ -136,16 +136,16 @@ input::-webkit-input-placeholder {
 
 .np_block_wrapper {
     width: 100%;
-height: auto;
+    height: auto;
 
 }
 
 .np_block_wrapper .title_ {
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
     text-transform: capitalize;
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    color: #fff;
+    color: #000;
 
 }
 
@@ -289,7 +289,7 @@ h2 span {
 .genre_blog {
     margin-top: 80px;
     box-sizing: border-box;
-    background-color: #04040E;
+    background-color: #F2F2F2;
 }
 
 .well_genres {
@@ -345,6 +345,33 @@ h2 span {
 }
 
 /* theatre main blog ends here*/
+.home-title {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    color: #fff;
+    font-size: 60px;
+    max-width: 100px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#home-title-button {
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    background-image: linear-gradient(to right top, #f3558a, #f76189, #fa6c8a, #fd768a, #ff818c);
+    border-radius: 10px;
+    padding: 10px 0px 8px 26px;
+    width: 160px;
+    height: 50px;
+    color: #fff;
+    font-size: 1.3em;
+    box-shadow: 0px 4px 40px #f3558a;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
 .carousel {
     border-top: 4px solid #90ee90;
     overflow: hidden;
@@ -421,8 +448,8 @@ h2 span {
     font-weight: 600;
     text-transform: capitalize;
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    color: #fff;
-padding-top: 30px;
+    color: #000;
+    padding-top: 30px;
 }
 
 .main-blog {
@@ -446,6 +473,7 @@ padding-top: 30px;
     width: 377px;
     height: 300px;
 }
+
 .block_item2 #up_movies {
     background-size: cover;
 
@@ -473,6 +501,7 @@ padding-top: 30px;
 #subscribe-blog::before {
     background: #222222;
     height: 316px;
+
 }
 
 #subscribe-blog {
@@ -551,8 +580,9 @@ input[type="email"] {
 
 .subscribe-block_group > a {
     color: #ffffff;
-    background: #3ec0e1;
-    font-family: Montserrat;
+    background: #15959F;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
     margin-top: 10px;
     -webkit-order: 0;
     -webkit-box-ordinal-group: 1;
@@ -577,6 +607,10 @@ input[type="email"] {
     letter-spacing: 0.56px;
     padding: 15px;
     text-decoration: none;
+    border-radius: 30px;
+    letter-spacing: 0.3em;
+    box-shadow: 0px 3px 5px #000;
+
 }
 
 .subscribe-block_group > a:hover {
@@ -598,10 +632,12 @@ input[type="email"] {
     float: left;
     display: inline;
 }
-.one .img_align{
-    width:200px;
+
+.one .img_align {
+    width: 200px;
     height: 180px;
 }
+
 .two {
     width: 180px;
     height: 180px;
@@ -632,10 +668,13 @@ input[type="email"] {
 .two h6 {
     color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
-    font-family: Montserrat;
-    letter-spacing: 0px;
+    font-family: 'Raleway';
+}
+
+.two h6 p {
+    font-size: 12px;
 }
 
 .two .pop_link a {
@@ -849,20 +888,37 @@ div.first .second {
 }
 
 #bg_image {
-    width: 100%;
+    max-width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: -1;
+}
+
+.movie_details_main {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 
 }
 
-.sing_colum_blog {
-    padding-left: 20px;
-    color: #fff;
+.movie_details_main .overlay_image img {
+    max-width: 300px;
+    height: 400px;
+}
 
+.sing_colum_blog {
+    padding-left: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 800px;
 }
 
 .movie_details_title {
@@ -880,19 +936,19 @@ div.first .second {
 .well_style {
     margin-right: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-
+    background-color: #fff;
 }
 
 .casts_name {
-    color: black;
+    color: #000;
     font-weight: 700;
     text-align: center;
     margin-top: 10px;
 }
 
 .people {
-    width:80%;
-    color: black;
+    width: 80%;
+    color: #000;
     margin: 0 auto;
 }
 
@@ -916,8 +972,9 @@ div.first .second {
 .movie_detail_section {
     width: 100%;
     height: auto;
-    background-color: #f4f4f4;
-    margin-top: -18px;
+    background-color: #F2F2F2;
+    margin-top: -20px;
+    padding-top: 20px;
 }
 
 #img_main_blog {
@@ -972,7 +1029,8 @@ div.first .second {
     width: 100%;
 
 }
-.trailer .trailer-body{
+
+.trailer .trailer-body {
     width: 80%;
     margin: 0 auto;
 }
@@ -983,13 +1041,16 @@ div.first .second {
     font-size: 1.4em;
     font-weight: 600;
 }
-.movie-recommend{
-    width:100%;
+
+.movie-recommend {
+    width: 100%;
 }
+
 .movie-recommend .main_recommend {
-    width:80%;
+    width: 80%;
     margin: 0 auto;
 }
+
 /*search wrapper*/
 #search_wrapper_main {
     width: 100%;
@@ -1093,7 +1154,7 @@ div.first .second {
 }
 
 .bdy_bckColor {
-    background-color: #04040E;
+    background-color: #F2F2F2;
     margin-top: -16px;
     position: relative;
     box-sizing: border-box;
@@ -1137,9 +1198,25 @@ div.first .second {
 }
 
 /*media query*/
-@media screen and (min-width:320px) and (max-width: 600px) {
+@media screen and (min-width: 320px) and (max-width: 600px) {
     #root {
         overflow-x: hidden;
+    }
+
+    .home-title {
+        top: 120px;
+        left: 20px;
+
+        font-size: 20px;
+    }
+
+    #home-title-button {
+        top: 220px;
+        left: 10px;
+        width: 100px;
+        padding: 8px 0 0 15px;
+        height: 30px;
+        font-size: 0.8em;
     }
 
     .header-section .searchbox {
@@ -1164,9 +1241,10 @@ div.first .second {
     }
 
     /*in theatre*/
-    .np_block_wrapper ._intheatre{
+    .np_block_wrapper ._intheatre {
         width: 68%;
     }
+
     .np_block_wrapper .theater_blog {
         display: flex;
         flex-direction: column;
@@ -1181,26 +1259,30 @@ div.first .second {
         position: relative;
     }
 
-    .contents-toprated{
+    .contents-toprated {
         margin-left: 0;
+        padding-bottom: 10px;
     }
-    .inner-blog .block_item2{
+
+    .inner-blog .block_item2 {
 
     }
 
-.block_item2 .img_align{
-    width:12.8em;
-    height: 16em;
-}
+    .block_item2 .img_align {
+        width: 12.8em;
+        height: 16em;
+    }
+
     .img2SecondBlog {
         width: 100%;
         position: relative;
     }
 
     /*to rated*/
-    .toprated_title{
-        color:#fff;
+    .toprated_title {
+        color: #000;
     }
+
     .one .img_align {
         width: 13.6em;
         height: 10em;
@@ -1209,18 +1291,24 @@ div.first .second {
 
     /*follow content*/
     .follow-blog .toprated_title {
-color:#fff;
+        color: #000;
+
     }
-    .follow-blog{
-        width:230px;
+
+    .follow-blog {
+        width: 230px;
         margin: 0 auto;
+
     }
+
     .follow-blog .follow-content {
-        width:100%;
+        width: 100%;
     }
-.main-blog{
-width:100%;
-}
+
+    .main-blog {
+        width: 100%;
+    }
+
     .fa {
         padding: 12px;
         font-size: 12px;
@@ -1228,24 +1316,27 @@ width:100%;
         text-align: center;
         text-decoration: none;
     }
-    input[type="email"]{
+
+    input[type="email"] {
         padding: 8px 8px;
     }
-    .subscribe-block_group > a{
+
+    .subscribe-block_group > a {
         padding: 8px;
     }
+
     /*popular main*/
     .popularmain {
         margin: 0 auto;
     }
-    .two{
+
+    .two {
         height: 140px;
     }
 
-
 }
 
-@media screen and (min-width:601px) and (max-width: 960px) {
+@media screen and (min-width: 601px) and (max-width: 960px) {
     /*navbar*/
     .header-section {
         width: 65%;

@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Row, Col, Grid} from 'react-bootstrap';
 
-let datas = [];
 export default class Latest extends React.Component {
     constructor(props) {
         super(props);
@@ -32,7 +30,7 @@ export default class Latest extends React.Component {
             return (
                 <div className="well_genres">
 
-                        <img className="genre_image" src={imgurl} width="200px" height="300px"/>
+                        <img className="genre_image" src={imgurl} width="200px" height="300px" alt=" "/>
 
                     <div className="genre_title">
                         <p >{movie.name}</p>

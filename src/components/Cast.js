@@ -28,7 +28,6 @@ export default class Cast extends React.Component {
     }
     
     render() {
-        console.log("cast"+this.props.id[0]);
         let name=this.state.movie.map(n=>{
             return n.name;
         })

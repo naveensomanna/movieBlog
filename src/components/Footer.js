@@ -1,8 +1,8 @@
 import React from 'react';
 import {Col,Row} from 'react-bootstrap';
-import facebook from './images/facebook.png';
-import twitter from './images/twitter.png';
-import insta from './images/insta.png';
+import facebook from '../images/facebook.png';
+import twitter from '../images/twitter.png';
+import insta from '../images/insta.png';
 export default class Footer extends React.Component{
     render(){
         return(
@@ -28,9 +28,9 @@ export default class Footer extends React.Component{
 <div id="menu-footer">
 <h5 className="widget-title ">information</h5>
 <ul>
-    <li><a href="">about us</a></li>
-    <li><a href="">Contacts</a></li>
-    <li><a href="">terms of Service</a></li>
+    <li><a href=" ">about us</a></li>
+    <li><a href=" ">Contacts</a></li>
+    <li><a href=" ">terms of Service</a></li>
     </ul>
     </div>
 </Col>
@@ -38,8 +38,8 @@ export default class Footer extends React.Component{
 <div >
 <h5 className="widget-title ">IMDbPro</h5>
 <ul>
-    <li><a href=""></a>Box Office Mojo</li>
-    <li><a href="">Withoutabox</a></li>
+    <li><a href=" "></a>Box Office Mojo</li>
+    <li><a href=" ">Withoutabox</a></li>
     </ul>
     </div>
 </Col>
@@ -62,9 +62,9 @@ export default class Footer extends React.Component{
     </div>
     <p id="imdb">IMDb</p>
 <div>
-    <img src={facebook} width="18px" height="18px" style={{marginRight:'5px'}}/>
-    <img src={twitter} width="20px" height="20px" style={{marginRight:'5px'}}/>
-    <img src={insta} width="20px" height="20px"/>
+    <img src={facebook} width="18px" height="18px" style={{marginRight:'5px'}} alt=" "/>
+    <img src={twitter} width="20px" height="20px" style={{marginRight:'5px'}} alt=" "/>
+    <img src={insta} width="20px" height="20px" alt=" "/>
 
     </div>
     </div>

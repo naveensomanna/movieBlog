@@ -3,48 +3,53 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 
-import './App.css';
+import '../css/App.css';
 
-export default class Drama extends React.Component{
+export default class Horror extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
             movie: [],
-            count:1,
-            pagecount:1
+            data:[],
+            pageCount:10
         }
-        this.handleClick=this.handleClick.bind(this);
+        this.handlePageClick=this.handlePageClick.bind(this);
     }
-    handleClick(e){
-        
-        }
     componentWillMount() {
-      
+        
         console.log("url" + this.state.movie);
     }
-    componentDidMount(){
-        let requestUrl = "https://api.themoviedb.org/3/genre/18/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
-    axios
-        .get(requestUrl)
-        .then(response => {
-            this.setState({movie: response.data.results})
-        });
-    }
+    handlePageClick(data){
+        var pageValue=data.selected+1;
+        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page="+pageValue;
+        axios
+            .get(requestUrl)
+            .then(response => {
+                this.setState({movie: response.data.results})
+            });
+        }
+            
+        
+        componentDidMount()
+        {
+            let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        axios
+            .get(requestUrl)
+            .then(response => {
+                this.setState({movie: response.data.results})
+            });
+        }
     render()
-    { 
-         
-
+    {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this.state.movie;
         let movieList = movies.map(movie => {
-            console.log("mapped movie" + movie)
             let imgurl = baseImgURL + movie.poster_path;
             let mainid_image2= movie.id;
-            console.log("imgurl" + imgurl)
             return (
-                <div className="well_genres">
-            <NavLink to={`/Movies/${mainid_image2}`}><img  className="genre_image" src={imgurl} width="200px" height="300px"/></NavLink>
+                <div className=" well_genres">
+            <NavLink to={`/Movies/${mainid_image2}`}><img  className="genre_image" src={imgurl} width="200px" height="300px" alt=" "/></NavLink>
                     <div className="genre_title">
                         <p>{movie.title}</p>
                     </div>
@@ -52,14 +57,12 @@ export default class Drama extends React.Component{
             </div>
             );
         });
-    
-        return(
-        <div className="genre_blog">
-        <div className="title_movies container">
+        return (
+            <div className="genre_blog">
 
-        </div>
-<div className="genre_details">
+            <div className="genre_details">
             <div className="genre_wrapper">
+                
                 {movieList}
                 </div>
                 
@@ -77,8 +80,11 @@ export default class Drama extends React.Component{
                     subContainerClassName={"pages pagination"}
                     activeClassName={"active"}
                 
-                />                </div>
+                />       
+                         </div>
                 </div>
         );
     }
 }
+
+

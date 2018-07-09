@@ -23,13 +23,13 @@ export default class Recommendation extends React.Component {
 
     render() {
         var path = "https://image.tmdb.org/t/p/w500";
-        var img_slice = this.state.movie.slice(1, 9);
-        var poster = img_slice.map(img => {
-                var bgimg = path + img.poster_path;
+        let img_slice = this.state.movie.slice(1, 9);
+        let poster = img_slice.map(movi => {
+                let bgimg = path + movi.poster_path;
                 return (
                     <div id="img_main_blog">
-                        <img src={bgimg}/>
-                        <p>{img.title}<span>{img.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
+                        <img alt=" " src={bgimg} />
+                        <p>{movi.title}<span>{movi.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
                     </div>
                 )
             }
