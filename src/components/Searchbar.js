@@ -49,18 +49,12 @@ export default class SearchBar extends React.Component {
             let imgurl = baseImgURL + movie.poster_path;
             return (
                 <div id="well_searchbox">
-                    <img src={imgurl} width="186px" height="270px" alt=" "/>
-                    <div className="movie_details">
-                        <p>{movie.title}</p>
-                        <p>{movie.overview}</p>
-                    </div>
+                    <img src={imgurl}  alt=" "/>
                 </div>
             );
         })
         return (
             <div id="search_wrapper_main">
-
-
                 <h3 className="genre_title container">Search Movie Results</h3>
                 <div className=" search_details">
                     <div className="search_wrapper">

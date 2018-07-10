@@ -81,6 +81,7 @@ export default class SubscrbPopular extends React.Component {
                     <div className="one">
                         {movieList1}
                     </div>
+                    <div>
                     <div className="two">
 
                         <h6 className="name_align">{movieposter[0]}</h6>
@@ -98,6 +99,7 @@ export default class SubscrbPopular extends React.Component {
                         <h6 className="name_align">{movieposter[2]}</h6>
                         <div className="pop_link"><Link to={`/Movies/${obj1[2]}`}>&#x3e;</Link>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

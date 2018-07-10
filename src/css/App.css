@@ -24,12 +24,12 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 80px;
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 999;
-    transition: top .3s;
 }
 
 .nameblog .logoimg {
@@ -227,7 +227,7 @@ input::-webkit-input-placeholder {
     text-decoration: none;
     font-family: 'Pathway Gothic One', sans-serif;
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 1.8em;
 }
 
 .movie_title a:hover {
@@ -392,7 +392,6 @@ h2 span {
 #carousell {
     width: 100%;
     height: 1000px;
-    margin-top: 80px;
     position: relative;
     display: inline-block;
 
@@ -424,7 +423,7 @@ h2 span {
     height: 1000px;
     max-width: 100%;
     background-repeat: no-repeat;
-    object-position: 70% 30%;
+    object-position: 60% 40%;
     object-fit: cover;
     position: relative;
     z-index: -1;
@@ -434,13 +433,11 @@ h2 span {
 /*topratedblog*/
 .toprated-main {
     width: 100%;
-    margin: 0 auto;
     height: auto;
 }
 
 .contents-toprated {
     width: 100%;
-    margin-left: 5%;
 }
 
 .toprated_title {
@@ -453,13 +450,13 @@ h2 span {
 }
 
 .main-blog {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 
 }
 
 .inner-blog {
-    width: 100%;
+    width: 86%;
     border-top: 3px solid #3ec0e1;
     display: flex;
     flex-wrap: wrap;
@@ -470,8 +467,12 @@ h2 span {
     object-fit: cover;
     -o-object-position: 80% 20%;
     object-position: 80% 20%;
+
+}
+
+.inner-blog .img_align {
     width: 377px;
-    height: 300px;
+    height: 330px;
 }
 
 .block_item2 #up_movies {
@@ -483,7 +484,7 @@ h2 span {
     background: #2b2b2b;
     border-top: 3px solid #ea485e;
     padding: 15px 30px 30px 30px;
-    max-width: 373px;
+    width: 80%;
 }
 
 .follow-content .subtitle {
@@ -496,6 +497,9 @@ h2 span {
 
 .follow-social {
     padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 #subscribe-blog::before {
@@ -522,31 +526,39 @@ h2 span {
 }
 
 .fa {
-    padding: 15px;
-    font-size: 30px;
-    width: 60px;
+    padding: 12px;
+    font-size: 28px;
+    width: 50px;
     text-align: center;
     text-decoration: none;
+    border-radius: 50%;
+
 }
 
 .fa-facebook {
     background: #3B5998;
     color: white;
+    margin-right: 3px;
+
 }
 
 .fa-twitter {
     background: #55ACEE;
     color: white;
+    margin-right: 3px;
 }
 
 .fa-google {
     background: #dd4b39;
     color: white;
+    margin-right: 3px;
+
 }
 
 .fa-youtube {
     background: #bb0000;
     color: white;
+
 }
 
 .subscribe-block_group {
@@ -560,7 +572,6 @@ h2 span {
 }
 
 input[type="email"] {
-    -webkit-order: 0;
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
@@ -569,13 +580,13 @@ input[type="email"] {
     -ms-flex: 1 1 0;
     flex: 1 1 0;
     -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
     align-self: auto;
-    border-radius: 0;
     border: 1px solid #404040;
     max-width: 100%;
     color: #ffff;
     background: #2b2b2b;
+    border-radius: 30px;
+    outline: none;
 }
 
 .subscribe-block_group > a {
@@ -584,7 +595,6 @@ input[type="email"] {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     margin-top: 10px;
-    -webkit-order: 0;
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
@@ -593,10 +603,8 @@ input[type="email"] {
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
     align-self: auto;
     max-width: 100%;
-    border-radius: 0;
     text-transform: uppercase;
     -webkit-transition: 0.3s ease all;
     transition: 0.3s ease all;
@@ -604,7 +612,6 @@ input[type="email"] {
     display: block;
     width: 100%;
     text-align: center;
-    letter-spacing: 0.56px;
     padding: 15px;
     text-decoration: none;
     border-radius: 30px;
@@ -618,29 +625,28 @@ input[type="email"] {
 }
 
 .popularmain {
-    width: 370px;
+    width: 80%;
     position: relative;
     top: 0;
     left: 0;
     height: auto;
     padding-top: 40px;
+
 }
 
 .one {
     width: 70px;
-    height: 55px;
     float: left;
-    display: inline;
 }
 
 .one .img_align {
-    width: 200px;
-    height: 180px;
+    width: 340px;
+    height: 230px;
 }
 
 .two {
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 230px;
     background: #2b2b2b;
     position: relative;
     top: 0;
@@ -649,6 +655,7 @@ input[type="email"] {
     transition: all 0.3s ease;
     margin-left: auto;
     overflow: hidden;
+
 }
 
 .two .pop_link {
@@ -658,7 +665,7 @@ input[type="email"] {
 }
 
 .two:hover {
-    width: 280px;
+    width: 380px;
 }
 
 .two:hover .pop_link {
@@ -667,8 +674,7 @@ input[type="email"] {
 
 .two h6 {
     color: white;
-    text-align: center;
-    font-size: 14px;
+    font-size: 1.2em;
     font-weight: 600;
     font-family: 'Raleway';
 }
@@ -907,7 +913,7 @@ div.first .second {
 }
 
 .movie_details_main .overlay_image img {
-    max-width: 300px;
+    width: 300px;
     height: 400px;
 }
 
@@ -996,7 +1002,8 @@ div.first .second {
     display: flex;
     justify-content: space-between;
     color: #000;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     font-size: 1em;
     box-sizing: border-box;
     width: 250px;
@@ -1060,18 +1067,18 @@ div.first .second {
 }
 
 #well_searchbox {
-    width: 100%;
+
+    overflow: hidden;
+    margin-bottom: 10px;
 
 }
 
-#well_searchbox {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    background: #2b2b2b;
-    margin-bottom: 10px;
-
+#well_searchbox img {
+    max-width: 180px;
+    height: 270px;
+    object-position: 80% 20%;
+    filter: brightness(0.6);
+    border-radius: 10px;
 }
 
 .search_details {
@@ -1082,8 +1089,12 @@ div.first .second {
 }
 
 .search_wrapper {
-    width: 76%;
+    width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /*pagination*/
@@ -1158,6 +1169,8 @@ div.first .second {
     margin-top: -16px;
     position: relative;
     box-sizing: border-box;
+    padding-bottom: 20px;
+    height: auto;
 }
 
 #togglebar {
@@ -1197,11 +1210,17 @@ div.first .second {
     display: none;
 }
 
+.readmore {
+    transition: 0.3s all;
+}
+
 /*media query*/
-@media screen and (min-width: 320px) and (max-width: 600px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
     #root {
         overflow-x: hidden;
     }
+
+
 
     .home-title {
         top: 120px;
@@ -1219,8 +1238,23 @@ div.first .second {
         font-size: 0.8em;
     }
 
+    .header-section {
+        width: 100%
+
+    }
+
+    #carousell img {
+        object-position: 60% 40%;
+    }
+
     .header-section .searchbox {
-        width: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-section .searchbox input {
+        width: 60%;
     }
 
     #open-slide {
@@ -1228,7 +1262,7 @@ div.first .second {
         color: #000;
         font-size: 20px;
         position: absolute;
-        top: 25px;
+        top: 24px;
         left: 20px;
     }
 
@@ -1242,21 +1276,26 @@ div.first .second {
 
     /*in theatre*/
     .np_block_wrapper ._intheatre {
-        width: 68%;
+        width: 96%;
+        position: relative;
+        box-sizing: border-box;
     }
 
     .np_block_wrapper .theater_blog {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        border-radius: 3px;
     }
-
-    .wrap_img {
-    }
-
+.block_item1{
+    padding-bottom: 8px;
+}
     #img1FirstBlog {
         width: 100%;
-        height: 30em;
+        height: 32em;
         position: relative;
+        border-radius: 3px;
     }
 
     .contents-toprated {
@@ -1264,40 +1303,55 @@ div.first .second {
         padding-bottom: 10px;
     }
 
-    .inner-blog .block_item2 {
+    .block_item2 {
+        width: 100%;
+        padding-bottom: 8px;
+    }
 
+    ._intheatre .title_ {
+        text-align: center;
     }
 
     .block_item2 .img_align {
-        width: 12.8em;
-        height: 16em;
+        width: 100%;
+        height: 18em;
+
     }
 
     .img2SecondBlog {
         width: 100%;
         position: relative;
+        border-radius: 3px;
     }
 
     /*to rated*/
     .toprated_title {
         color: #000;
+        text-align: center;
     }
 
     .one .img_align {
-        width: 13.6em;
-        height: 10em;
+        width: 18em;
         object-position: center center;
+    }
+
+    .two {
+        width: 11em;
+    }
+
+    .two:hover {
+        width: 19em;
     }
 
     /*follow content*/
     .follow-blog .toprated_title {
         color: #000;
-
+        padding: 0;
     }
 
     .follow-blog {
-        width: 230px;
-        margin: 0 auto;
+        width: 100%;
+        padding: 0 8px 0 8px;
 
     }
 
@@ -1306,6 +1360,10 @@ div.first .second {
     }
 
     .main-blog {
+        width: 96%;
+    }
+
+    .main-blog .inner-blog {
         width: 100%;
     }
 
@@ -1327,53 +1385,124 @@ div.first .second {
 
     /*popular main*/
     .popularmain {
+        width: 100%;
+        padding: 50px 8px 0 8px;
+    }
+
+    .genre_details {
+        width: 96%;
+    }
+
+    .well_genres {
+        width: 100%;
+    }
+
+    .genre_image {
+        width: 100%;
+
+    }
+
+    .movie_details_main {
+        width: 96%;
+        justify-content: center;
+    }
+
+    .movie_details_main .overlay_image img {
+        width: 100%;
+        height: 500px;
+        object-position: 80% 20%;
+    }
+
+    .sing_colum_blog {
+        width: 100%;
+        padding: 0;
+    }
+
+    .people {
+        width: 73%;
         margin: 0 auto;
     }
 
-    .two {
-        height: 140px;
+    .well_style {
+        margin-bottom: 7px;
     }
 
+    .trailer .trailer-body {
+        width: 73%;
+    }
+
+    .movie-recommend .main_recommend {
+        width: 73%;
+        overflow: hidden;
+    }
+    .invert{
+        padding-left: 140px;
+    }
 }
 
-@media screen and (min-width: 601px) and (max-width: 960px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
     /*navbar*/
+    #header-wrapper {
+        width: 100%;
+        height: 6%;
+    }
+
     .header-section {
-        width: 65%;
+        width: 80%;
+        height: 100%;
+    }
+
+    #header-wrapper #logo img {
+        width: 90px;
+        height: 60px;
     }
 
     .bdy_bckColor {
-        background-color: #04040E;
         margin-top: -18px;
     }
 
     .np_block_wrapper {
         width: 100%;
-        padding-top: 50px;
+
         position: relative;
         box-sizing: border-box;
     }
 
     .np_block_wrapper ._intheatre {
-        width: 70.7%;
+        width: 90%;
         margin: 0 auto;
     }
-
+.theater_blog{
+    width: 100%;
+}
+.block_item1{
+    width:60%;
+}
     #img1FirstBlog {
-        max-width: 22em;
+        width: 100%;
+        height: 36em;
         position: relative;
     }
-
-    .img2SecondBlog {
-        height: 16.2em;
-        width: 13.2em;
+.wrap_img{
+    width: 100%;
+}
+.block_item2{
+    width:50%;
+}
+    .wrap_img .img2SecondBlog {
+        height: 18em;
+        width: 100%;
         position: relative;
     }
 
     /*top rated*/
     .main-blog {
-        width: 75%;
+        width: 85%;
         margin: 0 auto;
+    }
+
+    .main-blog .inner-blog {
+        width: 100%;
     }
 
     .toprated-main {
@@ -1385,12 +1514,12 @@ div.first .second {
     }
 
     #up_movies .img_align {
-        width: 16.8em;
-        height: 15em;
+        width: 20.4em;
+        height: 17em;
     }
 
     .follow-blog .follow-content {
-        max-width: 250px;
+        width: 85%;
     }
 
     .follow-blog .follow-social .fa {
@@ -1409,21 +1538,20 @@ div.first .second {
         padding: 8px;
     }
 
-    .one .img_align {
-        width: 9em;
-        height: 10em;
+    .popularmain .one .img_align {
+        width: 10em;
+        height: 11em;
     }
 
     .popularmain {
-        width: 250px;
-        padding-top: 15px;
+        width: 87%;
         position: relative;
         box-sizing: border-box;
     }
 
     .popularmain .two {
-        width: 125px;
-        height: 10em;
+        width: 10em;
+        height: 11em;
         background: #2b2b2b;
         position: relative;
         top: 0;
@@ -1435,7 +1563,7 @@ div.first .second {
     }
 
     .popularmain .two:hover {
-        width: 170px;
+        width: 14em;
     }
 
     .popularmain .two .pop_link {
@@ -1469,7 +1597,6 @@ div.first .second {
         font-size: 14px;
         font-weight: 600;
         font-family: Montserrat;
-        letter-spacing: 0px;
         text-align: center;
     }
 
@@ -1479,77 +1606,90 @@ div.first .second {
         box-sizing: border-box;
     }
 
+    .movie_details_main {
+        width: 87%;
+    }
+
+    .sing_colum_blog {
+        width: 500px;
+    }
+
 }
 
-@media screen and (min-width: 961px ) and (max-width: 1366px) {
-    #header-wrapper #togglebar {
+@media (min-width: 1201px ) {
+    #header-wrapper #tooglebar {
         display: none;
     }
 
-    .bdy_bckColor {
-        margin-top: -17px;
-        margin-bottom: -18px;
-        padding-bottom: 10px;
-    }
-
-    .np_block_wrapper {
-        width: 100%;
-        box-sizing: border-box;
-        padding-top: 15px;
+    .theater_blog {
+        overflow: hidden;
     }
 
     .np_block_wrapper ._intheatre {
-        width: 70%;
-        margin: 0 auto;
+        width: 80%;
+    }
+.theater_blog{
+    width:100%;
+}
+    .block_item1 {
+    width:80%;
     }
 
     #img1FirstBlog {
-        max-width: 28.6em;
-        max-height: 40em;
-        position: relative;
+        width: 100%;
+        display: block;
+        height: 46em;
+    }
+.wrap_img{
+    width: 100%;
+}
+    .block_item2 {
+        width: 50%;
     }
 
-    .img2SecondBlog {
-        height: 19.9em;
-        width: 17.5em;
-        position: relative;
+    .wrap_img .img2SecondBlog {
+        width: 100%;
+        display: block;
+        height: 23em;
+
     }
 
-    /*to rated*/
     #up_movies .img_align {
-        width: 22.2em;
-        height: 19em;
-    }
+        width: 100%;
+        height: 22em;
 
+    }
+.one{
+    max-width:430px;
+    float:left;
+}
     .one .img_align {
-        width: 10em;
-        height: 10em;
+        width:230px;
+        height: 16em;
     }
 
-    /*latest follow content*/
     .follow-blog .follow-content {
-        max-width: 300px;
+        max-width: 750px;
     }
 
     .popularmain {
-        max-width: 300px;
-        padding-top: 15px;
+        max-width: 750px;
+        padding-top: 25px;
     }
 
     .popularmain .two {
-        width: 160px;
-        height: 10em;
+        width: 200px;
+        height: 16em;
 
     }
 
     .popularmain .two:hover {
-        width: 220px;
+        width: 300px;
     }
 
     .popularmain .two .pop_link a {
         width: 30px;
         height: 30px;
-
         position: absolute;
         top: -90px;
         left: 190px;
@@ -1559,15 +1699,15 @@ div.first .second {
     }
 
     .main-blog {
-        width: 74%;
+        width: 70%;
     }
-
+.main-blog .inner-blog{
+width: 100%;
+}
     .toprated-main {
         padding-top: 35px;
     }
 
-    .toprated-main .contents-toprated {
-        margin: 0;
-    }
+
 
 }

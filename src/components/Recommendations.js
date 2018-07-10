@@ -29,7 +29,7 @@ export default class Recommendation extends React.Component {
                 return (
                     <div id="img_main_blog">
                         <img alt=" " src={bgimg} />
-                        <p>{movi.title}<span>{movi.vote_average}<span className="glyphicon glyphicon-star"></span></span></p>
+                        <p>{movi.title}<span>{movi.vote_average}<span className="glyphicon glyphicon-star" style={{marginLeft:'3px'}}></span></span></p>
                     </div>
                 )
             }

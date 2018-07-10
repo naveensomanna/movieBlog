@@ -1,22 +1,21 @@
 import React from 'react';
-import './index.css';
-import Header from './components/Header.js';
-import Home from './components/Home.js';
-import Comdey from './components/Comdey.js';
-import Drama from './components/Drama.js';
-import Action from './components/Action.js';
-import Horror from './components/Horror.js';
-import Footer from './components/Footer.js';
-import Movies from './components/Movies.js';
-import SearchBar from './components/Searchbar.js';
-import People from './components/People.js';
+import '../index.css';
+import Header from './Header.js';
+import Home from './Home.js';
+import Comdey from './Comdey.js';
+import Drama from './Drama.js';
+import Action from './Action.js';
+import Horror from './Horror.js';
+import Footer from './Footer.js';
+import Movies from './Movies.js';
+import SearchBar from './Searchbar.js';
+import People from './People.js';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 
 export default class App extends React.Component{
     constructor(props) {
         super(props)
-       
-      
+
     this.scrollFunction=this.scrollFunction.bind(this);
     this.topFunction=this.topFunction.bind(this);
       }
@@ -37,8 +36,7 @@ render(){
 
     return(
 <Router>
-    <div>
-
+    <React.Fragment>
     <Header/>
 <Route exact path="/" component={Home}/>
 <Route  path="/comdey" component={Comdey}/>
@@ -51,7 +49,7 @@ render(){
 <Footer/>
 <button onClick={this.topFunction} id="myBtn" title="Go to top"> &#8593;</button>
 
-    </div>
+    </React.Fragment>
    </Router>
     );
 }

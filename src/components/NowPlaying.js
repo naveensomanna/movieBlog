@@ -54,8 +54,8 @@ export default class NowPlaying extends React.Component {
             let imgurl = baseImgURL + movie.poster_path;
             let mainid_image1 = movie.id;
             return (
-                <div className="block_item1" key={movie.id}>
-                    <div style={{overflow: "hidden"}} className="boxshadow_img">
+                <div className="block_item1" key={movie.id} >
+                    <div style={{overflow: "hidden"}} className="boxshadow_img" id="running_now1">
                         <img id="img1FirstBlog" src={imgurl} alt=" "/>
                     </div>
                     <div className="movie_title">
@@ -70,13 +70,13 @@ export default class NowPlaying extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="np_block_wrapper">
-                    <div className="_intheatre">
-                        <h4 className="title_">In Theaters</h4>
+                <div className="np_block_wrapper" >
+                    <div className="_intheatre" >
+                        <h4 className="title_" id="movies_section">In Theaters</h4>
                         <div className="theater_blog">
-                            <div>
+
                                 {movieList1}
-                            </div>
+
                             <div className="wrap_img">
                                 {movieList}
                             </div>

@@ -27,7 +27,8 @@ class Header extends React.Component {
     btnclick = () => {
         document.getElementById('side-menu').style.width = '250px';
     }
-    btnclose = () => {
+    btnclose = (e) => {
+        e.preventDefault();
         document.getElementById('side-menu').style.width = '0';
     }
 
@@ -63,12 +64,18 @@ class Header extends React.Component {
                     </div>
                     <div id="side-menu" className="side-nav">
                         <a href=" " className="btn-close" onClick={this.btnclose}>&times;</a>
-                        <NavLink exact to="/" className="nav_achor" activeStyle={{color: '#FB0378'}}>Home</NavLink>
-                        <NavLink to="/comdey" className="nav_achor" activeStyle={{color: '#FB0378'}}>Comedy</NavLink>
-                        <NavLink to="/drama" className="nav_achor" activeStyle={{color: '#FB0378'}}>Drama</NavLink>
-                        <NavLink to="/action" className="nav_achor" activeStyle={{color: '#FB0378'}}>Action</NavLink>
-                        <NavLink to="/horror" className="nav_achor" activeStyle={{color: '#FB0378'}}>Horror</NavLink>
-                        <NavLink to="/people" className="nav_achor" activeStyle={{color: '#FB0378'}}>People</NavLink>
+                        <a href=" " onClick={this.btnclose}><NavLink exact to="/" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>Home</NavLink></a>
+                        <a href=" " onClick={this.btnclose}><NavLink to="/comdey" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>Comedy</NavLink></a>
+                        <a href=" " onClick={this.btnclose}><NavLink to="/drama" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>Drama</NavLink></a>
+                        <a href=" " onClick={this.btnclose}><NavLink to="/action" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>Action</NavLink></a>
+                        <a href=" " onClick={this.btnclose}><NavLink to="/horror" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>Horror</NavLink></a>
+                        <a href=" " onClick={this.btnclose}><NavLink to="/people" className="nav_achor"
+                                                                     activeStyle={{color: '#FB0378'}}>People</NavLink></a>
 
                     </div>
                 </div>

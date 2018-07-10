@@ -8,7 +8,8 @@ export default class Movies extends Component {
         this.state = {
             movie: [],
             movie1: [],
-            movie2: []
+            movie2: [],
+
         }
     }
 
@@ -39,7 +40,12 @@ export default class Movies extends Component {
         );
 
     }
+    componentDidUpdate() {
 
+            window.scrollTo(0,0);
+
+
+    }
     render() {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let URL_YOUTUBE = 'https://www.youtube.com/embed/';
@@ -55,12 +61,10 @@ export default class Movies extends Component {
         movies = this.state.movie1.slice(1, 5);
 
         let movieList = movies.map(movie => {
-            console.log("mapped movie" + movie)
             var imgurl;
 
             imgurl = baseImgURL + movie.profile_path;
 
-            console.log("imgurl" + imgurl);
 
 
             return (
@@ -77,6 +81,8 @@ export default class Movies extends Component {
             'max-width': '100%',
             'filter': 'brightness(0.3)'
         }
+
+
         return (
             <div>
                 <div className="first">
@@ -89,10 +95,10 @@ export default class Movies extends Component {
                             <p className="movie_details_title">{this.state.movie.original_title}</p>
                             <p>Overview :</p>
                             <p className="movie_details">{this.state.movie.overview}</p>
-                            <p>Popularity :</p>
-                            <p className="movie_details">{this.state.movie.popularity}</p>
-                            <p>Votes :</p>
-                            <p className="movie_details">{this.state.movie.vote_count}</p>
+                            <p>Popularity : <span className="movie_details">{this.state.movie.popularity}</span></p>
+
+                            <p>Votes : <span className="movie_details">{this.state.movie.vote_count}</span></p>
+
                         </div>
                     </div>
                 </div>
@@ -113,6 +119,7 @@ export default class Movies extends Component {
                             <iframe src={link1} allowFullScreen title="trailer"/>
                         </div>
                     </div>
+
                     <Recommendation id={this.props.match.params.id}/>
                 </div>
             </div>
