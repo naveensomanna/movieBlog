@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { upcomingApi,baseImgURL} from "./Api";
 
 export default class Upcoming extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class Upcoming extends React.Component {
     }
 
     componentWillMount() {
-        let requestUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = upcomingApi;
         axios.get(requestUrl).then(response => {
             this.setState({
                 upcoming: response.data.results
@@ -19,7 +20,6 @@ export default class Upcoming extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w1280";
         let movies = [];
         movies = this.state.upcoming.slice(2, 6);
         let upcoming_movie = movies.map(movie => {

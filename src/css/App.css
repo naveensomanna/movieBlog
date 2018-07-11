@@ -676,24 +676,20 @@ input[type="email"] {
     left: 0;
     transform: translate(0, -50);
     transition: all 0.3s ease;
-    margin-left: auto;
-    overflow: hidden;
+margin-left: auto;
+    margin-bottom: -10px;
 
 }
 
 .two .pop_link {
     width: 20px;
-    opacity: 0;
+    opacity: 1  ;
     position: relative;
 }
 
-.two:hover {
-    width: 380px;
-}
 
-.two:hover .pop_link {
-    opacity: 1;
-}
+
+
 
 .two h6 {
     color: white;
@@ -712,13 +708,13 @@ input[type="email"] {
     background: #00ada9;
     color: white;
     position: absolute;
-    top: -90px;
-    left: 235px;
+    top: 0px;
+    left: 0px;
     padding: 5px 0 0 16px;
     font-size: 1.4em;
     font-weight: bold;
     text-decoration: none;
-
+border-radius: 3px;
 }
 
 /*topratedblog ends*/
@@ -761,7 +757,7 @@ input[type="email"] {
     max-width: 100%;
     height: 230px;
     background-color: #ffffff;
-    position: relative;
+
 }
 
 .invert {
@@ -1151,7 +1147,6 @@ div.first .second {
     .home-title {
         top: 120px;
         left: 20px;
-
         font-size: 20px;
     }
 
@@ -1166,7 +1161,6 @@ div.first .second {
 
     .header-section {
         width: 100%
-
     }
 
     #carousell img {
@@ -1257,18 +1251,21 @@ div.first .second {
         color: #000;
         text-align: center;
     }
-
+.one{
+    width:50%;
+    float: left;
+}
     .one .img_align {
-        width: 18em;
+        width: 100%;
         object-position: center center;
     }
 
     .two {
-        width: 11em;
+        width: 50%;
     }
 
     .two:hover {
-        width: 19em;
+
     }
 
     /*follow content*/
@@ -1347,20 +1344,22 @@ div.first .second {
     }
 
     .people {
-        width: 73%;
-        margin: 0 auto;
+        width: 84%;
     }
 
     .well_style {
         margin-bottom: 7px;
     }
-
+.well_style .people_casting{
+    width:10em;
+    height: 15em;
+}
     .trailer .trailer-body {
-        width: 73%;
+        width: 84%;
     }
 
     .movie-recommend .main_recommend {
-        width: 73%;
+        width: 84%;
         overflow: hidden;
     }
 
@@ -1600,12 +1599,13 @@ div.first .second {
     }
 
     .one {
-        max-width: 430px;
+        width: 50%;
         float: left;
+        position: relative;
     }
 
     .one .img_align {
-        width: 230px;
+        width: 100%;
         height: 16em;
     }
 
@@ -1614,30 +1614,16 @@ div.first .second {
     }
 
     .popularmain {
-        max-width: 750px;
+        width: 620px;
         padding-top: 25px;
     }
 
     .popularmain .two {
-        width: 200px;
+        width: 50%;
         height: 16em;
-
     }
 
-    .popularmain .two:hover {
-        width: 300px;
-    }
 
-    .popularmain .two .pop_link a {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: -90px;
-        left: 190px;
-        padding: 3px 0 0 8px;
-        font-size: 1.2em;
-
-    }
 
     .main-blog {
         width: 70%;
@@ -1651,4 +1637,12 @@ div.first .second {
         padding-top: 35px;
     }
 
+}
+@media (max-width: 320px) {
+    .people{
+        width:93.8%;
+    }
+    .trailer .trailer-body{
+        width:93.8%;
+    }
 }

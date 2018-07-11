@@ -3,6 +3,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import '../../css/App.css';
+import { HorrorApi,baseImgURL } from "../Api";
 
 export default class Horror extends React.Component {
     constructor(props) {
@@ -12,12 +13,11 @@ export default class Horror extends React.Component {
             data: [],
             pageCount: 10
         }
-        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
-    handlePageClick(data) {
+    handlePageClick = (data) => {
         var pageValue = data.selected + 1;
-        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=" + pageValue;
+        let requestUrl = HorrorApi + pageValue;
         axios
             .get(requestUrl)
             .then(response => {
@@ -27,7 +27,7 @@ export default class Horror extends React.Component {
 
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = HorrorApi;
         axios
             .get(requestUrl)
             .then(response => {
@@ -36,7 +36,6 @@ export default class Horror extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let horror_movies = [];
         horror_movies = this.state.horror;
         let movieList = horror_movies.map(data => {
@@ -44,7 +43,8 @@ export default class Horror extends React.Component {
             let mainid_image2 = data.id;
             return (
                 <div className=" well_genres">
-                    <NavLink to={`/Movies/${mainid_image2}`}><img className="genre_image" src={imgurl} width="200px"
+                    <NavLink to={`/Movies/${mainid_image2}`}>
+                        <img className="genre_image" src={imgurl} width="200px"
                                                                   height="300px" alt=" "/></NavLink>
                     <div className="genre_title">
                         <p>{data.title}</p>

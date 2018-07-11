@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
+import {baseImgURL,SearchApi} from "./Api";
 
 export default class SearchBar extends React.Component {
 
@@ -14,7 +15,7 @@ export default class SearchBar extends React.Component {
     }
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/search/movie?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1&query=" + this.props.match.params.id;
+        let requestUrl = SearchApi + this.props.match.params.id;
         axios
             .get(requestUrl)
             .then(response => {
@@ -35,7 +36,6 @@ export default class SearchBar extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movies = [];
         movies = this.state.search;
 

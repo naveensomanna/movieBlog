@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
-let baseImgURL = "https://image.tmdb.org/t/p/w500";
+import { now_playingApi ,baseImgURL} from './Api.js';
 
 export default class NowPlaying extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class NowPlaying extends React.Component {
     }
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = now_playingApi;
         axios
             .get(requestUrl)
             .then(response => {
@@ -23,14 +23,14 @@ export default class NowPlaying extends React.Component {
     }
 
     render() {
-        let theatre_movies = [];
+        let theatre_movies = [], theatre_movies1 = [], main_image2;
         theatre_movies = this.state.in_theatre.slice(1, 2);
         let movieList = theatre_movies.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             let main_image1 = movie.id;
             return (
                 <div className="block_item1" key={movie.id} >
-                    <div style={{overflow: "hidden"}} className="boxshadow_img" id="running_now1">
+                    <div  className="boxshadow_img" id="running_now1">
                         <img id="img1FirstBlog" src={imgurl} alt=" "/>
                     </div>
                     <div className="movie_title">
@@ -42,7 +42,7 @@ export default class NowPlaying extends React.Component {
             );
         });
 
-        let theatre_movies1 = [], main_image2;
+
 
         theatre_movies1 = this.state.in_theatre.slice(3, 7);
 

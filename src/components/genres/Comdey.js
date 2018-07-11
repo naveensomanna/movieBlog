@@ -3,6 +3,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import '../../css/App.css';
 import ReactPaginate from 'react-paginate';
+import {ComedyApi,baseImgURL} from "../Api";
 
 export default class Comdey extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class Comdey extends React.Component {
     }
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/35/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = ComedyApi;
         axios
             .get(requestUrl)
             .then(response => {
@@ -27,7 +28,7 @@ export default class Comdey extends React.Component {
     handlePageClick(data) {
         console.log(data);
         var pageValue = data.selected + 1;
-        let requestUrl1 = "https://api.themoviedb.org/3/genre/35/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=" + pageValue;
+        let requestUrl1 = ComedyApi + pageValue;
         axios
             .get(requestUrl1)
             .then(response => {
@@ -36,7 +37,6 @@ export default class Comdey extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let comedy_movies = [];
         comedy_movies = this.state.comedy;
         let movieList = comedy_movies.map(data => {

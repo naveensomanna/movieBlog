@@ -79,25 +79,23 @@ export default class Popular extends React.Component {
                     <div>
                     <div className="two">
 
-                        <h6 className="name_align">{popular_title[0]}</h6>
-                        <div className="pop_link"><Link to={`/Movies/${popular_details[0]}`}> &#x3e; </Link>
+                        <h6 className="name_align">{popular_title[0]}  <div className="pop_link"><Link to={`/Movies/${popular_details[0]}`}> &#x3e; </Link></div></h6>
+
                         </div>
 
                     </div>
                     <div className="two">
-                        <h6 className="name_align">{popular_title[1]}</h6>
-                        <div className="pop_link">
+                        <h6 className="name_align">{popular_title[1]}  <div className="pop_link">
                             <Link to={`/Movies/${popular_details[1]}`}>&#x3e;</Link>
-                        </div>
+                        </div></h6>
+
                     </div>
                     <div className="two">
-                        <h6 className="name_align">{popular_title[2]}</h6>
-                        <div className="pop_link"><Link to={`/Movies/${popular_details[2]}`}>&#x3e;</Link>
+                        <h6 className="name_align">{popular_title[2]}  <div className="pop_link"><Link to={`/Movies/${popular_details[2]}`}>&#x3e;</Link></div></h6>
+
                         </div>
                     </div>
-                    </div>
                 </div>
-            </div>
 
         );
     }

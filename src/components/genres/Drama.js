@@ -3,6 +3,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import '../../css/App.css';
+import {DramaApi,baseImgURL} from "../Api";
 
 export default class Drama extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class Drama extends React.Component {
 
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/18/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl =DramaApi;
         axios
             .get(requestUrl)
             .then(response => {
@@ -25,7 +26,6 @@ export default class Drama extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let drama_movies = [];
         drama_movies = this.state.drama;
         let movieList = drama_movies.map(data => {

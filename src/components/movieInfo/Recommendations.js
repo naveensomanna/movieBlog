@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { baseImgURL , movieBaseUrl ,token} from "../Api";
 
-var path = "https://image.tmdb.org/t/p/w500";
 export default class Recommendation extends React.Component {
 
     constructor(props) {
@@ -12,7 +12,7 @@ export default class Recommendation extends React.Component {
     }
 
     componentDidMount() {
-        let request = `https://api.themoviedb.org/3/movie/${this.props.id}/recommendations?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1`;
+        let request = movieBaseUrl+ this.props.id+ "/recommendations"+token;
         axios.get(request).then(response => {
             this.setState({
                 recommend: response.data.results
@@ -24,9 +24,9 @@ export default class Recommendation extends React.Component {
 
         let img_slice = this.state.recommend.slice(1, 9);
         let recommend_poster = img_slice.map(movie => {
-                let bgimg = path + movie.poster_path;
+                let bgimg = baseImgURL + movie.poster_path;
                 return (
-                    <div id="img_main_blog">
+                    <div id="img_main_blog" key={movie.id}>
                         <img alt=" " src={bgimg} />
                         <p>{movie.title}<span>{movie.vote_average}<span className="glyphicon glyphicon-star" style={{marginLeft:'3px'}}></span></span></p>
                     </div>

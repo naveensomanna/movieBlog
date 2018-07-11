@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {PersonApi,baseImgURL} from "../Api";
 
 export default class People extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class People extends React.Component {
     }
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/person/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = PersonApi;
         axios.get(requestUrl).then(response => {
             this.setState({
                 people: response.data.results
@@ -22,7 +23,6 @@ export default class People extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movi = [];
         movi = this.state.people;
         var people_list = movi.map(movie => {

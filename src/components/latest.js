@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Popular from './Popular.js';
+import { topratedApi , baseImgURL} from "./Api";
 
 export default class Latest extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class Latest extends React.Component {
     }
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/movie/top_rated?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = topratedApi;
         axios.get(requestUrl).then(response => {
             this.setState({
                 toprated: response.data.results
@@ -24,7 +25,6 @@ export default class Latest extends React.Component {
     }
 
     render() {
-        let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let toprated_movies = [];
         toprated_movies = this.state.toprated.slice(1, 7);
         let movieList = toprated_movies.map(data => {
