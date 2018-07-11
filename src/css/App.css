@@ -4,7 +4,6 @@
 
 body {
     width: 100%;
-    /*background: #141414;*/
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -16,11 +15,54 @@ body {
     overflow-x: hidden;
 }
 
-/*header*/
+.bdy_bckColor {
+    background-color: #F2F2F2;
+    margin-top: -16px;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    height: auto;
+}
 
-/*movie name*/
+#togglebar {
+    display: none;
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+}
+
+.side-nav .btn-close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+}
+
+#open-slide {
+    display: none;
+}
+
+/*header*/
 #header-wrapper {
-    /*background-color: #081c24;*/
     box-sizing: border-box;
     width: 100%;
     height: 80px;
@@ -30,15 +72,6 @@ body {
     left: 0;
     right: 0;
     z-index: 999;
-}
-
-.nameblog .logoimg {
-    display: inline;
-
-}
-
-.nameblog a {
-    text-decoration: none;
 }
 
 /*navbar */
@@ -121,230 +154,7 @@ input::-webkit-input-placeholder {
     display: none;
 }
 
-/*In thetare main  blog starts*/
-#img1FirstBlog {
-    width: 41em;
-    height: 45.8em;
-}
-
-.img2SecondBlog {
-    height: 22.9em;
-    width: 20.7em;
-    object-fit: cover;
-    object-position: 80% 20%;
-}
-
-.np_block_wrapper {
-    width: 100%;
-    height: auto;
-
-}
-
-.np_block_wrapper .title_ {
-    font-size: 1.8em;
-    font-weight: 600;
-    text-transform: capitalize;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-    color: #000;
-
-}
-
-.np_block_wrapper ._intheatre {
-    width: 60.7%;
-    margin: 0 auto;
-    padding: 20px 0 0 0;
-}
-
-.theater_blog {
-    width: 100%;
-    height: auto;
-    border-top: 3px solid #f1bd3b;
-    display: flex;
-    flex-direction: row;
-}
-
-.block_item1 {
-    position: relative;
-
-}
-
-.block_item1 img {
-    position: relative;
-
-    transform: scale3d(1, 1, 1);
-    transition: all 0.5s linear;
-}
-
-.block_item2 img {
-    position: relative;
-    transform: scale3d(1, 1, 1);
-    transition: all 0.5s linear;
-    overflow: hidden;
-
-}
-
-.block_item2 {
-    position: relative;
-    overflow: hidden;
-}
-
-.block_item2 .boxshadow_img {
-
-    background-size: cover;
-
-}
-
-.wrap_img {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.block_item1 .boxshadow_img {
-    position: relative;
-    background-size: contain;
-
-}
-
-.movie_title {
-    position: absolute;
-    bottom: 0;
-    left: 5px;
-    margin-top: 10px !important;
-    height: 42px;
-    line-height: 2.4em;
-    transition: height 0.5s ease;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #fff;
-    text-shadow: 1px 1px 0 #000;
-    font-family: 'Source Sans Pro', sans-serif;
-
-}
-
-.movie_title a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-weight: 500;
-    font-size: 1.8em;
-}
-
-.movie_title a:hover {
-    color: #3ec0e1;
-
-}
-
-.movie_title p:nth-child(2) {
-    font-size: 1em;
-    color: #fff;
-}
-
-.block_item1:hover .movie_title {
-    height: 74px;
-}
-
-.block_item2:hover .movie_title {
-    height: 74px;
-}
-
-.block_item1:hover img {
-    transform: scale3d(1.2, 1.2, 1.2);
-}
-
-.block_item2:hover img {
-    transform: scale3d(1.2, 1.2, 1.2);
-}
-
-.theatremainblog h2 {
-    position: absolute;
-    top: 400px;
-    left: 20px;
-    width: 100%;
-}
-
-h2 span {
-    color: white;
-    letter-spacing: -1;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/*comedy*/
-.well_genres .vote_genres {
-    position: absolute;
-    top: 3px;
-    left: 6px;
-    color: #fff;
-    font-size: 0.8em;
-    font-weight: 500;
-    font-family: 'Pathway Gothic One', sans-serif;
-
-}
-
-.vote_genres > span {
-    margin-left: 2px;
-}
-
-.genre_blog {
-    margin-top: 80px;
-    box-sizing: border-box;
-    background-color: #F2F2F2;
-}
-
-.well_genres {
-    width: 200px;
-    height: auto;
-    box-sizing: border-box;
-    margin: 10px 0 10px 0;
-    position: relative;
-}
-
-.genre_details {
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.genre_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-
-.genre_title {
-    box-sizing: border-box;
-    height: auto;
-    position: absolute;
-    top: 230px;
-    left: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 1.9em;
-    letter-spacing: 0.6px;
-    overflow: hidden;
-    line-height: 1em;
-}
-
-.title_movies h2 {
-    color: #000;
-    font-weight: 700;
-    font-size: 1.6em;
-    font-family: 'Source Sans Pro';
-}
-
-.genre_image {
-    object-fit: cover;
-    object-position: 80% 20%;
-    border-radius: 10px;
-    -webkit-filter: brightness(0.5);
-    filter: brightness(0.6);
-}
-
-/* theatre main blog ends here*/
+/*upcoming cover image*/
 .home-title {
     position: absolute;
     top: 200px;
@@ -428,6 +238,213 @@ h2 span {
     position: relative;
     z-index: -1;
     display: block;
+}
+
+/*In thetare main  blog starts*/
+.np_block_wrapper ._intheatre {
+    width: 60.7%;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+}
+
+.theater_blog {
+    width: 100%;
+    height: auto;
+    border-top: 3px solid #f1bd3b;
+    display: flex;
+    flex-direction: row;
+}
+
+.block_item1 {
+    position: relative;
+
+}
+
+#img1FirstBlog {
+    width: 41em;
+    height: 45.8em;
+}
+
+.img2SecondBlog {
+    height: 22.9em;
+    width: 20.7em;
+    object-fit: cover;
+    object-position: 80% 20%;
+}
+
+.np_block_wrapper {
+    width: 100%;
+    height: auto;
+
+}
+
+.np_block_wrapper .title_ {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #000;
+
+}
+
+.block_item1 .boxshadow_img {
+    position: relative;
+    background-size: cover;
+
+}
+
+.block_item1 img {
+    position: relative;
+    transform: scale3d(1, 1, 1);
+    transition: all 0.5s linear;
+}
+
+.block_item2 img {
+    position: relative;
+    transform: scale3d(1, 1, 1);
+    transition: all 0.5s linear;
+    overflow: hidden;
+
+}
+
+.block_item2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.block_item2 .boxshadow_img {
+    background-size: cover;
+}
+
+.wrap_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie_title {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    margin-top: 10px !important;
+    height: 42px;
+    line-height: 2.4em;
+    transition: height 0.5s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.movie_title a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+.movie_title a:hover {
+    color: #3ec0e1;
+
+}
+
+.movie_title p:nth-child(2) {
+    font-size: 1em;
+    color: #fff;
+}
+
+.block_item1:hover .movie_title {
+    height: 74px;
+}
+
+.block_item2:hover .movie_title {
+    height: 74px;
+}
+
+.block_item1:hover img {
+    transform: scale3d(1.2, 1.2, 1.2);
+}
+
+.block_item2:hover img {
+    transform: scale3d(1.2, 1.2, 1.2);
+}
+
+/* theatre main blog ends here*/
+/*comedy*/
+.well_genres .vote_genres {
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: 'Pathway Gothic One', sans-serif;
+
+}
+
+.vote_genres > span {
+    margin-left: 2px;
+}
+
+.genre_blog {
+    margin-top: 80px;
+    box-sizing: border-box;
+    background-color: #F2F2F2;
+}
+
+.well_genres {
+    width: 200px;
+    height: auto;
+    box-sizing: border-box;
+    margin: 10px 0 10px 0;
+    position: relative;
+}
+
+.genre_details {
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.genre_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.genre_title {
+    box-sizing: border-box;
+    height: auto;
+    position: absolute;
+    top: 230px;
+    left: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.9em;
+    letter-spacing: 0.6px;
+    overflow: hidden;
+    line-height: 1em;
+}
+
+.title_movies h2 {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.6em;
+    font-family: 'Source Sans Pro';
+}
+
+.genre_image {
+    object-fit: cover;
+    object-position: 80% 20%;
+    border-radius: 10px;
+    -webkit-filter: brightness(0.5);
+    filter: brightness(0.6);
 }
 
 /*topratedblog*/
@@ -561,6 +578,11 @@ h2 span {
 
 }
 
+.subscribe-message {
+    color: #888888;
+    padding-bottom: 20px;
+}
+
 .subscribe-block_group {
     justify-content: center;
     display: flex;
@@ -587,6 +609,7 @@ input[type="email"] {
     background: #2b2b2b;
     border-radius: 30px;
     outline: none;
+    padding: 10px;
 }
 
 .subscribe-block_group > a {
@@ -820,52 +843,7 @@ input[type="email"] {
     background: #ea485e;
 }
 
-.subscribe-message {
-    color: #888888;
-    padding-bottom: 20px;
-}
-
-input[type="email"] {
-    background: #2b2b2b;
-    color: #ffffff;
-    padding: 12px 20px;
-    border: 1px solid #404040;
-    margin: 0px;
-}
-
-#subscribe-submit {
-    background: #2caae1;
-    color: #ffffff;
-    font-family: Montserrat;
-    padding: 14px;
-    text-decoration: none;
-}
-
-#subscribe-submit:hover {
-    background: #a0ce4e;
-    color: white;
-}
-
-/*tvshow*/
-
-#tvshow {
-    color: black;
-}
-
-.tvshows {
-    width: 80%;
-    margin: 0 auto;
-
-}
-
-.tvshows > div {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-/*movies*/
+/*movies info*/
 .movie_details_main {
     width: 1000px;
     position: relative;
@@ -1058,7 +1036,7 @@ div.first .second {
     margin: 0 auto;
 }
 
-/*search wrapper*/
+/*search result wrapper*/
 #search_wrapper_main {
     width: 100%;
     color: white;
@@ -1164,63 +1142,11 @@ div.first .second {
     justify-content: space-between;
 }
 
-.bdy_bckColor {
-    background-color: #F2F2F2;
-    margin-top: -16px;
-    position: relative;
-    box-sizing: border-box;
-    padding-bottom: 20px;
-    height: auto;
-}
-
-#togglebar {
-    display: none;
-}
-
-.side-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background: #111;
-    opacity: 0.9;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-nav a {
-    padding: 10px 10px 10px 30px;
-    text-decoration: none;
-    font-size: 22px;
-    color: #ccc;
-    display: block;
-}
-
-.side-nav .btn-close {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 30px;
-}
-
-#open-slide {
-    display: none;
-}
-
-.readmore {
-    transition: 0.3s all;
-}
-
 /*media query*/
 @media screen and (min-width: 320px) and (max-width: 768px) {
     #root {
         overflow-x: hidden;
     }
-
-
 
     .home-title {
         top: 120px;
@@ -1288,9 +1214,11 @@ div.first .second {
         overflow: hidden;
         border-radius: 3px;
     }
-.block_item1{
-    padding-bottom: 8px;
-}
+
+    .block_item1 {
+        padding-bottom: 8px;
+    }
+
     #img1FirstBlog {
         width: 100%;
         height: 32em;
@@ -1435,7 +1363,8 @@ div.first .second {
         width: 73%;
         overflow: hidden;
     }
-    .invert{
+
+    .invert {
         padding-left: 140px;
     }
 }
@@ -1472,23 +1401,29 @@ div.first .second {
         width: 90%;
         margin: 0 auto;
     }
-.theater_blog{
-    width: 100%;
-}
-.block_item1{
-    width:60%;
-}
+
+    .theater_blog {
+        width: 100%;
+    }
+
+    .block_item1 {
+        width: 60%;
+    }
+
     #img1FirstBlog {
         width: 100%;
         height: 36em;
         position: relative;
     }
-.wrap_img{
-    width: 100%;
-}
-.block_item2{
-    width:50%;
-}
+
+    .wrap_img {
+        width: 100%;
+    }
+
+    .block_item2 {
+        width: 50%;
+    }
+
     .wrap_img .img2SecondBlog {
         height: 18em;
         width: 100%;
@@ -1628,11 +1563,13 @@ div.first .second {
     .np_block_wrapper ._intheatre {
         width: 80%;
     }
-.theater_blog{
-    width:100%;
-}
+
+    .theater_blog {
+        width: 100%;
+    }
+
     .block_item1 {
-    width:80%;
+        width: 80%;
     }
 
     #img1FirstBlog {
@@ -1640,9 +1577,11 @@ div.first .second {
         display: block;
         height: 46em;
     }
-.wrap_img{
-    width: 100%;
-}
+
+    .wrap_img {
+        width: 100%;
+    }
+
     .block_item2 {
         width: 50%;
     }
@@ -1659,12 +1598,14 @@ div.first .second {
         height: 22em;
 
     }
-.one{
-    max-width:430px;
-    float:left;
-}
+
+    .one {
+        max-width: 430px;
+        float: left;
+    }
+
     .one .img_align {
-        width:230px;
+        width: 230px;
         height: 16em;
     }
 
@@ -1701,13 +1642,13 @@ div.first .second {
     .main-blog {
         width: 70%;
     }
-.main-blog .inner-blog{
-width: 100%;
-}
+
+    .main-blog .inner-blog {
+        width: 100%;
+    }
+
     .toprated-main {
         padding-top: 35px;
     }
-
-
 
 }

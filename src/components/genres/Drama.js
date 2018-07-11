@@ -2,48 +2,37 @@ import React from 'react';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
-import '../css/App.css';
+import '../../css/App.css';
 
-export default class Horror extends React.Component {
+export default class Drama extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            horror: [],
-            data: [],
-            pageCount: 10
+            drama: [],
+            count: 1,
+            pagecount: 1
         }
-        this.handlePageClick = this.handlePageClick.bind(this);
-    }
-
-    handlePageClick(data) {
-        var pageValue = data.selected + 1;
-        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=" + pageValue;
-        axios
-            .get(requestUrl)
-            .then(response => {
-                this.setState({horror: response.data.results})
-            });
     }
 
 
     componentDidMount() {
-        let requestUrl = "https://api.themoviedb.org/3/genre/27/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
+        let requestUrl = "https://api.themoviedb.org/3/genre/18/movies?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios
             .get(requestUrl)
             .then(response => {
-                this.setState({horror: response.data.results})
+                this.setState({drama: response.data.results})
             });
     }
 
     render() {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-        let horror_movies = [];
-        horror_movies = this.state.horror;
-        let movieList = horror_movies.map(data => {
+        let drama_movies = [];
+        drama_movies = this.state.drama;
+        let movieList = drama_movies.map(data => {
             let imgurl = baseImgURL + data.poster_path;
             let mainid_image2 = data.id;
             return (
-                <div className=" well_genres">
+                <div className="well_genres">
                     <NavLink to={`/Movies/${mainid_image2}`}><img className="genre_image" src={imgurl} width="200px"
                                                                   height="300px" alt=" "/></NavLink>
                     <div className="genre_title">
@@ -53,12 +42,12 @@ export default class Horror extends React.Component {
                 </div>
             );
         });
+
         return (
             <div className="genre_blog">
 
                 <div className="genre_details">
                     <div className="genre_wrapper">
-
                         {movieList}
                     </div>
 
@@ -76,11 +65,8 @@ export default class Horror extends React.Component {
                                    subContainerClassName={"pages pagination"}
                                    activeClassName={"active"}
 
-                    />
-                </div>
+                    /></div>
             </div>
         );
     }
 }
-
-

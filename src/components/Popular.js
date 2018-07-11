@@ -2,12 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-export default class SubscrbPopular extends React.Component {
+export default class Popular extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movie: [],
-
+            popular: []
         }
     }
 
@@ -15,32 +14,28 @@ export default class SubscrbPopular extends React.Component {
         let requestUrl1 = "https://api.themoviedb.org/3/movie/popular?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1";
         axios.get(requestUrl1).then(response => {
             this.setState({
-                movie: response.data.results
+                popular: response.data.results
             });
         });
     }
 
     render() {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
-        let moviess = [];
-        moviess = this.state.movie.slice(1, 4);
-        let movieList1 = moviess.map(movie => {
+        let popular_movies = [];
+        popular_movies = this.state.popular.slice(1, 4);
+        let movieList1 = popular_movies.map(movie => {
             let imgurl = baseImgURL + movie.poster_path;
             return (
                 <img key={movie.id} className="img_align" src={imgurl} alt=" "/>
             );
         });
-        let obj1 = moviess.map(mov => {
+        let popular_details = popular_movies.map(mov => {
             return mov.id;
         });
 
 
-        // console.log(obj.id)
-        // let obj =JSON.parse(moviess[0]);
-        // console.log(obj['adult'])
-
-        let movieposter = [];
-        movieposter = moviess.map(movie => {
+        let popular_title = [];
+        popular_title = popular_movies.map(movie => {
                 return (<div>{movie.title}  <p>({movie.release_date})</p></div>
                 );
             }
@@ -84,20 +79,20 @@ export default class SubscrbPopular extends React.Component {
                     <div>
                     <div className="two">
 
-                        <h6 className="name_align">{movieposter[0]}</h6>
-                        <div className="pop_link"><Link to={`/Movies/${obj1[0]}`}> &#x3e; </Link>
+                        <h6 className="name_align">{popular_title[0]}</h6>
+                        <div className="pop_link"><Link to={`/Movies/${popular_details[0]}`}> &#x3e; </Link>
                         </div>
 
                     </div>
                     <div className="two">
-                        <h6 className="name_align">{movieposter[1]}</h6>
+                        <h6 className="name_align">{popular_title[1]}</h6>
                         <div className="pop_link">
-                            <Link to={`/Movies/${obj1[1]}`}>&#x3e;</Link>
+                            <Link to={`/Movies/${popular_details[1]}`}>&#x3e;</Link>
                         </div>
                     </div>
                     <div className="two">
-                        <h6 className="name_align">{movieposter[2]}</h6>
-                        <div className="pop_link"><Link to={`/Movies/${obj1[2]}`}>&#x3e;</Link>
+                        <h6 className="name_align">{popular_title[2]}</h6>
+                        <div className="pop_link"><Link to={`/Movies/${popular_details[2]}`}>&#x3e;</Link>
                         </div>
                     </div>
                     </div>

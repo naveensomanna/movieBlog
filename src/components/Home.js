@@ -4,10 +4,7 @@ import UpcomingMovies from './Upcoming.jsx';
 import Latest from './latest.js';
 
 export default class Home extends React.Component {
-    constructor(props) {
-        super(props);
 
-    }
 
     render() {
         return (

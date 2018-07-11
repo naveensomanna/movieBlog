@@ -1,35 +1,34 @@
 import React from 'react';
 import axios from 'axios';
 
-
+var path = "https://image.tmdb.org/t/p/w500";
 export default class Recommendation extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            movie: []
+            recommend: []
         }
     }
 
     componentDidMount() {
-//recommendation api
-        var request = `https://api.themoviedb.org/3/movie/${this.props.id}/recommendations?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1`;
+        let request = `https://api.themoviedb.org/3/movie/${this.props.id}/recommendations?api_key=0060474990618f8eace5a7835a1fead6&language=en-US&page=1`;
         axios.get(request).then(response => {
             this.setState({
-                movie: response.data.results
+                recommend: response.data.results
             })
         });
     }
 
     render() {
-        var path = "https://image.tmdb.org/t/p/w500";
-        let img_slice = this.state.movie.slice(1, 9);
-        let poster = img_slice.map(movi => {
-                let bgimg = path + movi.poster_path;
+
+        let img_slice = this.state.recommend.slice(1, 9);
+        let recommend_poster = img_slice.map(movie => {
+                let bgimg = path + movie.poster_path;
                 return (
                     <div id="img_main_blog">
                         <img alt=" " src={bgimg} />
-                        <p>{movi.title}<span>{movi.vote_average}<span className="glyphicon glyphicon-star" style={{marginLeft:'3px'}}></span></span></p>
+                        <p>{movie.title}<span>{movie.vote_average}<span className="glyphicon glyphicon-star" style={{marginLeft:'3px'}}></span></span></p>
                     </div>
                 )
             }
@@ -41,7 +40,7 @@ export default class Recommendation extends React.Component {
                         <h2>Recommendation</h2>
                     </div>
                     <div className="movie_recommend">
-                        {poster}
+                        {recommend_poster}
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import SubscrbPopular from './SubscrbPopular.js';
+import Popular from './Popular.js';
 
 export default class Latest extends React.Component {
     constructor(props) {
@@ -58,7 +58,7 @@ export default class Latest extends React.Component {
                             </div>
                         </Col>
                         <Col lg={5} md={4} sm={4} xs={12}>
-                            <SubscrbPopular/>
+                            <Popular/>
                         </Col>
                     </Row>
                 </div>

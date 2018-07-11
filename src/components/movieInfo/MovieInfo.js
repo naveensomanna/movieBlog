@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Recommendation from './Recommendations.js';
 
-export default class Movies extends Component {
+export default class MovieInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
             movie: [],
-            movie1: [],
-            movie2: [],
+            casts: [],
+            trailer: [],
 
         }
     }
@@ -25,7 +25,7 @@ export default class Movies extends Component {
         let requestUrl1 = "https://api.themoviedb.org/3/movie/" + this.props.match.params.id + "/casts?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
         axios.get(requestUrl1).then(response => {
                 this.setState({
-                        movie1: response.data.cast
+                        casts: response.data.cast
                     }
                 )
             }
@@ -33,7 +33,7 @@ export default class Movies extends Component {
         let requestUrl2 = "https://api.themoviedb.org/3/movie/" + this.props.match.params.id + "/videos?api_key=0060474990618f8eace5a7835a1fead6&language=en-US";
         axios.get(requestUrl2).then(response => {
                 this.setState({
-                        movie2: response.data.results
+                        trailer: response.data.results
                     }
                 )
             }
@@ -50,32 +50,28 @@ export default class Movies extends Component {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let URL_YOUTUBE = 'https://www.youtube.com/embed/';
         let videos = [];
-        videos = this.state.movie2.slice(0, 3);
+        videos = this.state.trailer.slice(0, 3);
         let link = videos.map(trailer => {
             return trailer.key;
         });
         let link1 = URL_YOUTUBE + link[0];
         let imgUrl = baseImgURL + this.state.movie.poster_path;
-        let imgUrl111 = "https://image.tmdb.org/t/p/w1280" + this.state.movie.backdrop_path;
-        let movies = [];
-        movies = this.state.movie1.slice(1, 5);
+        let imgUrl_backdrop = "https://image.tmdb.org/t/p/w1280" + this.state.movie.backdrop_path;
+        let casts_movies = [];
+        casts_movies = this.state.casts.slice(1, 5);
 
-        let movieList = movies.map(movie => {
-            var imgurl;
-
+        let casts_movieList = casts_movies.map(movie => {
+            let imgurl;
             imgurl = baseImgURL + movie.profile_path;
-
-
-
             return (
                 <div className="well_style">
                     <img src={imgurl} id="e" className="people_casting" alt=" "/><p className="casts_name">{movie.name}</p>
-
-                </div>);
+                </div>
+            );
         });
 
         var Style = {
-            'background-image': `url(${imgUrl111}) `,
+            'background-image': `url(${imgUrl_backdrop}) `,
             'background-repeat': 'no-repeat',
             'background-size': 'cover',
             'max-width': '100%',
@@ -108,7 +104,7 @@ export default class Movies extends Component {
                         <h2>Top Billed Cast</h2>
 
                         <div className="casts">
-                            {movieList}
+                            {casts_movieList}
 
 
                         </div>

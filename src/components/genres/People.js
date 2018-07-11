@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class Latest extends React.Component {
+export default class People extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,7 @@ export default class Latest extends React.Component {
         let baseImgURL = "https://image.tmdb.org/t/p/w500";
         let movi = [];
         movi = this.state.people;
-        var moviess = movi.map(movie => {
+        var people_list = movi.map(movie => {
             let imgurl = baseImgURL + movie.profile_path;
             return (
                 <div className="well_genres">
@@ -44,7 +44,7 @@ export default class Latest extends React.Component {
                 <div className="person_wrap">
                     <div className="media_people">
                         <div className="item_card">
-                            {moviess}
+                            {people_list}
                         </div>
                     </div>
                 </div>

@@ -4,14 +4,13 @@ import {NavLink, withRouter} from 'react-router-dom';
 
 class Header extends React.Component {
     constructor(Props) {
-        super(Props)
+        super(Props);
         this.state = {
             btnclick: false
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
+    handleChange=(event) =>{
 
         event.preventDefault();
         if (event.target.value.length > 0) {
@@ -24,7 +23,8 @@ class Header extends React.Component {
 
     }
 
-    btnclick = () => {
+    btnclick = (e) => {
+        e.preventDefault();
         document.getElementById('side-menu').style.width = '250px';
     }
     btnclose = (e) => {
@@ -60,7 +60,7 @@ class Header extends React.Component {
 
                     </ul>
                     <div className="searchbox">
-                        <input type="text" placeholder="Search" onChange={this.handleSubmit}/>
+                        <input type="text" placeholder="Search" onChange={this.handleChange}/>
                     </div>
                     <div id="side-menu" className="side-nav">
                         <a href=" " className="btn-close" onClick={this.btnclose}>&times;</a>

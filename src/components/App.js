@@ -2,14 +2,14 @@ import React from 'react';
 import '../index.css';
 import Header from './Header.js';
 import Home from './Home.js';
-import Comdey from './Comdey.js';
-import Drama from './Drama.js';
-import Action from './Action.js';
-import Horror from './Horror.js';
+import Comdey from './genres/Comdey.js';
+import Drama from './genres/Drama.js';
+import Action from './genres/Action.js';
+import Horror from './genres/Horror.js';
 import Footer from './Footer.js';
-import Movies from './Movies.js';
+import MovieInfo from './movieInfo/MovieInfo.js';
 import SearchBar from './Searchbar.js';
-import People from './People.js';
+import People from './genres/People.js';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 
 export default class App extends React.Component{
@@ -43,7 +43,7 @@ render(){
 <Route  path="/drama" component={Drama}/>
 <Route  path="/action" component={Action}/>
 <Route  path="/horror" component={Horror}/>
-<Route  path="/movies/:id" component={Movies}/>
+<Route  path="/movies/:id" component={MovieInfo}/>
 <Route  path="/SearchBar/:id" component={SearchBar}/>
 <Route path="/people" component={People}/>
 <Footer/>
