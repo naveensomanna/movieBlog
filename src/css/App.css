@@ -21,7 +21,10 @@ body {
     position: relative;
     box-sizing: border-box;
     padding-bottom: 20px;
-    height: auto;
+    max-height: 100%cmd
+;
+    width: 100%;
+
 }
 
 #togglebar {

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Recommendation from './Recommendations.js';
 import {BarLoader} from 'react-css-loaders';
+import ErrorHandle from './ErrorHandle';
 import {baseImgURL, YoutubeApi,movieBaseUrl,token,backDropApi} from "../Api";
 
 export default class MovieInfo extends Component {
@@ -106,6 +107,8 @@ export default class MovieInfo extends Component {
                     return <Bground imgUrl={imgUrl} original_title={this.state.movie.original_title} Style={Style}
                                     overview={this.state.movie.overview} popularity={this.state.movie.popularity}
                                     vote_count={this.state.movie.vote_count}/>;
+                case 2:
+                    return <ErrorHandle/>;
                 default:
                     return null;
             }
@@ -116,6 +119,8 @@ export default class MovieInfo extends Component {
                     return <BarLoader/>;
                 case 1:
                     return <Casts casts_movieList={casts_movieList}/>
+                case 2:
+                    return <ErrorHandle/>;
 
             }
         })();
@@ -125,6 +130,8 @@ export default class MovieInfo extends Component {
                     return <BarLoader/>;
                 case 1:
                     return <Trailer trailerUrl={trailerUrl}/>
+                case 2:
+                    return <ErrorHandle/>;
             }
         })();
 
