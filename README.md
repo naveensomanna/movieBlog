@@ -1,11 +1,9 @@
-# movieDB [![Paypal Donate](https://img.shields.io/badge/paypal-donate-green.svg?style=flat)](https://www.paypal.me/junedomingo)
-Discover Movies and TV shows
+# movieDB [![Paypal Donate]
+Discover Movies 
 
 
 ![movieapp-screenshots_big_iphone_](https://cloud.githubusercontent.com/assets/5106887/20606597/f176b3e2-b2ac-11e6-9163-c9e625df7748.png)
 
-### Download APK file
- - [Download from Google Drive - v2.2.1](http://bit.ly/2s9UdxG)
 
 ### What's included
 | Name             | Description   |
@@ -24,7 +22,7 @@ Clone this repo
 
 ```sh
 $ git clone git@github.com:JuneDomingo/movieapp.git
-$ cd movieapp
+$ cd movieDB
 $ yarn install or npm install
 ```
 
