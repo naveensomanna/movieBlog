@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
                     <div className="invert">
                         <Row>
 
-                            <Col lg={2} md={3} xs={12}>
+                            <Col lg={2} md={3} xs={6} >
                                 <div className="footer-area">
                                     <h5 className="widget-title">categories</h5>
                                     <ul>
@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
                                     </ul>
                                 </div>
                             </Col>
-                            <Col lg={2} md={3} xs={12}>
+                            <Col lg={2} md={3} xs={6}>
                                 <div id="menu-footer">
                                     <h5 className="widget-title ">information</h5>
                                     <ul>
@@ -35,7 +35,7 @@ export default class Footer extends React.Component {
                                     </ul>
                                 </div>
                             </Col>
-                            <Col lg={2} md={3} xs={12}>
+                            <Col lg={2} md={3} xs={6}>
                                 <div>
                                     <h5 className="widget-title ">IMDbPro</h5>
                                     <ul>
@@ -44,7 +44,7 @@ export default class Footer extends React.Component {
                                     </ul>
                                 </div>
                             </Col>
-                            <Col lg={2} md={3} xs={12}>
+                            <Col lg={2} md={3} xs={6}>
                                 <div className="widget-tag">
                                     <h5 className="widget-title">tags</h5>
                                     <div className="tag-cloud">
@@ -57,7 +57,7 @@ export default class Footer extends React.Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col lg={4} md={3} xs={12}>
+                            <Col lg={4} md={3} xs={6}>
                                 <div className="subscribe-blog">
                                     <div className="footer-title">
                                     </div>
