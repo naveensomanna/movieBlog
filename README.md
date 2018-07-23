@@ -2,7 +2,7 @@
 Discover Movies 
 
 
-![movieapp-screenshots_big_iphone_](https://cloud.githubusercontent.com/assets/5106887/20606597/f176b3e2-b2ac-11e6-9163-c9e625df7748.png)
+
 
 
 ### What's included
