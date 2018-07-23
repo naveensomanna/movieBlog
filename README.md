@@ -9,8 +9,8 @@ Discover Movies
 | Name             | Description   |
 | :-------------:|--------------|
 | [React](http://facebook.github.io/react/releases/16.0/) |  Build react Web Apps using JavaScript and React. |
-| [React Router](https://github.com/wix/react-router-navigation) | App-wide support for 100%  navigation with an easy cross-platform interface. |
-| [ESLint](http://eslint.org/) | The pluggable linting utility for JavaScript and JSX |
+| [React Router](https://github.com/wix/react-router-navigation) | Web App-wide support for 100%  navigation with an easy cross-platform interface. |
+
 
 ### Requirements
 - [Node](https://nodejs.org/) >= 5.0.0
