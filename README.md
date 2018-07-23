@@ -1,4 +1,4 @@
-# movieDB [![Paypal Donate]
+# movieDB 
 Discover Movies 
 
 
@@ -8,8 +8,8 @@ Discover Movies
 ### What's included
 | Name             | Description   |
 | :-------------:|--------------|
-| [React](http://facebook.github.io/react-native/releases/0.32/) |  Build Native Mobile Apps using JavaScript and React. |
-| [React Router](https://github.com/wix/react-native-navigation) | App-wide support for 100% native navigation with an easy cross-platform interface. |
+| [React](http://facebook.github.io/react/releases/16.0/) |  Build react Web Apps using JavaScript and React. |
+| [React Router](https://github.com/wix/react-router-navigation) | App-wide support for 100%  navigation with an easy cross-platform interface. |
 | [ESLint](http://eslint.org/) | The pluggable linting utility for JavaScript and JSX |
 
 ### Requirements
@@ -21,7 +21,7 @@ Discover Movies
 Clone this repo
 
 ```sh
-$ git clone git@github.com:JuneDomingo/movieapp.git
+$ git clone https://github.com/naveensomanna/movieDB.git
 $ cd movieDB
 $ yarn install or npm install
 ```
